@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>おりーぶグループ 採用サイト｜誰かの成長に、本気で向き合う仕事。</title>
+<meta name="description" content="おりーぶグループの採用サイト。兵庫県伊丹市・尼崎市で、児童発達支援・放課後等デイサービス・就労継続支援B型・グループホームを運営しています。資格・経験を問わない職種もあります。">
+<meta property="og:title" content="おりーぶグループ 採用サイト｜誰かの成長に、本気で向き合う仕事。">
+<meta property="og:description" content="誰かの成長を支えながら、自分も一緒に成長していく。伊丹市・尼崎市の福祉の仕事。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<!--
+  =========================================================================
+  おりーぶグループ 採用サイト v3（リデザイン）
+  制作：アビエルトワークス（株式会社Brifu）
+  -------------------------------------------------------------------------
+  ・データは下部 <script> の DATA に集約。
+  ・【要確認】【仮】= クライアント確認前のダミー。制度・条件は創作していない。
+  ・求人条件は Indeed / アットカンパニーの原稿と同一にすること。
+  ・利用者が写る写真は掲載同意の確認が必須。
+  =========================================================================
+-->
+<style>
+/*
+  配色：クライアント提供の色見本（北欧インテリアのくすみ色）から
+  主役　　：サージ #3F4A68（紺）／ コペンハーゲンルーフ #C25B49（赤）／ サクソングリーン #A0A873（オリーブ）
+  差し色　：バブーシュ #E9C362 ／ ポッテッドシュリンプ #D9BCAE ／ メアグリーン #487171 ／ テール・デジプト #A54F37
+  ニュートラル：スクールハウスホワイト／タンズゲートグリーン／レイリングス
+  ※旧トークン名（--olive / --yellow など）は互換のため残し、新しい色に割り当て直している。
+*/
+:root{
+  --serge:#3F4A68; --roof:#C25B49; --saxon:#A0A873; --babouche:#E9C362; --shrimp:#D9BCAE;
+  --mere:#487171; --terre:#A54F37; --sugar:#7E9D9A; --arsenic:#85B49D; --chinese:#62839E;
+  --dyrehaven:#626E5C; --lightblue:#BBBDB6; --tunsgate:#E8E6D2; --school:#E6DDCF; --railings:#424649;
+  --olive:var(--serge); --olive-d:#323B55; --olive-l:#DDE0E8;
+  --paper:#F6F2EA; --paper-2:var(--school); --black:#33363A; --ink-2:#55585C; --ink-3:#707276;
+  --sky:var(--arsenic); --sky-d:var(--chinese); --sky-ink:#3E5F78;
+  --yellow:var(--babouche); --orange:var(--roof);
+  --line:#DED6C8;
+  --en:"Bricolage Grotesque",system-ui,sans-serif;
+  --jp:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Noto Sans CJK JP","Yu Gothic","YuGothic","Meiryo",sans-serif;
+  --ease:cubic-bezier(.2,.65,.25,1);
+  --pad:20px;
+}
+@media(min-width:900px){:root{--pad:56px}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--black);font-family:var(--jp);font-size:16px;
+  line-height:1.9;letter-spacing:.02em;-webkit-font-smoothing:antialiased;overflow-x:clip}
+ul,ol{margin:0;padding:0}
+img{display:block;max-width:100%}
+h1,h2,h3,p{margin:0}
+a{color:inherit}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--sky-d);outline-offset:3px;border-radius:2px}
+.in-wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.sp{display:inline}
+@media(min-width:760px){br.sp{display:none}}
+.todo{display:inline-block;font-size:11px;font-weight:700;color:#7A4A10;background:#FCEBC5;
+  padding:1px 7px;border-radius:2px;margin-right:6px;vertical-align:1px}
+
+/* ================= 段差つき背景パネル ================= */
+.pn{position:relative;background:var(--bg,var(--paper));
+  --r:22px;--th:30px;--tw:58%}
+@media(min-width:900px){.pn{--r:30px;--th:48px;--tw:40%}}
+.pn.tl::before,.pn.tr::before{content:"";position:absolute;top:calc(var(--th)*-1);
+  height:calc(var(--th) + 1px);width:var(--tw);background:var(--bg)}
+.pn.tl::before{left:0;border-top-right-radius:var(--r)}
+.pn.tr::before{right:0;border-top-left-radius:var(--r)}
+.pn.tl::after,.pn.tr::after{content:"";position:absolute;top:calc(var(--r)*-1);
+  width:var(--r);height:var(--r)}
+.pn.tl::after{left:var(--tw);background:radial-gradient(circle at 100% 0,transparent calc(var(--r) - .5px),var(--bg) var(--r))}
+.pn.tr::after{right:var(--tw);background:radial-gradient(circle at 0 0,transparent calc(var(--r) - .5px),var(--bg) var(--r))}
+.pn.tl{border-top-right-radius:var(--r)}
+.pn.tr{border-top-left-radius:var(--r)}
+.pn.bl{border-bottom-left-radius:var(--r)}
+.pn.br{border-bottom-right-radius:var(--r)}
+.pn.inset-l{margin-left:clamp(0px,3vw,48px)}
+.pn.inset-r{margin-right:clamp(0px,3vw,48px)}
+
+/* ================= 共通の見出し ================= */
+.lab{display:flex;align-items:center;gap:10px;font-family:var(--en);font-weight:700;font-size:13px;
+  letter-spacing:.12em;color:var(--olive)}
+.lab::before{content:"";width:9px;height:9px;background:currentColor;transform:rotate(45deg)}
+.lab small{font-family:var(--jp);font-weight:500;letter-spacing:.06em;font-size:12px;color:var(--ink-3)}
+.ttl{font-weight:900;font-size:clamp(28px,5.2vw,58px);line-height:1.32;letter-spacing:.01em;margin-top:18px}
+.ttl em{font-style:normal;color:var(--olive)}
+.side .ttl,.weapon .ttl{font-size:clamp(28px,3.9vw,48px)}
+.big-en{font-family:var(--en);font-weight:800;line-height:.9;letter-spacing:-.02em}
+
+/* ================= モーション ================= */
+.js [data-r]{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js [data-r].in{opacity:1;transform:none}
+.js .mask{clip-path:inset(0 0 100% 0);transition:clip-path 1.25s var(--ease)}
+.js .mask.in{clip-path:inset(0 0 0 0)}
+.mask img{transform:scale(1.12);transition:transform 1.8s var(--ease)}
+.mask.in img{transform:scale(1)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js [data-r],.js .mask{opacity:1!important;transform:none!important;clip-path:none!important}
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+}
+
+/* ================= ヘッダー ================= */
+.hd{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;
+  align-items:flex-start;pointer-events:none}
+.hd > *{pointer-events:auto}
+.logo{display:flex;flex-direction:column;justify-content:center;background:var(--olive);color:#fff;
+  text-decoration:none;padding:14px 20px 12px;border-bottom-right-radius:18px;line-height:1.3}
+.logo b{font-size:17px;letter-spacing:.1em}
+.logo small{font-family:var(--en);font-size:10px;letter-spacing:.24em;opacity:.85}
+@media(min-width:900px){.logo{padding:20px 30px 18px}.logo b{font-size:19px}}
+.hd-r{display:flex;gap:10px;align-items:center;margin:14px 14px 0 0}
+.navpill{display:none;background:#fff;border-radius:999px;padding:6px 6px 6px 24px;gap:22px;align-items:center;
+  font-size:13px;box-shadow:0 6px 24px rgba(22,24,26,.08)}
+.navpill a{text-decoration:none;transition:color .2s var(--ease)}
+.navpill a:hover{color:var(--olive)}
+.navpill .go{background:var(--black);color:#fff;border-radius:999px;padding:9px 18px;font-weight:700}
+.navpill .go:hover{color:#fff;background:var(--olive)}
+@media(min-width:1100px){.navpill{display:flex}}
+.menu-btn{width:52px;height:52px;border-radius:50%;border:0;background:#fff;cursor:pointer;
+  display:grid;place-items:center;box-shadow:0 6px 24px rgba(22,24,26,.1);transition:transform .2s var(--ease)}
+.menu-btn:hover{transform:scale(1.05)}
+.menu-btn i{display:block;width:20px;height:2px;background:var(--black);position:relative}
+.menu-btn i::before,.menu-btn i::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--black);transition:transform .3s var(--ease)}
+.menu-btn i::before{top:-6px}.menu-btn i::after{top:6px}
+.menu-open .menu-btn i{background:transparent}
+.menu-open .menu-btn i::before{transform:translateY(6px) rotate(45deg)}
+.menu-open .menu-btn i::after{transform:translateY(-6px) rotate(-45deg)}
+.drawer{position:fixed;inset:0;z-index:55;background:var(--black);color:#fff;padding:110px var(--pad) 40px;
+  display:grid;align-content:start;gap:4px;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+.menu-open .drawer{opacity:1;visibility:visible}
+.drawer a{text-decoration:none;font-weight:700;font-size:clamp(20px,4.6vw,34px);padding:6px 0;
+  display:flex;gap:14px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer a span{font-family:var(--en);font-size:12px;color:var(--yellow);letter-spacing:.1em;width:28px}
+.drawer a:hover{color:var(--sky)}
+
+/* ================= 01 HERO ================= */
+.hero{position:relative;height:92svh;min-height:600px;overflow:hidden;background:#222}
+.hero .sh{position:absolute;inset:0;opacity:0;transition:opacity 1.4s var(--ease)}
+.hero .sh.on{opacity:1}
+.hero .sh img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 7s linear}
+.hero .sh.on img{transform:scale(1.14)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.22),transparent 30%,transparent 60%,rgba(0,0,0,.25))}
+.hero-side{position:absolute;z-index:3;left:18px;top:30%;transform:translateY(-50%) rotate(180deg);
+  writing-mode:vertical-rl;font-family:var(--en);font-size:11px;letter-spacing:.3em;color:#fff;display:none}
+@media(min-width:900px){.hero-side{display:block;left:26px}}
+.hero-count{position:absolute;z-index:3;right:var(--pad);top:84px;color:#fff;font-family:var(--en);
+  font-weight:700;font-size:13px;letter-spacing:.1em;display:flex;align-items:center;gap:12px}
+.hero-count .bar{width:80px;height:2px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
+.hero-count .bar i{position:absolute;inset:0;background:#fff;transform-origin:left;transform:scaleX(0)}
+.hero-count .bar i.run{animation:prog 5.5s linear forwards}
+@keyframes prog{to{transform:scaleX(1)}}
+/* コピーを載せる紙の段 */
+.hero-copy{position:absolute;z-index:4;left:0;bottom:0;background:var(--paper);
+  padding:26px var(--pad) 22px;border-top-right-radius:26px;max-width:min(760px,94vw)}
+.hero-copy::after{content:"";position:absolute;right:-26px;bottom:0;width:26px;height:26px;
+  background:radial-gradient(circle at 100% 0,transparent 25.5px,var(--paper) 26px)}
+.hero-copy .en{font-family:var(--en);font-weight:700;font-size:12px;letter-spacing:.24em;color:var(--olive);margin-bottom:8px}
+.hero-copy h1{font-weight:900;font-size:clamp(25px,5.4vw,60px);line-height:1.34;letter-spacing:.02em}
+.hero-copy h1 .l{display:block;white-space:nowrap}
+.hero-copy h1 em{font-style:normal;color:var(--olive)}
+.hero-copy p{margin-top:12px;font-size:clamp(13px,1.5vw,16px);color:var(--ink-2);line-height:1.9}
+.hero .ln{display:inline-block;overflow:hidden;vertical-align:bottom}
+.js .hero .ln > span{display:inline-block;transform:translateY(105%);transition:transform 1.1s var(--ease)}
+.js .hero.ready .ln > span{transform:none}
+
+/* ================= 02 ABOUT ================= */
+.about{padding:72px 0 120px}
+@media(min-width:900px){.about{padding:110px 0 170px}}
+.about-grid{display:grid;gap:40px;margin-top:30px}
+@media(min-width:960px){.about-grid{grid-template-columns:1.15fr .85fr;gap:60px;align-items:start}}
+.statement{font-weight:900;font-size:clamp(30px,6.4vw,78px);line-height:1.28;letter-spacing:.01em}
+.statement .l{display:block}
+.statement .hl{position:relative;white-space:nowrap}
+.statement .hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:.08em;height:.32em;
+  background:var(--yellow);z-index:-1;transform-origin:left;transform:scaleX(0);transition:transform 1s .4s var(--ease)}
+.statement.in .hl::after{transform:scaleX(1)}
+.statement .hl{z-index:0}
+.about-txt{margin-top:28px;color:var(--ink-2);font-size:15px;max-width:30em}
+.about-photos{position:relative;min-height:440px}
+.about-photos figure{margin:0;position:absolute;overflow:hidden;border-radius:6px}
+.about-photos .p1{width:72%;right:0;top:0;aspect-ratio:3/4}
+.about-photos .p2{width:54%;left:0;bottom:0;aspect-ratio:4/3;z-index:2;border:6px solid var(--paper)}
+.about-photos img{width:100%;height:100%;object-fit:cover}
+.about-photos .chip{position:absolute;z-index:3;right:6%;bottom:22%;background:var(--sky);color:var(--black);
+  font-weight:700;font-size:13px;padding:10px 16px;border-radius:999px}
+@media(max-width:959px){.about-photos{min-height:auto;aspect-ratio:1/1}}
+/* PURPOSE */
+.purpose{margin-top:90px;display:grid;gap:22px;align-items:end}
+@media(min-width:960px){.purpose{margin-top:130px}}
+.purpose .big-en{font-size:clamp(64px,15vw,190px);color:transparent;-webkit-text-stroke:1.5px var(--olive)}
+.purpose h3{font-weight:900;font-size:clamp(24px,4.2vw,52px);line-height:1.4;white-space:nowrap}
+.purpose p{margin-top:12px;color:var(--ink-2);font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:44px;
+  border-top:1px solid var(--line);padding-top:24px}
+.stat b{display:block;font-family:var(--en);font-weight:800;font-size:clamp(40px,7vw,86px);line-height:1;color:var(--black)}
+.stat b small{font-size:.32em;margin-left:4px;font-family:var(--jp);font-weight:700}
+.stat > span{font-size:12.5px;color:var(--ink-3)}
+/* マーキー */
+.mq{overflow:hidden;white-space:nowrap;margin-top:70px;user-select:none}
+.mq div{display:inline-block;animation:mq 38s linear infinite}
+.mq span{font-family:var(--en);font-weight:800;font-size:clamp(54px,11vw,150px);line-height:1;
+  letter-spacing:-.02em;color:var(--olive);padding-right:.4em}
+.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1.5px var(--olive)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ================= スライダー（参考サイト型） ================= */
+.sl-wrap{display:grid;gap:18px;margin-top:40px}
+.sl-wrap > *{min-width:0}
+@media(min-width:900px){.sl-wrap{grid-template-columns:70px minmax(0,1fr);gap:22px;align-items:stretch}}
+.sl-ctl{display:flex;gap:8px;order:2}
+@media(min-width:900px){.sl-ctl{order:0;flex-direction:column;align-self:start;position:sticky;top:120px}}
+.sl-ctl button{flex:1;min-height:52px;border:0;cursor:pointer;background:rgba(255,255,255,.14);color:inherit;
+  font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.1em;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:4px;border-radius:4px;transition:background .2s var(--ease)}
+@media(min-width:900px){.sl-ctl button{width:70px;height:96px;flex:none}}
+.sl-ctl button:hover{background:rgba(255,255,255,.3)}
+.sl-ctl button:disabled{opacity:.35;cursor:default}
+.sl-ctl button b{font-size:18px;line-height:1}
+.sl{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+  padding-bottom:6px;margin-right:calc(-1*(var(--pad) + max(0px,(100vw - 1280px)/2)));padding-right:var(--pad)}
+.sl::-webkit-scrollbar{display:none}
+.sl > *{scroll-snap-align:start;flex:0 0 min(80vw,340px)}
+.sl-prog{height:2px;background:rgba(255,255,255,.2);margin-top:14px;position:relative}
+.sl-prog i{position:absolute;left:0;top:0;bottom:0;background:currentColor;width:20%;transition:transform .2s linear}
+
+/* ================= 03 DAILY ================= */
+.daily{--bg:var(--olive);color:#fff;padding:70px 0 110px}
+@media(min-width:900px){.daily{padding:100px 0 150px}}
+.daily .lab{color:var(--yellow)}
+.daily .lab small{color:rgba(255,255,255,.7)}
+.daily .ttl em{color:var(--yellow)}
+.daily .lede{margin-top:16px;max-width:30em;color:rgba(255,255,255,.86);font-size:15px}
+.dcard{background:#fff;color:var(--black);border-radius:6px;padding:12px;display:grid;
+  grid-template-columns:minmax(0,1fr) 40px;gap:10px 10px;align-content:start}
+.dcard .no{grid-column:1/-1;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--olive)}
+.dcard figure{margin:0;overflow:hidden;border-radius:4px;aspect-ratio:4/5}
+.dcard figure img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.dcard:hover figure img{transform:scale(1.06)}
+.dcard .kw{writing-mode:vertical-rl;font-weight:900;font-size:20px;letter-spacing:.14em;color:var(--olive);
+  justify-self:center;align-self:start;white-space:nowrap}
+.dcard h3{grid-column:1/-1;font-weight:900;font-size:18px;line-height:1.5;padding:4px 4px 0}
+.dcard p{grid-column:1/-1;font-size:13.5px;color:var(--ink-2);line-height:1.85;padding:2px 4px 6px}
+.daily .note{margin-top:20px;font-size:12px;color:rgba(255,255,255,.7)}
+
+/* ================= MOVIE ================= */
+.movie{padding:80px 0 40px}
+@media(min-width:900px){.movie{padding:120px 0 60px}}
+.movie .lede{margin-top:16px;max-width:30em;color:var(--ink-2);font-size:15px}
+.mv-list{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:36px;
+  padding-bottom:6px;margin-right:calc(-1*var(--pad));padding-right:var(--pad)}
+.mv-list::-webkit-scrollbar{display:none}
+@media(min-width:900px){.mv-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;overflow:visible;margin-right:0;padding-right:0}}
+.mv{flex:0 0 min(62vw,260px);scroll-snap-align:start;margin:0}
+.mv-box{position:relative;aspect-ratio:9/16;border-radius:8px;overflow:hidden;background:var(--black);cursor:pointer}
+.mv-box video{width:100%;height:100%;object-fit:cover;display:block}
+.mv-play{position:absolute;inset:0;display:grid;place-items:center;border:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.45));
+  cursor:pointer;transition:opacity .3s var(--ease)}
+.mv-play span{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;
+  color:var(--olive);font-size:20px;padding-left:4px;transition:transform .25s var(--ease)}
+.mv-box:hover .mv-play span{transform:scale(1.08)}
+.mv.playing .mv-play{opacity:0}
+.mv-time{position:absolute;right:10px;top:10px;z-index:2;background:rgba(22,24,26,.7);color:#fff;font-family:var(--en);
+  font-size:11px;font-weight:700;letter-spacing:.06em;padding:3px 8px;border-radius:999px}
+.mv figcaption{padding:12px 2px 0}
+.mv figcaption small{font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--olive)}
+.mv figcaption b{display:block;font-weight:900;font-size:16px;line-height:1.5}
+.movie .note{margin-top:20px;font-size:12px;color:var(--ink-3)}
+
+/* ================= 04 YOUR STORY ================= */
+.story{padding:80px 0 120px}
+@media(min-width:900px){.story{padding:120px 0 170px}}
+.story-grid{display:grid;gap:36px}
+@media(min-width:980px){.story-grid{grid-template-columns:.9fr 1.1fr;gap:70px}
+  .story-grid .side{position:sticky;top:120px;align-self:start}}
+.story .side p{margin-top:20px;color:var(--ink-2);font-size:15px;max-width:26em}
+.xp{border-top:1px solid var(--black)}
+.xp li{list-style:none;border-bottom:1px solid var(--line)}
+.xp a{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:14px;align-items:center;
+  padding:18px 4px;text-decoration:none;transition:background-color .25s var(--ease),padding .25s var(--ease)}
+.xp a:hover{background:#fff;padding-left:14px}
+.xp .n{font-family:var(--en);font-weight:700;font-size:13px;color:var(--olive)}
+.xp .t{font-weight:700;font-size:clamp(17px,2.2vw,22px);line-height:1.5}
+.xp .t small{display:block;font-weight:500;font-size:12.5px;color:var(--ink-3);margin-top:2px}
+.xp .arrow{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;
+  font-size:14px;transition:all .25s var(--ease)}
+.xp a:hover .arrow{background:var(--olive);border-color:var(--olive);color:#fff}
+
+/* ================= 05 WEAPON ================= */
+.weapon{--bg:var(--sky);padding:70px 0 110px}
+@media(min-width:900px){.weapon{padding:110px 0 150px}}
+.weapon .lab{color:var(--sky-ink)}
+.weapon-grid{display:grid;gap:40px;margin-top:10px}
+@media(min-width:980px){.weapon-grid{grid-template-columns:1fr 1fr;gap:64px;align-items:start}}
+.weapon-ph{position:relative}
+.weapon-ph figure{margin:0;border-radius:6px;overflow:hidden;aspect-ratio:4/5}
+.weapon-ph img{width:100%;height:100%;object-fit:cover}
+.weapon-ph .pop{position:absolute;left:-10px;bottom:28px;background:var(--black);color:#fff;
+  font-weight:900;font-size:clamp(20px,2.6vw,30px);line-height:1.4;padding:16px 22px;border-radius:4px}
+@media(min-width:980px){.weapon-ph .pop{left:-48px}}
+.conv{margin-top:30px;display:grid;gap:10px}
+.conv li{list-style:none;background:#fff;border-radius:6px;padding:16px 18px;display:grid;gap:4px}
+@media(min-width:620px){.conv li{grid-template-columns:1fr 26px 1fr;align-items:center;gap:12px}}
+@media(max-width:619px){.conv .ar{text-align:left;line-height:1}}
+.conv .from{font-size:13px;color:var(--ink-3)}
+.conv .from b{display:block;color:var(--black);font-size:15.5px}
+.conv .to{font-weight:700;font-size:15px}
+.conv .ar{color:var(--orange);font-weight:900;text-align:center}
+.fact{margin-top:22px;border:1.5px solid var(--black);border-radius:6px;padding:16px 18px;background:rgba(255,255,255,.5)}
+.fact b{display:block;font-size:13px;letter-spacing:.06em;margin-bottom:4px}
+.fact p{font-size:15px}
+
+/* ================= 06 FIND YOUR ROLE ================= */
+.role{--bg:var(--black);color:#fff;padding:70px 0 120px}
+@media(min-width:900px){.role{padding:110px 0 160px}}
+.role .lab{color:var(--sky)}
+.role .lab small{color:rgba(255,255,255,.6)}
+.role .ttl em{color:var(--sky)}
+.role-grid{display:grid;gap:36px}
+@media(min-width:980px){.role-grid{grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}}
+.role .side p{margin-top:18px;color:rgba(255,255,255,.75);font-size:14.5px}
+.qbox{background:#fff;color:var(--black);border-radius:8px;padding:24px 20px;min-height:420px}
+@media(min-width:760px){.qbox{padding:36px}}
+.qprog{display:flex;gap:6px;margin-bottom:22px}
+.qprog i{flex:1;height:4px;border-radius:2px;background:var(--paper-2);transition:background-color .3s var(--ease)}
+.qprog i.on{background:var(--olive)}
+.qn{font-family:var(--en);font-weight:700;font-size:12px;letter-spacing:.14em;color:var(--olive)}
+.qq{font-weight:900;font-size:clamp(20px,2.6vw,26px);line-height:1.5;margin:8px 0 22px}
+.qopts{display:grid;gap:8px}
+@media(min-width:620px){.qopts{grid-template-columns:1fr 1fr}}
+.qopt{text-align:left;background:var(--paper);border:1.5px solid transparent;border-radius:6px;padding:16px 18px;
+  min-height:62px;font-size:15px;font-weight:500;cursor:pointer;color:var(--black);
+  transition:border-color .2s var(--ease),background-color .2s var(--ease),transform .2s var(--ease)}
+.qopt:hover{border-color:var(--olive);background:#fff;transform:translateY(-2px)}
+.qback{margin-top:18px;background:none;border:0;color:var(--ink-3);font-size:14px;cursor:pointer;
+  text-decoration:underline;text-underline-offset:4px}
+.qres .type{font-weight:900;font-size:clamp(24px,3.4vw,36px);line-height:1.4;margin:6px 0 14px}
+.qres .type em{font-style:normal;background:linear-gradient(transparent 60%,var(--yellow) 60%)}
+.qres ul{margin:0 0 18px;padding-left:1.1em;color:var(--ink-2);font-size:15px}
+.qjob{border:1px solid var(--line);border-left:4px solid var(--olive);border-radius:4px;padding:14px 16px;margin-bottom:8px}
+.qjob b{display:block}
+.qjob span{font-size:13.5px;color:var(--ink-2);line-height:1.8}
+.qfine{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:14px;margin:16px 0}
+
+/* ================= ボタン ================= */
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:14px;justify-content:space-between;min-height:54px;
+  padding:12px 12px 12px 24px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;
+  border:1.5px solid transparent;cursor:pointer;transition:all .25s var(--ease)}
+.btn i{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-style:normal;
+  font-size:13px;transition:transform .25s var(--ease)}
+.btn:hover i{transform:translateX(4px)}
+.btn-olive{background:var(--olive);color:#fff}.btn-olive i{background:#fff;color:var(--olive)}
+.btn-olive:hover{background:var(--olive-d)}
+.btn-black{background:var(--black);color:#fff}.btn-black i{background:#fff;color:var(--black)}
+.btn-line{background:transparent;border-color:var(--black);color:var(--black)}.btn-line i{background:var(--black);color:#fff}
+.btn-line:hover{background:var(--black);color:#fff}
+.btn-white{background:#fff;color:var(--black)}.btn-white i{background:var(--yellow);color:var(--black)}
+
+/* ================= 07 PEOPLE ================= */
+.people{padding:80px 0 120px}
+@media(min-width:900px){.people{padding:120px 0 170px}}
+.person{display:grid;gap:22px;margin-top:70px;align-items:center}
+@media(min-width:900px){.person{grid-template-columns:1fr 1fr;gap:64px;margin-top:110px}
+  .person:nth-child(even) .pp{order:2}}
+.pp{position:relative}
+.pp figure{margin:0;border-radius:6px;overflow:hidden;aspect-ratio:4/5}
+.pp img{width:100%;height:100%;object-fit:cover}
+.pp .tag{position:absolute;z-index:2;top:14px;left:14px;background:var(--yellow);font-family:var(--en);font-weight:800;
+  font-size:13px;letter-spacing:.1em;padding:6px 14px;border-radius:999px}
+.pname{position:absolute;right:-6px;bottom:20px;background:#fff;padding:14px 18px;border-radius:6px 0 0 6px;
+  box-shadow:0 10px 30px rgba(22,24,26,.12)}
+.pname b{display:block;font-size:20px;font-weight:900}
+.pname span{font-size:12.5px;color:var(--ink-3)}
+.pt .say{font-weight:900;font-size:clamp(22px,3vw,34px);line-height:1.55}
+.pt .say::before{content:"“";display:block;font-family:var(--en);font-size:70px;line-height:.6;color:var(--olive);margin-bottom:6px}
+.pqa{margin-top:26px;border-top:1px solid var(--line)}
+.pqa div{display:grid;gap:4px;padding:14px 0;border-bottom:1px solid var(--line)}
+@media(min-width:620px){.pqa div{grid-template-columns:170px 1fr;gap:16px}}
+.pqa dt{font-size:12.5px;font-weight:700;color:var(--olive)}
+.pqa dd{margin:0;font-size:14.5px;color:var(--ink-2)}
+
+/* ================= 08 VISION ================= */
+.vision{--bg:var(--paper-2);padding:80px 0 120px;overflow:hidden}
+@media(min-width:900px){.vision{padding:120px 0 170px}}
+.vision-st{font-weight:900;font-size:clamp(26px,5vw,60px);line-height:1.4;margin-top:24px;max-width:18em}
+.vision-st em{font-style:normal;color:var(--sky-d)}
+.mission{margin-top:28px;display:grid;gap:8px;max-width:40em}
+.mission b{font-family:var(--en);font-size:13px;letter-spacing:.14em;color:var(--olive)}
+.mission p{font-size:16px;line-height:2}
+.track{position:relative;margin-top:60px;overflow-x:auto;scrollbar-width:none;padding-bottom:6px}
+.track::-webkit-scrollbar{display:none}
+.track-in{display:grid;grid-template-columns:repeat(4,minmax(240px,1fr));gap:18px;position:relative;min-width:1000px}
+.track-line{position:absolute;left:0;right:0;top:34px;height:3px;background:var(--line)}
+.track-line i{position:absolute;inset:0;background:linear-gradient(90deg,var(--olive),var(--sky-d));transform-origin:left;transform:scaleX(0)}
+.stage{position:relative;padding-top:64px}
+.stage .dot{position:absolute;top:24px;left:0;width:24px;height:24px;border-radius:50%;background:var(--paper-2);
+  border:3px solid var(--olive)}
+.stage .en{font-family:var(--en);font-weight:800;font-size:clamp(34px,4vw,52px);line-height:1;color:var(--black)}
+.stage .jp{font-weight:700;font-size:14px;color:var(--olive);margin:6px 0 10px}
+.stage p{font-size:14px;color:var(--ink-2);line-height:1.85}
+.stage .svc{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:700;background:#fff;
+  padding:4px 12px;border-radius:999px}
+.vision .note{margin-top:18px;font-size:12px;color:var(--ink-3)}
+
+/* ================= 09 VALUES ================= */
+.values{--bg:var(--olive-d);color:#fff;padding:80px 0 120px}
+@media(min-width:900px){.values{padding:120px 0 170px}}
+.values .lab{color:var(--yellow)}
+.values .lab small{color:rgba(255,255,255,.65)}
+.core{display:grid;gap:10px;margin-top:40px}
+.core div{display:flex;align-items:baseline;gap:18px;border-bottom:1px solid rgba(255,255,255,.18);padding:10px 0}
+.core div:nth-child(2){padding-left:8%}
+.core div:nth-child(3){padding-left:16%}
+.core i{font-family:var(--en);font-style:normal;font-weight:700;font-size:14px;color:var(--yellow)}
+.core b{font-weight:900;font-size:clamp(54px,11vw,140px);line-height:1.1;letter-spacing:.04em}
+.core span{font-size:13px;color:rgba(255,255,255,.7);margin-left:auto;text-align:right;max-width:14em;line-height:1.7}
+.so{margin-top:70px}
+.so h3{font-weight:900;font-size:clamp(20px,2.6vw,28px)}
+.acts-list{margin-top:22px;display:grid;gap:10px}
+@media(min-width:760px){.acts-list{grid-template-columns:repeat(2,1fr)}}
+.acts-list li{list-style:none;background:rgba(255,255,255,.08);border-radius:6px;padding:18px 20px;
+  display:flex;gap:16px;align-items:flex-start;transition:background-color .25s var(--ease)}
+.acts-list li:hover{background:rgba(255,255,255,.14)}
+.acts-list li i{font-family:var(--en);font-style:normal;font-weight:800;color:var(--black);background:var(--yellow);
+  width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:13px;flex:none}
+.acts-list b{display:block;font-size:17px}
+.acts-list span{font-size:13.5px;color:rgba(255,255,255,.75)}
+
+/* ================= 10 JOBS ================= */
+.jobs{padding:80px 0 120px}
+@media(min-width:900px){.jobs{padding:120px 0 170px}}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:34px 0 22px}
+.chip{border:1.5px solid var(--black);background:transparent;border-radius:999px;padding:9px 18px;min-height:44px;
+  font-size:14px;font-weight:700;cursor:pointer;color:var(--black);transition:all .2s var(--ease)}
+.chip:hover{background:#fff}
+.chip[aria-pressed="true"]{background:var(--black);color:#fff}
+.jgrid{display:grid;gap:14px}
+@media(min-width:860px){.jgrid{grid-template-columns:1fr 1fr}}
+.job{background:#fff;border-radius:8px;border:1px solid var(--line);overflow:hidden;transition:border-color .2s var(--ease)}
+.job:hover{border-color:var(--black)}
+.job-h{padding:22px 22px 18px}
+.job-h .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.job h3{font-weight:900;font-size:20px;line-height:1.4}
+.badge{font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.b-open{background:var(--yellow);color:var(--black)}
+.b-req{background:var(--paper-2);color:var(--ink-2)}
+.job .desc{font-size:14px;color:var(--ink-2);margin:10px 0 12px;line-height:1.85}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--ink-3)}
+.meta b{color:var(--black);font-weight:700;margin-right:4px}
+.job-tg{width:100%;display:flex;justify-content:space-between;align-items:center;background:var(--paper);
+  border:0;border-top:1px solid var(--line);padding:14px 22px;font-size:14px;font-weight:700;cursor:pointer;color:var(--black)}
+.job-tg i{font-style:normal;transition:transform .25s var(--ease)}
+.job-tg[aria-expanded="true"] i{transform:rotate(45deg)}
+.job-d{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s var(--ease)}
+.job-d.open{grid-template-rows:1fr}
+.job-d > div{overflow:hidden}
+.job-d dl{margin:0;padding:18px 22px 6px;display:grid;gap:10px;font-size:14px}
+@media(min-width:620px){.job-d dl{grid-template-columns:110px 1fr;gap:10px 16px}}
+.job-d dt{font-size:12.5px;color:var(--ink-3)}
+.job-d dd{margin:0;color:var(--ink-2)}
+.job-d .btns{padding:12px 22px 22px}
+.empty{grid-column:1/-1;border:1.5px dashed var(--line);border-radius:8px;padding:34px 22px}
+.empty b{display:block;font-size:17px;margin-bottom:6px}
+
+/* ================= 11 PLACES ================= */
+.places{--bg:var(--sky);padding:70px 0 120px}
+@media(min-width:900px){.places{padding:110px 0 160px}}
+.places .lab{color:var(--sky-ink)}
+.places .sl-ctl button{background:rgba(255,255,255,.55);color:var(--black)}
+.places .sl-ctl button:hover{background:#fff}
+.places .sl-prog{background:rgba(22,24,26,.15)}
+.pcard{background:#fff;border-radius:6px;padding:14px;display:grid;gap:12px}
+.pcard .area{grid-column:1/-1;aspect-ratio:16/10;border-radius:4px;display:flex;flex-direction:column;justify-content:space-between;
+  padding:14px;color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.pcard .area img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .7s var(--ease)}
+.pcard:hover .area img{transform:scale(1.05)}
+.pcard .area.ph::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(22,24,26,.5),transparent 38%,transparent 52%,var(--tint) 100%)}
+.pcard .area small{font-family:var(--en);font-size:11px;letter-spacing:.14em;font-weight:700;opacity:.9}
+.pcard .area b{font-weight:900;font-size:30px;line-height:1.1;text-shadow:0 2px 12px rgba(0,0,0,.25)}
+.pcard .area.kid{background:var(--olive);--tint:rgba(70,94,33,.9)}
+.pcard .area.adult{background:var(--sky-d);--tint:rgba(29,111,144,.9)}
+.pcard .area .todo{position:absolute;right:10px;top:10px;margin:0}
+.pcard h3{font-weight:900;font-size:17px;line-height:1.45}
+.pcard p{font-size:13px;color:var(--ink-2);margin-top:4px;line-height:1.7}
+.pcard .v{writing-mode:vertical-rl;font-size:12px;font-weight:700;color:var(--ink-3);justify-self:center;letter-spacing:.12em}
+.pcard .acc{grid-column:1/-1;border-top:1px solid var(--line);padding-top:10px;font-size:12px;color:var(--ink-3)}
+
+/* ================= 12 FAQ ================= */
+.faq{padding:80px 0 120px}
+@media(min-width:900px){.faq{padding:120px 0 170px}}
+.faq-grid{display:grid;gap:30px}
+@media(min-width:980px){.faq-grid{grid-template-columns:.8fr 1.2fr;gap:70px}
+  .faq-grid .side{position:sticky;top:120px;align-self:start}}
+details{border-top:1px solid var(--black)}
+details:last-child{border-bottom:1px solid var(--black)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:34px 1fr 26px;gap:10px;align-items:center;
+  padding:20px 0;font-weight:700;font-size:16.5px}
+summary::-webkit-details-marker{display:none}
+summary .q{font-family:var(--en);font-weight:800;color:var(--olive);font-size:18px}
+summary .pm{width:26px;height:26px;border-radius:50%;background:var(--black);color:#fff;display:grid;place-items:center;
+  font-size:15px;transition:transform .25s var(--ease)}
+details[open] summary .pm{transform:rotate(45deg);background:var(--olive)}
+details .a{padding:0 0 22px 44px;color:var(--ink-2);font-size:15px;max-width:42em}
+
+/* ================= 13 CTA ================= */
+.cta{--bg:var(--olive);color:#fff;padding:80px 0 120px;overflow:hidden}
+@media(min-width:900px){.cta{padding:120px 0 160px}}
+.cta h2{font-weight:900;font-size:clamp(32px,6.6vw,84px);line-height:1.3}
+.cta h2 em{font-style:normal;color:var(--yellow)}
+.cta p.lead{margin-top:22px;font-size:16px;color:rgba(255,255,255,.88);max-width:30em}
+.cta-cards{display:grid;gap:12px;margin-top:44px}
+@media(min-width:860px){.cta-cards{grid-template-columns:repeat(3,1fr)}}
+.cta-cards a{display:flex;flex-direction:column;justify-content:space-between;gap:18px;min-height:132px;
+  border-radius:8px;padding:22px;text-decoration:none;transition:transform .25s var(--ease)}
+.cta-cards a:hover{transform:translateY(-4px)}
+.cta-cards a:nth-child(1){background:#fff;color:var(--black)}
+.cta-cards a:nth-child(2){background:var(--sky);color:var(--black)}
+.cta-cards a:nth-child(3){background:var(--black);color:#fff}
+.cta-cards small{font-family:var(--en);font-weight:700;font-size:12px;letter-spacing:.14em;opacity:.7}
+.cta-cards b{display:block;font-weight:900;font-size:24px;margin-top:6px}
+.cta-cards span.s{font-size:13px;opacity:.8}
+.cta-cards .go{align-self:flex-end;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--yellow);color:var(--black);font-weight:900}
+.cta-steps{display:grid;gap:10px;margin-top:40px;counter-reset:s}
+@media(min-width:760px){.cta-steps{grid-template-columns:repeat(4,1fr)}}
+.cta-steps li{list-style:none;border-top:1px solid rgba(255,255,255,.35);padding-top:12px;font-size:14px;color:rgba(255,255,255,.88)}
+.cta-steps li b{display:block;font-family:var(--en);font-size:12px;letter-spacing:.14em;color:var(--yellow)}
+
+/* ================= FOOTER ================= */
+.ft{--bg:var(--black);color:#fff;padding:70px 0 120px}
+.ft-grid{display:grid;gap:30px}
+@media(min-width:900px){.ft-grid{grid-template-columns:1fr auto;align-items:end}}
+.ft .tag{font-weight:900;font-size:clamp(26px,5vw,60px);line-height:1.35}
+.ft .tag em{font-style:normal;color:var(--sky)}
+.ft nav{display:grid;grid-template-columns:repeat(2,auto);gap:6px 30px;font-size:13.5px}
+.ft nav a{text-decoration:none;color:rgba(255,255,255,.75)}
+.ft nav a:hover{color:#fff}
+.ft .small{margin-top:40px;border-top:1px solid rgba(255,255,255,.14);padding-top:18px;font-size:12px;
+  color:rgba(255,255,255,.55);display:grid;gap:4px}
+.ft .small a{color:rgba(255,255,255,.75)}
+
+/* ================= スマホ固定CTA ================= */
+.mbar{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;gap:8px;
+  padding:6px;background:rgba(28,42,66,.94);border-radius:999px;backdrop-filter:blur(8px);
+  transform:translateY(140%);transition:transform .35s var(--ease)}
+.mbar.on{transform:none}
+.mbar a{flex:1;text-align:center;min-height:48px;display:grid;place-items:center;border-radius:999px;
+  font-weight:700;font-size:14px;text-decoration:none;color:#fff}
+.mbar a:first-child{background:var(--olive)}
+@media(min-width:1100px){.mbar{display:none}}
+
+/* =====================================================================
+   テーマ：北欧インテリアのくすみ色 × ポスターのような幾何学
+   セクションの地色：ABOUT 生成り → DAILY サージ → WEAPON タンズゲート → ROLE ポッテッドシュリンプ
+   → VISION スクールハウスホワイト → VALUES メアグリーン → PLACES バブーシュ → CTA テール・デジプト → FOOTER レイリングス
+   モチーフは面・線・点・円と、葉／オリーブの枝。余白を大きく残し、置きすぎない。
+   ===================================================================== */
+/* 見出し：ラベルの後ろに細い罫線が伸びる */
+.ttl em,.hero-copy h1 em,.vision-st em{color:var(--roof)}
+.lab::before{width:8px;height:8px;border-radius:50%;transform:none}
+.lab::after{content:"";flex:none;width:0;height:1px;background:currentColor;opacity:.55;transition:width 1.1s .35s var(--ease)}
+.lab.in::after{width:44px}
+.hero-copy .en{display:flex;align-items:center;gap:12px;color:var(--roof)}
+.hero-copy .en::before{content:"";width:34px;height:12px;background:repeating-linear-gradient(-60deg,currentColor 0 2px,transparent 2px 8px)}
+/* 角はほぼ直角に。ポスターのような端正さ */
+.dcard,.pcard,.job,.mv-box{border-radius:6px}
+.qbox{border-radius:8px}
+.about-photos figure,.weapon-ph figure,.pp figure,.dcard figure,.pcard .area{border-radius:4px}
+.story,.movie,.people,.faq{position:relative}
+section > .in-wrap,footer > .in-wrap{position:relative;z-index:1}
+
+/* ---------- 幾何学モチーフ ---------- */
+.deco-box{position:absolute;inset:0;overflow:hidden;pointer-events:none;border-radius:inherit}
+.sh{position:absolute;display:block;pointer-events:none;--c:var(--black);opacity:var(--o,1)}
+.sh-blk{background:var(--c);transform-origin:left center}
+.sh-disc{background:var(--c);border-radius:50%}
+.sh-ring{border:1.5px solid var(--c);border-radius:50%}
+.sh-dots{background:radial-gradient(var(--c) 1.5px,transparent 2px) 0 0/var(--g,14px) var(--g,14px)}
+.sh-hatch{height:12px;background:repeating-linear-gradient(-60deg,var(--c) 0 2px,transparent 2px 8px);transform-origin:left center}
+.sh-lines{background:repeating-linear-gradient(90deg,var(--c) 0 1.5px,transparent 1.5px var(--g,12px));transform-origin:center top}
+.sh-para{background:var(--c);clip-path:polygon(0 16%,100% 0,100% 84%,0 100%)}
+.sh-pdots{background:radial-gradient(var(--c) 1.6px,transparent 2.1px) 0 0/8px 12px;clip-path:polygon(0 16%,100% 0,100% 84%,0 100%)}
+svg.sh{overflow:visible}
+.sh-leaf{fill:none;stroke:var(--c);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.sh-cl{fill:var(--c)}
+.v-en{position:absolute;writing-mode:vertical-rl;font-family:var(--en);font-weight:700;font-size:11px;letter-spacing:.55em;
+  color:var(--c,var(--ink-3));pointer-events:none;white-space:nowrap;display:none}
+@media(min-width:900px){.v-en{display:block}}
+
+/* 動き：余白の中で、面は横に伸び、線は上から降り、点と円はふわっと現れる */
+.sh,.v-en{transition:opacity 1.1s var(--ease),scale 1.4s var(--ease)}
+.js .sh:not(.in),.js .v-en:not(.in){opacity:0}
+.js .sh-blk:not(.in),.js .sh-hatch:not(.in){scale:0 1}
+.js .sh-lines:not(.in){scale:1 0}
+.js .sh-ring:not(.in),.js .sh-disc:not(.in){scale:.55}
+.js .sh-dots:not(.in),.js .sh-pdots:not(.in),.js .sh-para:not(.in),.js svg.sh:not(.in){scale:.92}
+.sh.float{animation:float 11s ease-in-out infinite alternate}
+.sh.float.slow{animation-duration:16s;animation-direction:alternate-reverse}
+@keyframes float{to{transform:translateY(-16px)}}
+@media (prefers-reduced-motion:reduce){.js .sh,.js .v-en{opacity:var(--o,1)!important;scale:1!important}}
+
+/* 模様入りの丸（ファブリックの見本帳のように並べる） */
+.tc-row{display:flex;gap:10px;flex-wrap:wrap}
+.tc{width:40px;height:40px;border-radius:50%;background:var(--c);transition:scale .8s var(--ease),opacity .8s var(--ease)}
+.tc.dot{background:radial-gradient(rgba(255,255,255,.9) 1.4px,transparent 2px) 0 0/8px 8px,var(--c)}
+.tc.str{background:repeating-linear-gradient(90deg,var(--c) 0 5px,rgba(255,255,255,.7) 5px 6.5px)}
+.tc.grid{background:repeating-linear-gradient(90deg,var(--c) 0 2px,transparent 2px 9px),repeating-linear-gradient(0deg,var(--c) 0 2px,transparent 2px 9px)}
+.js .tc-row:not(.in) .tc{scale:.3;opacity:0}
+.tc-row .tc:nth-child(2){transition-delay:.08s}.tc-row .tc:nth-child(3){transition-delay:.16s}
+.tc-row .tc:nth-child(4){transition-delay:.24s}.tc-row .tc:nth-child(5){transition-delay:.32s}
+.tc-row .tc:nth-child(6){transition-delay:.4s}.tc-row .tc:nth-child(7){transition-delay:.48s}
+.tc-row .tc:nth-child(8){transition-delay:.56s}
+
+/* ABOUT */
+.about-photos .chip{background:var(--babouche)}
+.about-photos .sh{z-index:0}
+.ab-b{--c:var(--shrimp);width:58%;height:64%;right:-7%;top:14%}
+.ab-d{--c:var(--serge);--g:13px;width:130px;height:96px;left:-3%;top:-5%}
+.ab-h{--c:var(--roof);width:96px;left:2%;bottom:-26px}
+.ab-v{right:16px;top:150px}
+.stat:nth-child(1) b{color:var(--serge)}
+.stat:nth-child(2) b{color:var(--roof)}
+.stat:nth-child(3) b{color:var(--mere)}
+.mq span{color:var(--serge)}
+.mq span:nth-child(even){-webkit-text-stroke-color:var(--roof)}
+.mq span:nth-child(4n+3){color:var(--saxon)}
+
+/* DAILY（サージ） */
+.dcard .kw{color:var(--roof)}
+.dcard .no{color:var(--serge)}
+.dy-d{--c:var(--babouche);--g:16px;width:190px;height:144px;right:6%;top:64px}
+.dy-r{--c:rgba(255,255,255,.3);width:280px;height:280px;right:-90px;top:-60px}
+.dy-l{--c:rgba(255,255,255,.16);--g:14px;width:126px;height:250px;left:-14px;bottom:40px}
+.dy-v{--c:rgba(255,255,255,.45);left:18px;top:150px}
+
+/* MOVIE / STORY */
+.mv-play span{color:var(--roof)}
+.mv figcaption small{color:var(--serge)}
+.mv-b{--c:var(--saxon);width:min(220px,30vw);height:140px;right:var(--pad);top:70px}
+.mv-h{--c:var(--serge);width:84px;right:calc(var(--pad) + 100px);top:226px}
+.xp .n{color:var(--roof)}
+.xp a:hover .arrow{background:var(--serge);border-color:var(--serge)}
+.st-l1{--c:var(--sugar);width:104px;height:166px;left:var(--pad);bottom:70px}
+.st-l2{--c:var(--saxon);width:66px;height:106px;left:calc(var(--pad) + 92px);bottom:52px;rotate:14deg}
+@media(max-width:979px){.st-l1,.st-l2{display:none}}
+
+/* WEAPON（タンズゲート）：ミッドセンチュリーの平行四辺形 */
+.weapon{--bg:var(--tunsgate)}
+.weapon .lab{color:var(--serge)}
+.weapon-ph .pop{background:var(--serge)}
+.fact{border-color:var(--serge)}
+.wp-p1{--c:var(--babouche);width:84px;height:136px;right:4%;top:36px}
+.wp-p2{--c:var(--railings);width:64px;height:104px;right:calc(4% + 96px);top:96px}
+.wp-pd{--c:var(--railings);width:56px;height:150px;right:calc(4% + 30px);top:186px}
+@media(max-width:979px){.wp-p2,.wp-pd{display:none}.wp-p1{width:54px;height:88px;top:20px}}
+
+/* ROLE（ポッテッドシュリンプ）：円と輪の重なり */
+.role{--bg:var(--shrimp);color:var(--black)}
+.role .lab{color:var(--serge)}
+.role .lab small{color:var(--ink-2)}
+.role .ttl em{color:var(--black);background:linear-gradient(transparent 62%,var(--babouche) 62%);
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+.role .side p{color:var(--black)}
+.rl-c{--c:var(--roof);width:190px;height:190px;left:-56px;bottom:-60px}
+.rl-r{--c:var(--serge);width:250px;height:250px;left:40px;bottom:-110px}
+.rl-l{--c:var(--serge);--g:10px;width:92px;height:170px;right:4%;top:44px;--o:.55}
+.rl-v{--c:var(--serge);left:18px;top:60px}
+
+/* PEOPLE */
+.pt .say::before{color:var(--roof)}
+.pp .tag{background:var(--babouche);color:var(--black)}
+.pe-o{width:210px;height:105px;right:var(--pad);top:96px;--lf:var(--dyrehaven);--ov:var(--saxon);--ov2:var(--railings)}
+@media(max-width:899px){.pe-o{width:130px;height:65px;top:60px}}
+
+/* VISION（スクールハウスホワイト）：三角のガーランド */
+.vision{--bg:var(--school)}
+.track-line i{background:linear-gradient(90deg,var(--serge),var(--roof),var(--saxon))}
+.stage:nth-child(3) .dot{border-color:var(--roof)}
+.stage:nth-child(4) .dot{border-color:var(--saxon)}
+.stage:nth-child(5) .dot{border-color:var(--mere)}
+.vi-t{width:min(330px,56vw);height:auto;right:var(--pad);top:84px}
+
+/* VALUES（メアグリーン）：点の集まり */
+.values{--bg:var(--mere);color:#fff}
+.values .lab{color:#fff}
+.values .lab small{color:rgba(255,255,255,.8)}
+.core div{border-bottom-color:rgba(255,255,255,.22)}
+.core i{color:var(--babouche)}
+.core b{color:#fff}
+.core span{color:rgba(255,255,255,.92)}
+.acts-list li{background:rgba(255,255,255,.1)}
+.acts-list li:hover{background:rgba(255,255,255,.17)}
+.acts-list span{color:rgba(255,255,255,.9)}
+.acts-list li i{color:var(--black)}
+.acts-list li:nth-child(2) i{background:var(--shrimp)}
+.acts-list li:nth-child(3) i{background:var(--arsenic)}
+.acts-list li:nth-child(4) i{background:var(--tunsgate)}
+.acts-list li:nth-child(5) i{background:#fff}
+.va-c1{--c:rgba(255,255,255,.14);width:320px;height:320px;right:-70px;top:-40px}
+.va-c2{--c:var(--arsenic);--o:.5;width:170px;height:170px;left:-40px;bottom:-50px}
+
+/* JOBS / FAQ */
+summary .q{color:var(--roof)}
+details[open] summary .pm{background:var(--roof)}
+
+/* 幾何学タイルのモザイク（バウハウス風の1/4円・半円・輪・ストライプ） */
+.mosaic{position:absolute;display:grid;grid-template-columns:repeat(3,var(--t,56px));gap:0;pointer-events:none}
+.mosaic i{width:var(--t,56px);height:var(--t,56px);display:block;transition:scale .9s var(--ease),opacity .9s var(--ease)}
+.t-q1{background:radial-gradient(circle at 0 100%,var(--c) 0 calc(var(--t,56px) - .5px),transparent var(--t,56px))}
+.t-q2{background:radial-gradient(circle at 100% 0,var(--c) 0 calc(var(--t,56px) - .5px),transparent var(--t,56px))}
+.t-half{background:radial-gradient(circle at 50% 100%,var(--c) 0 calc(var(--t,56px)/2 - .5px),transparent calc(var(--t,56px)/2))}
+.t-ring{background:radial-gradient(circle,transparent 0 30%,var(--c) 31% 49%,transparent 50%)}
+.t-disc{background:radial-gradient(circle,var(--c) 0 49%,transparent 50%)}
+.t-str{background:repeating-linear-gradient(90deg,var(--c) 0 3px,transparent 3px 8px)}
+.t-diag{background:repeating-linear-gradient(45deg,var(--c) 0 2.5px,transparent 2.5px 8px)}
+.t-sq{background:var(--c)}
+.js .mosaic:not(.in) i{scale:.4;opacity:0}
+.mosaic i:nth-child(2){transition-delay:.07s}.mosaic i:nth-child(3){transition-delay:.14s}
+.mosaic i:nth-child(4){transition-delay:.21s}.mosaic i:nth-child(5){transition-delay:.28s}
+.mosaic i:nth-child(6){transition-delay:.35s}
+.jb-m{right:var(--pad);top:64px}
+@media(max-width:759px){.jb-m{--t:34px;top:28px}}
+
+/* 斜線入りの円と三角（カバーデザインから） */
+.sh-scirc{border-radius:50%;background:repeating-linear-gradient(45deg,var(--c) 0 2.5px,transparent 2.5px 8px)}
+.sh-tri{background:var(--c);clip-path:polygon(0 0,100% 50%,0 100%)}
+.mv-s{--c:var(--serge);width:110px;height:110px;right:calc(var(--pad) - 24px);top:150px}
+.mv-t{--c:var(--roof);width:50px;height:56px;right:calc(var(--pad) + 236px);top:40px}
+@media(max-width:899px){.mv-s,.mv-t{display:none}}
+
+/* 北欧フォークアートのタイル（チューリップ・小枝・星） */
+.folk{display:grid;grid-template-columns:repeat(3,52px);gap:6px;margin-top:34px}
+.folk span{width:52px;height:52px;display:grid;place-items:center;transition:scale .8s var(--ease),opacity .8s var(--ease)}
+.folk svg{width:34px;height:40px;fill:var(--c,var(--serge))}
+.folk .bg{background:var(--b)}
+.js .folk:not(.in) span{scale:.5;opacity:0}
+.folk span:nth-child(2){transition-delay:.07s}.folk span:nth-child(3){transition-delay:.14s}
+.folk span:nth-child(4){transition-delay:.21s}.folk span:nth-child(5){transition-delay:.28s}
+.folk span:nth-child(6){transition-delay:.35s}
+
+/* PLACES（バブーシュ） */
+.places{--bg:var(--babouche)}
+.places .lab{color:var(--serge)}
+.places .sl-ctl button{background:rgba(255,255,255,.55)}
+.places .sl-prog{background:rgba(51,54,58,.15)}
+.pcard .area.kid{--tint:rgba(63,74,104,.88)}
+.pcard .area.adult{background:var(--mere);--tint:rgba(72,113,113,.9)}
+.pl-r{--c:var(--railings);--o:.45;width:290px;height:290px;right:-100px;top:-70px}
+.pl-d{--c:var(--railings);--o:.5;--g:14px;width:160px;height:112px;right:8%;bottom:44px}
+
+/* CTA（テール・デジプト） */
+.cta{--bg:var(--terre);color:#fff}
+.cta .lab{color:#fff}
+.cta .lab small{color:rgba(255,255,255,.8)}
+.cta h2 em{color:var(--babouche)}
+.cta p.lead{color:rgba(255,255,255,.92)}
+.cta-cards a:nth-child(2){background:var(--shrimp)}
+.cta-cards a:nth-child(3){background:var(--serge)}
+.cta-cards a:nth-child(1) .go{background:var(--roof);color:#fff}
+.cta-steps li{border-top-color:rgba(255,255,255,.35);color:rgba(255,255,255,.92)}
+.cta-steps li b{color:var(--babouche)}
+.cta .fine{margin-top:20px;font-size:12px;color:rgba(255,255,255,.8)}
+.ct-b{--c:var(--babouche);width:min(260px,26vw);height:200px;right:var(--pad);top:90px}
+.ct-d{--c:#fff;--o:.45;width:160px;height:110px;right:var(--pad);top:312px}
+.ct-r{--c:rgba(255,255,255,.4);width:400px;height:400px;right:-150px;bottom:-160px}
+@media(max-width:899px){.ct-b,.ct-d{display:none}}
+
+/* FOOTER（レイリングス） */
+.ft{--bg:var(--railings)}
+.ft .tc-row{margin-bottom:46px}
+.ft-o{width:180px;height:90px;right:var(--pad);top:30px;--lf:var(--saxon);--ov:var(--saxon);--ov2:var(--school);opacity:.85}
+@media(max-width:899px){.ft-o{display:none}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<!-- 装飾用のSVGシンボル：オリーブの枝／線画の葉／点の集まり -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <symbol id="olive" viewBox="0 0 240 120">
+    <path d="M6 104C60 92 120 66 234 18" fill="none" style="stroke:var(--lf)" stroke-width="2.4" stroke-linecap="round"/>
+    <g style="fill:var(--lf)">
+      <ellipse cx="44" cy="80" rx="20" ry="5.5" transform="rotate(-40 44 80)"/><ellipse cx="62" cy="92" rx="18" ry="5" transform="rotate(12 62 92)"/>
+      <ellipse cx="96" cy="60" rx="21" ry="5.5" transform="rotate(-45 96 60)"/><ellipse cx="118" cy="72" rx="19" ry="5" transform="rotate(4 118 72)"/>
+      <ellipse cx="150" cy="38" rx="20" ry="5.5" transform="rotate(-50 150 38)"/><ellipse cx="172" cy="51" rx="18" ry="5" transform="rotate(-6 172 51)"/>
+      <ellipse cx="218" cy="21" rx="16" ry="4.5" transform="rotate(-24 218 21)"/>
+    </g>
+    <ellipse cx="84" cy="86" rx="7.5" ry="10" style="fill:var(--ov)"/>
+    <ellipse cx="101" cy="81" rx="7" ry="9.5" style="fill:var(--ov2,var(--ov))"/>
+    <ellipse cx="192" cy="50" rx="7.5" ry="10" style="fill:var(--ov2,var(--ov))"/>
+  </symbol>
+  <symbol id="leaf" viewBox="0 0 100 160">
+    <path d="M50 6C84 34 92 92 50 146C8 92 16 34 50 6Z"/><path d="M50 14V156"/>
+    <path d="M50 44L68 30M50 64L74 48M50 84L76 68M50 104L72 90M50 124L64 114M50 44L32 30M50 64L26 48M50 84L24 68M50 104L28 90M50 124L36 114"/>
+  </symbol>
+  <symbol id="tulip" viewBox="0 0 60 80">
+    <rect x="29" y="30" width="2.4" height="48"/>
+    <ellipse cx="19" cy="58" rx="11" ry="4.2" transform="rotate(-35 19 58)"/><ellipse cx="41" cy="50" rx="11" ry="4.2" transform="rotate(35 41 50)"/>
+    <path d="M14 8C14 34 46 34 46 8L38 16L30 6L22 16Z"/>
+  </symbol>
+  <symbol id="sprig" viewBox="0 0 40 80">
+    <rect x="19" y="6" width="2" height="72"/>
+    <g><ellipse cx="13" cy="20" rx="6.5" ry="2.8" transform="rotate(35 13 20)"/><ellipse cx="27" cy="20" rx="6.5" ry="2.8" transform="rotate(-35 27 20)"/>
+      <ellipse cx="13" cy="34" rx="6.5" ry="2.8" transform="rotate(35 13 34)"/><ellipse cx="27" cy="34" rx="6.5" ry="2.8" transform="rotate(-35 27 34)"/>
+      <ellipse cx="13" cy="48" rx="6.5" ry="2.8" transform="rotate(35 13 48)"/><ellipse cx="27" cy="48" rx="6.5" ry="2.8" transform="rotate(-35 27 48)"/>
+      <ellipse cx="13" cy="62" rx="6.5" ry="2.8" transform="rotate(35 13 62)"/><ellipse cx="27" cy="62" rx="6.5" ry="2.8" transform="rotate(-35 27 62)"/></g>
+    <circle cx="20" cy="5" r="3.5"/>
+  </symbol>
+  <symbol id="star4" viewBox="0 0 40 40">
+    <ellipse cx="20" cy="10" rx="5.5" ry="10"/><ellipse cx="20" cy="30" rx="5.5" ry="10"/>
+    <ellipse cx="10" cy="20" rx="10" ry="5.5"/><ellipse cx="30" cy="20" rx="10" ry="5.5"/>
+  </symbol>
+  <symbol id="cluster" viewBox="0 0 200 200">
+    <circle cx="170" cy="100" r="7"/><circle cx="161" cy="135" r="8.5"/><circle cx="135" cy="161" r="6.5"/><circle cx="100" cy="170" r="8"/>
+    <circle cx="65" cy="161" r="7"/><circle cx="39" cy="135" r="8.5"/><circle cx="30" cy="100" r="6.5"/><circle cx="39" cy="65" r="8"/>
+    <circle cx="65" cy="39" r="7.5"/><circle cx="100" cy="30" r="6.5"/><circle cx="135" cy="39" r="8.5"/><circle cx="161" cy="65" r="7"/>
+    <circle cx="140" cy="100" r="6.5"/><circle cx="125" cy="131" r="7.5"/><circle cx="91" cy="139" r="6"/><circle cx="64" cy="117" r="7.5"/>
+    <circle cx="64" cy="82" r="6.5"/><circle cx="91" cy="61" r="8"/><circle cx="125" cy="69" r="6"/><circle cx="100" cy="100" r="8"/>
+  </symbol>
+</defs></svg>
+
+<!-- ========== HEADER ========== -->
+<header class="hd">
+  <a class="logo" href="#top"><b>おりーぶ</b><small>RECRUITING</small></a>
+  <div class="hd-r">
+    <nav class="navpill" aria-label="メニュー">
+      <a href="#daily">おりーぶの毎日</a><a href="#movie">動画</a><a href="#role">適性を見る</a><a href="#people">働く人</a>
+      <a href="#jobs">募集職種</a><a href="#places">働く場所</a>
+      <a class="go" href="#cta">見学してみる</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer"><i></i></button>
+  </div>
+</header>
+<nav class="drawer" id="drawer" aria-label="サイトメニュー">
+  <a href="#about"><span>02</span>おりーぶって、どんな場所？</a>
+  <a href="#daily"><span>03</span>おりーぶの毎日</a>
+  <a href="#movie"><span>MV</span>動画で見るおりーぶ</a>
+  <a href="#story"><span>04</span>あなたの経験</a>
+  <a href="#role"><span>06</span>どんな活躍ができそう？</a>
+  <a href="#people"><span>07</span>どんな人と働くの？</a>
+  <a href="#vision"><span>08</span>仕事の先にある未来</a>
+  <a href="#values"><span>09</span>大切にしていること</a>
+  <a href="#jobs"><span>10</span>募集職種</a>
+  <a href="#places"><span>11</span>働く場所</a>
+  <a href="#faq"><span>12</span>よくある質問</a>
+  <a href="#cta"><span>13</span>見学・相談</a>
+</nav>
+
+<!-- ========== 01 HERO ========== -->
+<section class="hero" id="top" aria-label="メインビジュアル">
+  <div id="heroStage"></div>
+  <p class="hero-side">OLIVE GROUP — RECRUITING SITE</p>
+  <div class="hero-count" aria-hidden="true"><span id="hNo">01</span><span class="bar"><i id="hBar"></i></span><span id="hAll">04</span></div>
+  <div class="hero-copy">
+    <p class="en">GROW TOGETHER</p>
+    <h1>
+      <span class="l"><span class="ln"><span>誰かの成長に、</span></span></span>
+      <span class="l"><span class="ln"><span><em>本気で</em>向き合う仕事。</span></span></span>
+    </h1>
+    <p>誰かの成長を支えながら、<br>自分も一緒に成長していく。<br>ここで働く毎日は、ちょっと楽しい。</p>
+  </div>
+</section>
+
+<!-- ========== 02 ABOUT ========== -->
+<section class="pn tr about" id="about" style="--bg:var(--paper)">
+  <div class="deco-box" aria-hidden="true"><p class="v-en ab-v">ABOUT OLIVE</p></div>
+  <div class="in-wrap">
+    <p class="lab" data-r>ABOUT <small>おりーぶって、どんな場所？</small></p>
+    <div class="about-grid">
+      <div>
+        <p class="statement" data-r>
+          <span class="l">ただ支援する</span><span class="l">だけじゃない。</span>
+          <span class="l">一緒に<span class="hl">悩んで</span>、</span>
+          <span class="l">一緒に<span class="hl">成長</span>する。</span>
+        </p>
+        <p class="about-txt" data-r>できないことを数えるのではなく、できることを一緒に増やしていく。うまくいかない日は、利用者さんと一緒に、スタッフ同士で一緒に悩む。それが、おりーぶの仕事のやり方です。</p>
+      </div>
+      <div class="about-photos">
+        <span class="sh sh-blk ab-b" aria-hidden="true" data-px="0.04"></span><span class="sh sh-dots ab-d" aria-hidden="true"></span><span class="sh sh-hatch ab-h" aria-hidden="true"></span>
+        <figure class="p1 mask" data-px="-0.06"><img src="S__21495892.jpg" alt="手づくりの教材を手に、子どもを迎える準備をするスタッフ" loading="lazy"></figure>
+        <figure class="p2 mask" data-px="0.08"><img src="S__21495879_0.jpg" alt="スタッフ同士で支援の方針を相談する様子" loading="lazy"></figure>
+        <span class="chip" data-r>ひとりで抱えない仕事です</span>
+      </div>
+    </div>
+
+    <div class="purpose">
+      <p class="big-en" data-r>PURPOSE</p>
+      <div data-r>
+        <h3>地域に必要とされ続ける。</h3>
+        <p>兵庫県伊丹市・尼崎市で、子どもの療育から、働く場所、暮らす場所まで。<br>地域の中で、長く頼られる存在であり続けることを目指しています。</p>
+      </div>
+    </div>
+    <div class="stats" data-r>
+      <div class="stat"><b><span data-count="13">0</span><small>拠点</small></b><span>本サイト掲載の事業所数</span></div>
+      <div class="stat"><b><span data-count="2">0</span><small>市</small></b><span>伊丹市・尼崎市</span></div>
+      <div class="stat"><b><span data-count="8">0</span><small>職種</small></b><span>募集中の職種</span></div>
+    </div>
+  </div>
+  <div class="mq" aria-hidden="true"><div><span>GROW TOGETHER</span><span>OLIVE</span><span>GROW TOGETHER</span><span>OLIVE</span><span>GROW TOGETHER</span><span>OLIVE</span><span>GROW TOGETHER</span><span>OLIVE</span></div></div>
+</section>
+
+<!-- ========== 03 DAILY ========== -->
+<section class="pn tl br daily" id="daily">
+  <div class="deco-box" aria-hidden="true"><span class="sh sh-ring dy-r float slow" data-px="0.05"></span><span class="sh sh-dots dy-d" data-px="-0.04"></span><span class="sh sh-lines dy-l"></span><p class="v-en dy-v">EVERYDAY STORIES</p></div>
+  <div class="in-wrap">
+    <p class="lab" data-r>DAILY <small>おりーぶの毎日</small></p>
+    <h2 class="ttl" data-r>おりーぶの日常には、<br><em>小さなドラマ</em>がある。</h2>
+    <p class="lede" data-r>「できた！」の瞬間、みんなの笑い声、スタッフ同士の作戦会議。毎日は、思っているよりずっと人間くさくて、ちょっと楽しい。</p>
+    <div class="sl-wrap" data-slider>
+      <div class="sl-ctl"><button type="button" data-prev aria-label="前へ"><b>←</b>Prev</button><button type="button" data-next aria-label="次へ"><b>→</b>Next</button></div>
+      <div>
+        <div class="sl" id="dailySl" tabindex="0" aria-label="おりーぶの毎日"></div>
+        <div class="sl-prog"><i></i></div>
+      </div>
+    </div>
+    <p class="note"><span class="todo">仮</span>写真に添えた短文は構成用の仮テキストです。スタッフへの聞き取りで差し替えてください。</p>
+  </div>
+</section>
+
+<!-- ========== MOVIE ========== -->
+<section class="movie" id="movie">
+  <div class="deco-box" aria-hidden="true"><span class="sh sh-blk mv-b" data-px="0.04"></span><span class="sh sh-scirc mv-s" data-px="-0.05"></span><span class="sh sh-tri mv-t"></span><span class="sh sh-hatch mv-h"></span></div>
+  <div class="in-wrap">
+    <p class="lab" data-r>MOVIE <small>動画で見るおりーぶ</small></p>
+    <h2 class="ttl" data-r>写真だけじゃ伝わらない、<br><em>現場の空気</em>を見てください。</h2>
+    <p class="lede" data-r>事業所の雰囲気や、一緒に働くスタッフの声を短い動画にまとめました。タップすると音声つきで再生されます。</p>
+    <div class="mv-list" id="mvList"></div>
+    <p class="note"><span class="todo">仮</span>動画のタイトル・並び順は仮です。出演者の掲載同意を確認してください。</p>
+  </div>
+</section>
+
+<!-- ========== 04 YOUR STORY ========== -->
+<section class="story" id="story">
+  <div class="deco-box" aria-hidden="true"><svg class="sh sh-leaf st-l1 float slow"><use href="#leaf"/></svg><svg class="sh sh-leaf st-l2"><use href="#leaf"/></svg></div>
+  <div class="in-wrap story-grid">
+    <div class="side">
+      <p class="lab" data-r>YOUR STORY <small>あなたの経験</small></p>
+      <h2 class="ttl" data-r>あなたの経験は、<br>ここで<br><em>誰かの力</em>になる。</h2>
+      <p data-r>持っている資格や、これまでの経験から、おりーぶで活かせる仕事を探せます。項目を押すと、関係する募集職種に移動します。</p>
+    </div>
+    <ul class="xp" id="xpList"></ul>
+  </div>
+</section>
+
+<!-- ========== 05 WEAPON ========== -->
+<section class="pn tr bl inset-l weapon" id="weapon">
+  <div class="deco-box" aria-hidden="true"><span class="sh sh-para wp-p1" data-px="-0.05"></span><span class="sh sh-para wp-p2" data-px="0.04"></span><span class="sh sh-pdots wp-pd"></span></div>
+  <div class="in-wrap weapon-grid">
+    <div>
+      <p class="lab" data-r>ANOTHER PATH <small>異業種からの挑戦</small></p>
+      <h2 class="ttl" data-r>福祉の経験だけが、<br>あなたの<br>武器じゃない。</h2>
+      <ul class="conv" id="convList"></ul>
+      <div class="fact" data-r>
+        <b>資格・経験を問わない職種</b>
+        <p>サポートスタッフ／送迎ドライバー（AT限定免許可）<br><span class="todo">要確認</span>最新の募集条件と照合してください</p>
+      </div>
+    </div>
+    <div class="weapon-ph">
+      <figure class="mask" data-px="-0.05"><img src="S__21495884_0.jpg" alt="子どもたちに絵本を読み聞かせるスタッフ" loading="lazy"></figure>
+      <p class="pop" data-r>前の仕事で<br>身につけたこと、<br>そのまま使えます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 06 FIND YOUR ROLE ========== -->
+<section class="pn tl br role" id="role">
+  <div class="deco-box" aria-hidden="true"><span class="sh sh-disc rl-c" data-px="0.04"></span><span class="sh sh-ring rl-r float"></span><span class="sh sh-lines rl-l"></span><p class="v-en rl-v">FIND YOUR ROLE</p></div>
+  <div class="in-wrap role-grid">
+    <div class="side">
+      <p class="lab" data-r>FIND YOUR ROLE <small>適性の目安</small></p>
+      <h2 class="ttl" data-r>あなたは、<br>おりーぶで<br><em>どんな活躍</em>が<br>できそう？</h2>
+      <p data-r>4つの質問に答えると、あなたの強みと、向いていそうな役割が分かります。採用の合否とは関係なく、回答は保存・送信されません。</p>
+    </div>
+    <div class="qbox" id="quiz" data-r></div>
+  </div>
+</section>
+
+<!-- ========== 07 PEOPLE ========== -->
+<section class="people" id="people">
+  <div class="deco-box" aria-hidden="true"><svg class="sh pe-o"><use href="#olive"/></svg></div>
+  <div class="in-wrap">
+    <p class="lab" data-r>PEOPLE <small>どんな人と働くの？</small></p>
+    <h2 class="ttl" data-r>前職は、ばらばら。<br>でも、<em>同じところ</em>で<br class="sp">喜んでる。</h2>
+    <div id="peopleList"></div>
+    <p style="margin-top:40px;font-size:12.5px;color:var(--ink-3)"><span class="todo">要差し替え</span>氏名・入社年数・コメントは仮です。写真はイメージを含みます。撮影と掲載同意の取得後に差し替えてください。</p>
+  </div>
+</section>
+
+<!-- ========== 08 VISION ========== -->
+<section class="pn tr bl vision" id="vision">
+  <div class="deco-box" aria-hidden="true"><svg class="sh vi-t" viewBox="0 0 330 56"><defs><pattern id="tpd" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.1" fill="#fff"/></pattern><pattern id="tpl" width="5" height="10" patternUnits="userSpaceOnUse"><rect width="1.2" height="10" fill="#fff"/></pattern></defs><polygon points="0,56 30,4 60,56" fill="#BBBDB6"/><polygon points="66,56 96,4 126,56" fill="#7E9D9A"/><polygon points="66,56 96,4 126,56" fill="url(#tpd)"/><polygon points="132,56 162,4 192,56" fill="#D9BCAE"/><polygon points="198,56 228,4 258,56" fill="#BBBDB6"/><polygon points="198,56 228,4 258,56" fill="url(#tpl)"/><polygon points="264,56 294,4 324,56" fill="#7E9D9A"/></svg></div>
+  <div class="in-wrap">
+    <p class="lab" data-r>VISION <small>仕事の先にある未来</small></p>
+    <h2 class="vision-st" data-r>障がいのある人とその家族が、安心して<em>自分らしく生きられる</em>明るい未来。</h2>
+    <div class="mission" data-r>
+      <b>MISSION</b>
+      <p>一人ひとりに寄り添い、できることを増やし、自信と可能性を育て、より良い未来をつくる。</p>
+    </div>
+    <div class="track" id="track">
+      <div class="track-in">
+        <div class="track-line"><i id="trackLine"></i></div>
+        <div class="stage" data-r><span class="dot"></span><p class="en">CHILD</p><p class="jp">就学前</p>
+          <p>はじめての「できた」を、一緒に見つける時期。</p><span class="svc">児童発達支援</span></div>
+        <div class="stage" data-r><span class="dot"></span><p class="en">SCHOOL</p><p class="jp">学齢期</p>
+          <p>放課後の時間に、得意と自信を少しずつ育てる。</p><span class="svc">放課後等デイサービス</span></div>
+        <div class="stage" data-r><span class="dot"></span><p class="en">WORK</p><p class="jp">働く</p>
+          <p>自分のペースで、働く力と役割をつくる。</p><span class="svc">就労継続支援B型</span></div>
+        <div class="stage" data-r><span class="dot"></span><p class="en">LIFE</p><p class="jp">暮らす</p>
+          <p>地域の中で、安心して暮らし続ける。</p><span class="svc">グループホーム</span></div>
+      </div>
+    </div>
+    <p class="note">※現在運営している事業をもとに記載しています。対象年齢・事業範囲は<span class="todo">要確認</span></p>
+  </div>
+</section>
+
+<!-- ========== 09 VALUES ========== -->
+<section class="pn tl values" id="values">
+  <div class="deco-box" aria-hidden="true"><svg class="sh sh-cl va-c1 float slow" data-px="0.04"><use href="#cluster"/></svg><svg class="sh sh-cl va-c2"><use href="#cluster"/></svg></div>
+  <div class="in-wrap">
+    <p class="lab" data-r>VALUES <small>おりーぶが大切にしていること</small></p>
+    <div class="core">
+      <div data-r><i>01</i><b>信念</b><span>ぶれない軸を持って、<br>利用者と向き合う。</span></div>
+      <div data-r><i>02</i><b>誠実</b><span>正直に、ごまかさずに、<br>一つひとつ積み重ねる。</span></div>
+      <div data-r><i>03</i><b>包容力</b><span>違いを受けとめ、<br>ともに悩み、ともに育つ。</span></div>
+    </div>
+    <div class="so">
+      <h3 data-r>だから、おりーぶではこう動きます。</h3>
+      <ul class="acts-list">
+        <li data-r><i>1</i><div><b>利用者を大切にする</b><span>判断に迷ったら、まず利用者さんにとってどうかを考えます。</span></div></li>
+        <li data-r><i>2</i><div><b>誠実で正直である</b><span>できないことは、できないと伝える。そこから一緒に考えます。</span></div></li>
+        <li data-r><i>3</i><div><b>親身になり、ともに成長する</b><span>利用者さんの成長に関わりながら、自分も成長していきます。</span></div></li>
+        <li data-r><i>4</i><div><b>前向きに成長する</b><span>うまくいかなかった日も、次の一手を考えます。</span></div></li>
+        <li data-r><i>5</i><div><b>真心を持って向き合う</b><span>一人ひとりに、本気で向き合います。</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 10 JOBS ========== -->
+<section class="pn tr jobs" id="jobs" style="--bg:var(--paper)">
+  <div class="deco-box" aria-hidden="true"><div class="mosaic jb-m" data-r><i class="t-q1" style="--c:var(--serge)"></i><i class="t-str" style="--c:var(--saxon)"></i><i class="t-disc" style="--c:var(--roof)"></i><i class="t-half" style="--c:var(--babouche)"></i><i class="t-ring" style="--c:var(--mere)"></i><i class="t-diag" style="--c:var(--roof)"></i></div></div>
+  <div class="in-wrap">
+    <p class="lab" data-r>JOBS <small>募集職種</small></p>
+    <h2 class="ttl" data-r>一緒に働く仲間を<br>募集しています。</h2>
+    <div class="filters" id="filters" role="group" aria-label="職種のしぼり込み"></div>
+    <div class="jgrid" id="jobList"></div>
+    <p style="margin-top:18px;font-size:12.5px;color:var(--ink-3)"><span class="todo">要確認</span>勤務地・雇用形態・給与・勤務時間は確定値に差し替え、Indeedの原稿と同一の表記にすること。</p>
+  </div>
+</section>
+
+<!-- ========== 11 PLACES ========== -->
+<section class="pn tl br places" id="places">
+  <div class="deco-box" aria-hidden="true"><span class="sh sh-ring pl-r float slow"></span><span class="sh sh-dots pl-d"></span></div>
+  <div class="in-wrap">
+    <p class="lab" data-r>PLACES <small>あなたが働く場所</small></p>
+    <h2 class="ttl" data-r>伊丹市と尼崎市に、<br>子どもと大人の居場所。</h2>
+    <div class="filters" id="placeFilters" role="group" aria-label="事業の種類でしぼり込み"></div>
+    <div class="sl-wrap" data-slider>
+      <div class="sl-ctl"><button type="button" data-prev aria-label="前へ"><b>←</b>Prev</button><button type="button" data-next aria-label="次へ"><b>→</b>Next</button></div>
+      <div>
+        <div class="sl" id="placeSl" tabindex="0" aria-label="事業所一覧"></div>
+        <div class="sl-prog"><i></i></div>
+      </div>
+    </div>
+    <p style="margin-top:18px;font-size:12.5px;color:var(--ink-2)">所在地・特色は<a href="https://www.olive-jp.co/%E3%81%8A%E3%82%8A%E3%83%BC%E3%81%B6%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97" rel="noopener">おりーぶグループ公式サイト</a>の掲載内容にもとづいています。<span class="todo">写真仮</span>の印がある事業所は、外観写真を確認中です。</p>
+  </div>
+</section>
+
+<!-- ========== 12 FAQ ========== -->
+<section class="faq" id="faq">
+  <div class="in-wrap faq-grid">
+    <div class="side">
+      <p class="lab" data-r>FAQ <small>応募前の不安</small></p>
+      <h2 class="ttl" data-r>気になること、<br>先に答えます。</h2>
+      <p data-r style="margin-top:18px;color:var(--ink-2);font-size:15px">決まっていないことは、決まっていないと書いています。</p>
+      <div class="folk" data-r aria-hidden="true">
+        <span class="bg" style="--b:var(--sugar);--c:#fff"><svg><use href="#tulip"/></svg></span>
+        <span style="--c:var(--serge)"><svg><use href="#sprig"/></svg></span>
+        <span style="--c:var(--babouche)"><svg><use href="#star4"/></svg></span>
+        <span style="--c:var(--serge)"><svg><use href="#star4"/></svg></span>
+        <span class="bg" style="--b:var(--serge);--c:#fff"><svg><use href="#sprig"/></svg></span>
+        <span style="--c:var(--saxon)"><svg><use href="#tulip"/></svg></span>
+      </div>
+    </div>
+    <div id="faqList"></div>
+  </div>
+</section>
+
+<!-- ========== 13 CTA ========== -->
+<section class="pn tr cta" id="cta">
+  <div class="deco-box" aria-hidden="true"><span class="sh sh-blk ct-b" data-px="0.05"></span><span class="sh sh-dots ct-d"></span><span class="sh sh-ring ct-r float slow"></span></div>
+  <div class="in-wrap">
+    <p class="lab" data-r>VISIT <small>まず、見に来ませんか？</small></p>
+    <h2 data-r>ちょっと気になる。<br><em>それだけでも、</em><br>十分です。</h2>
+    <p class="lead" data-r>応募する前に、まず事業所の空気を見に来てください。話を聞くだけでも大丈夫です。</p>
+    <div class="cta-cards">
+      <a href="#" data-todo="見学申込フォームURL" data-r><div><small>VISIT</small><b>見学してみる</b><span class="s">事業所の雰囲気を見る</span></div><span class="go">→</span></a>
+      <a href="#" data-todo="相談窓口（電話／LINE）" data-r><div><small>TALK</small><b>話を聞いてみる</b><span class="s">応募前の質問・相談</span></div><span class="go">→</span></a>
+      <a href="#jobs" data-r><div><small>JOBS</small><b>求人を見る</b><span class="s">募集職種と応募要件</span></div><span class="go">→</span></a>
+    </div>
+    <ol class="cta-steps">
+      <li data-r><b>STEP 01</b>見学・相談を申し込む</li>
+      <li data-r><b>STEP 02</b>事業所を見て、スタッフと話す</li>
+      <li data-r><b>STEP 03</b>気になれば応募する</li>
+      <li data-r><b>STEP 04</b>面接、そして入職</li>
+    </ol>
+    <p class="fine"><span class="todo">要確認</span>見学・相談の受付方法、所要時間</p>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="pn tl ft">
+  <div class="deco-box" aria-hidden="true"><svg class="sh ft-o"><use href="#olive"/></svg></div>
+  <div class="in-wrap">
+    <div class="tc-row" data-r aria-hidden="true"><i class="tc dot" style="--c:var(--babouche)"></i><i class="tc" style="--c:var(--shrimp)"></i><i class="tc str" style="--c:var(--saxon)"></i><i class="tc grid" style="--c:var(--arsenic)"></i><i class="tc" style="--c:var(--roof)"></i><i class="tc dot" style="--c:var(--sugar)"></i><i class="tc str" style="--c:var(--school)"></i><i class="tc" style="--c:var(--babouche)"></i></div>
+    <div class="ft-grid">
+      <p class="tag">誰かの成長に、<br><em>本気で</em>向き合う仕事。</p>
+      <nav aria-label="フッター">
+        <a href="#about">おりーぶについて</a><a href="#jobs">募集職種</a>
+        <a href="#daily">おりーぶの毎日</a><a href="#places">働く場所</a>
+        <a href="#people">働く人</a><a href="#faq">よくある質問</a>
+        <a href="#values">大切にしていること</a><a href="#cta">見学・相談</a>
+      </nav>
+    </div>
+    <div class="small">
+      <p>おりーぶグループ ／ 運営：<span class="todo">要確認</span>運営法人名</p>
+      <p>掲載している写真の一部はイメージです。</p>
+      <p><a href="https://www.olive-jp.co/" rel="noopener">児童部門</a>　<a href="https://www.olive-b.com/" rel="noopener">就労支援</a>　<a href="https://www.olivehome.work/" rel="noopener">グループホーム</a></p>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar"><a href="#cta">見学してみる</a><a href="#role">適性を見る</a></div>
+
+<script>
+/* ============================== DATA ============================== */
+const DATA={
+  hero:[
+    {b:'S__21495887.jpg',alt:'キーボードを弾きながら子どもと歌うスタッフ',pos:'55% 40%'},
+    {b:'S__21495891.jpg',alt:'子どもたちに紙芝居を読むスタッフの笑顔',pos:'50% 30%'},
+    {b:'S__21495885_0.jpg',alt:'床に広げた手づくり教材を準備するスタッフ',pos:'50% 50%'},
+    {b:'S__21495877_0.jpg',alt:'マットの上で体を動かす子どもに付き添うスタッフ',pos:'50% 50%'}
+  ],
+  daily:[
+    {img:'S__21495874_0.jpg',k:'できた！',t:'できた！が生まれた日。',d:'折り紙を前にずっと迷っていた子が、最後まで自分の手で仕上げた。その瞬間、テーブルの空気が変わった。'},
+    {img:'S__21495877_0.jpg',k:'大笑い',t:'今日は、みんなで大笑い。',d:'体を動かす時間は、いつも予定どおりにいかない。でも、それがいちばん楽しい。'},
+    {img:'S__21495876_0.jpg',k:'おやつ',t:'型ぬきクッキー、何つくる？',d:'生地をのばして、好きな形にぬいて。待つこと、順番をゆずることも、一緒に練習中。'},
+    {img:'S__21495878_0.jpg',k:'おかいもの',t:'お金の練習は、本番さながら。',d:'おもちゃのお金でお菓子を買ってみる。数えるのも、払うのも、自分の手で。'},
+    {img:'S__21495887.jpg',k:'音楽',t:'音がつなぐ、言葉のいらない時間。',d:'言葉が少ない子とも、音楽の時間なら話ができる。'},
+    {img:'S__21495875_0.jpg',k:'おでかけ',t:'見晴らしのいい場所まで、みんなで。',d:'外に出ると、いつもと違う顔が見られる。「あっち見て！」の声がうれしい。'},
+    {img:'S__21495880_0.jpg',k:'しゅくだい',t:'宿題タイムは、となりで見守る。',d:'答えを教えるより、「どこまでできた？」と聞く。自分で進めた分が、自信になる。'},
+    {img:'S__21495879_0.jpg',k:'作戦会議',t:'スタッフも、悩みながら成長中。',d:'うまくいかなかった日は、みんなで作戦会議。ひとりで抱えない。'}
+  ],
+  movies:[
+    {src:'814610849.398167.mp4',k:'PLACE',t:'こんにちは、おりーぶせらぴーです'},
+    {src:'814610849.700107.mp4',k:'INTERVIEW',t:'すまいるりんく 児童発達支援管理責任者インタビュー'},
+    {src:'814610849.589704.mp4',k:'ROOM',t:'今月の新書、入りました'},
+    {src:'814610849.736800.mp4',k:'RECRUIT',t:'すまいるりんくで、お待ちしております'}
+  ],
+  xp:[
+    {t:'保育士',s:'資格',to:'保育士 / 児童指導員',j:'保育士'},
+    {t:'教員免許（小・中・高・幼稚園）',s:'資格',to:'児童指導員',j:'児童指導員'},
+    {t:'理学療法士・作業療法士・言語聴覚士',s:'資格',to:'PT・OT・ST',j:'PT・OT・ST'},
+    {t:'障がい福祉・保育の実務経験',s:'経験',to:'児童発達支援管理責任者 / サービス管理責任者',j:'児童発達支援管理責任者'},
+    {t:'介護の経験',s:'経験',to:'生活支援員・世話人',j:'生活支援員・世話人'},
+    {t:'教育・指導の経験',s:'経験',to:'サポートスタッフ',j:'サポートスタッフ'},
+    {t:'接客・サービスの経験',s:'経験',to:'サポートスタッフ',j:'サポートスタッフ'},
+    {t:'スポーツの経験',s:'経験',to:'サポートスタッフ',j:'サポートスタッフ'},
+    {t:'子育ての経験',s:'経験',to:'サポートスタッフ',j:'サポートスタッフ'},
+    {t:'運転の経験',s:'経験',to:'送迎ドライバー',j:'送迎ドライバー'}
+  ],
+  conv:[
+    {f:'接客',fs:'先に気づく力',to:'利用者さんの小さな変化に気づく'},
+    {f:'営業',fs:'話を聞く力',to:'保護者の不安を受けとめる'},
+    {f:'飲食',fs:'段取りの力',to:'作業の手順をわかりやすくする'},
+    {f:'スポーツ',fs:'楽しませる力',to:'体を動かす時間をつくる'},
+    {f:'子育て',fs:'待つ力',to:'その人のペースに合わせる'}
+  ],
+  jobs:[
+    {name:'サポートスタッフ',open:true,desc:'活動の準備・見守り・片づけ。子どもや利用者さんと一緒に過ごす仕事です。',
+     work:'子どもや利用者さんと一緒に過ごしながら、活動の準備・見守り・片づけを担当します。',fit:'まず現場を知りたい人。福祉がはじめての人。',
+     req:'資格・経験は不問【要確認：最新の募集条件】'},
+    {name:'送迎ドライバー',open:true,desc:'子どもや利用者さんの送り迎え。1日2〜3時間からの勤務です。',
+     work:'子どもや利用者さんの送り迎え。',fit:'空いた時間で関わりたい人。',req:'普通自動車運転免許（AT限定可）【要確認】'},
+    {name:'児童指導員',open:false,desc:'個別・集団の療育プログラムの計画と実施、記録、保護者対応。',
+     work:'個別・集団の療育プログラムの計画と実施、記録、保護者対応。',fit:'子どもの変化に気づくのが好きな人。',
+     req:'小・中・高の教諭資格または幼稚園教諭（経験不問）、もしくは障がい児施設での経験2年以上【要確認】'},
+    {name:'保育士',open:false,desc:'児童発達支援・放課後等デイサービスでの療育と日々の支援。',
+     work:'児童発達支援・放課後等デイサービスでの療育、日々の支援と記録。',fit:'一人ひとりに合わせた関わりを考えたい人。',req:'保育士資格'},
+    {name:'児童発達支援管理責任者',open:false,desc:'個別支援計画の作成と、支援全体の組み立て。',
+     work:'個別支援計画の作成、支援全体の組み立て、チームの調整。',fit:'現場を支える側に回りたい人。',
+     req:'保育士・教諭等としての実務経験5年以上、または障がい児・者施設での実務経験5年以上。研修受講済みの方は優遇【要確認】'},
+    {name:'サービス管理責任者',open:false,desc:'就労支援・グループホームでの個別支援計画と支援管理。',
+     work:'就労支援・グループホームでの個別支援計画の作成と支援管理。',fit:'一人の生活を長い目で見たい人。',req:'実務経験および研修要件【要確認】'},
+    {name:'PT・OT・ST',open:false,desc:'感覚統合療法スペースでの機能訓練とプログラム設計。',
+     work:'感覚統合療法スペースでの機能訓練と、プログラムの設計。',fit:'子どもの発達に専門性を活かしたい人。',req:'理学療法士／作業療法士／言語聴覚士のいずれか'},
+    {name:'生活支援員・世話人',open:false,desc:'就労継続支援B型やグループホームでの日常生活の支援。',
+     work:'就労継続支援B型やグループホームでの、日常生活の支援。',fit:'暮らしを一緒につくりたい人。',req:'【要確認：資格要件と未経験可否】'}
+  ],
+  people:[
+    {img:'S__21495891.jpg',n:'【仮】スタッフA',r:'児童指導員',y:'入社3年目',
+     say:'「やってみたい」が増えていく瞬間に立ち会えるのが、この仕事のいちばんの楽しさです。',
+     qa:[['この仕事の好きなところ','【仮】子どもが自分から挑戦する瞬間に立ち会えること。'],['印象に残っている出来事','【仮】苦手だった活動に、自分から参加してくれた日。'],['入って変わったこと','【仮】「待つ」ことが上手になった。']]},
+    {img:'S__21495887.jpg',n:'【仮】スタッフB',r:'児童指導員',y:'入社2年目',
+     say:'前職で続けてきた音楽が、言葉の少ない子との会話になりました。',
+     qa:[['この仕事の好きなところ','【仮】自分の得意が、そのまま支援になること。'],['印象に残っている出来事','【仮】一緒に演奏した曲を、次の週も覚えていてくれた。'],['入って変わったこと','【仮】人の小さな変化に気づけるようになった。']]},
+    {img:'S__21495892.jpg',n:'【仮】スタッフC',r:'生活支援員',y:'入社5年目',
+     say:'迷ったら、ひとりで決めずにみんなで考える。それがおりーぶのいいところです。',
+     qa:[['この仕事の好きなところ','【仮】チームで悩んで、チームで喜べること。'],['印象に残っている出来事','【仮】利用者さんが自分で手順を決められるようになった日。'],['入って変わったこと','【仮】相談することが苦じゃなくなった。']]}
+  ],
+  // 出典：https://www.olive-jp.co/おりーぶグループ ／ 施設紹介（おりーぶSocialは閉鎖のため掲載しない）
+  // c：表示カテゴリ、ph：外観写真、kari:true は写真の対応が未確認
+  placeCats:['放課後等デイサービス','就労継続支援B型','すまいるりんく','ファーム','おりーぶ洗車','グループホーム'],
+  places:[
+    {c:'放課後等デイサービス',area:'伊丹市',k:'kid',n:'おりーぶ瑞穂',s:'児童発達支援・放課後等デイサービス（多機能型）',
+     f:'元教諭・作業療法士・公認心理師による学習とSST、言語聴覚士の個別療法まで、専門職がそろう総合教室。',ad:'伊丹市瑞ヶ丘1-52',ph:'places/mizuho.jpg'},
+    {c:'放課後等デイサービス',area:'尼崎市',k:'kid',n:'おりーぶ武庫之荘教室',s:'放課後等デイサービス',
+     f:'言語聴覚士の個別療法と箱庭セラピー、元教諭・作業療法士による学習支援。',ad:'尼崎市武庫之荘5丁目24-6',ph:'places/mukonoso.png'},
+    {c:'放課後等デイサービス',area:'尼崎市',k:'kid',n:'おりーぶせらぴー',s:'放課後等デイサービス',
+     f:'音楽療法士による音楽療法と、理学療法士による感覚統合療法の教室。',ad:'尼崎市西昆陽3-24-7',ph:'places/therapy.webp'},
+    {c:'放課後等デイサービス',area:'伊丹市',k:'kid',n:'おりーぶ瑞ヶ丘',s:'放課後等デイサービス',
+     f:'体育教諭の運動療法と、特別支援学校の教諭免許を持つスタッフによる学習指導。',ad:'伊丹市瑞穂町6-44-101',ph:'places/mizugaoka.jpg'},
+    {c:'放課後等デイサービス',area:'伊丹市',k:'kid',n:'おりーぶ瑞穂第2教室',s:'放課後等デイサービス',
+     f:'集中しやすい静かな学習環境と、体育教諭による運動療法。',ad:'伊丹市瑞ヶ丘1-37',ph:'places/mizuho2.png',kari:true},
+    {c:'就労継続支援B型',area:'尼崎市',k:'adult',n:'おりーぶ西昆陽',s:'就労継続支援B型',
+     f:'自分のペースで、働く力と役割をつくる場所。',ad:'尼崎市西昆陽2丁目37-1',ph:'places/nishikoya.jpg'},
+    {c:'就労継続支援B型',area:'伊丹市',k:'adult',n:'おりーぶ野間北（Cafè de olive）',s:'就労継続支援B型',
+     f:'カフェ「Cafè de olive NOMAKITA」での仕事を通じて、働く経験を積む場所。',ad:'伊丹市野間北1-2-16',ph:'places/cafe.jpg'},
+    {c:'すまいるりんく',area:'尼崎市',k:'kid',n:'すまいるりんくkids',s:'児童発達支援',
+     f:'未就学の子どもたちの療育を行う教室。',ad:'尼崎市田能5丁目7-15 寺田マンション101号室',ph:'places/room-play.png'},
+    {c:'すまいるりんく',area:'尼崎市',k:'kid',n:'すまいるりんく',s:'放課後等デイサービス',
+     f:'学齢期の子どもたちが放課後を過ごす教室。',ad:'尼崎市田能5丁目7-15 寺田マンション203号室',ph:'places/room-window.png'},
+    {c:'すまいるりんく',area:'尼崎市',k:'kid',n:'すまいるりんくサポート',s:'特定相談支援・障害児相談支援',
+     f:'サービス利用の計画づくりや、本人・家族の相談に応じる窓口。',ad:'尼崎市田能5丁目7-15 寺田マンション203号室',ph:'places/room-talk.png'},
+    {c:'ファーム',area:'尼崎市',k:'adult',n:'おりーぶファーム',s:'農園',
+     f:'野菜を育てる農園での作業。',ad:'尼崎市西昆陽3-24-7-B',ph:'places/farm.jpg'},
+    {c:'おりーぶ洗車',area:'伊丹市',k:'adult',n:'おりーぶ洗車工房・フリマ会場',s:'洗車・フリマ会場',
+     f:'洗車の仕事と、地域の人が集まるフリマ会場。',ad:'伊丹市寺本1-47',ph:'places/teramoto.jpg'},
+    {c:'グループホーム',area:'伊丹市',k:'adult',n:'おりーぶ堀池',s:'障がい者グループホーム・短期入所',
+     f:'地域の中で、安心して暮らし続けるための住まい。',ad:'伊丹市堀池1-6-10',ph:'places/horiike.webp'}
+  ],
+  faq:[
+    {q:'どんな人が働いていますか？',a:'【要確認】職員の前職・年代の構成。確認でき次第、具体的に記載します。'},
+    {q:'未経験でも応募できますか？',a:'サポートスタッフと送迎ドライバーは、資格・経験を問いません。児童指導員や保育士などには資格要件があります。各職種の応募要件は「募集職種」でご確認ください。'},
+    {q:'どんな資格が必要ですか？',a:'職種によって異なります。保育士は保育士資格、児童指導員は教諭資格または障がい児施設での経験2年以上、PT・OT・STは各国家資格が必要です。【要確認：最新の募集条件】'},
+    {q:'Wワークはできますか？',a:'【要確認】副業・兼業の可否。確認でき次第記載します。'},
+    {q:'見学できますか？',a:'【要確認】見学の受付方法と所要時間。'},
+    {q:'応募前に話を聞けますか？',a:'【要確認】相談窓口（電話／LINE等）と受付時間。'}
+  ],
+  quiz:{
+    q:[
+      {q:'人と関わるとき、自分に近いのは？',o:[['教える・伝える','teach'],['話を聴く・寄り添う','listen'],['一緒に体を動かす','move'],['手順を整える・段取る','plan']]},
+      {q:'関わってみたいのは？',o:[['小学生〜高校生の子ども','x'],['未就学の子ども','x'],['働く大人','x'],['暮らしを支える場面','x']]},
+      {q:'前の仕事で得意だったのは？',o:[['人前で進行する','teach'],['細かい変化に気づく','listen'],['体を使う作業','move'],['記録や書類を整える','plan']]},
+      {q:'いま持っている資格は？',o:[['保育士・教諭','lic'],['PT・OT・ST','reha'],['介護系の資格','care'],['とくにない','none']]}
+    ],
+    types:{
+      teach:{name:'伝える力で、<em>学びを支える</em>タイプ',jobs:['児童指導員','保育士','サポートスタッフ'],why:['伝え方を工夫する場面が多い療育の現場で力を発揮できそうです。','人に教えてきた経験が、そのまま支援に変わります。']},
+      listen:{name:'気づく力で、<em>暮らしを支える</em>タイプ',jobs:['生活支援員・世話人','サポートスタッフ'],why:['小さな変化を拾うことが、仕事の中心になります。','暮らしの場面での支援に向いていそうです。']},
+      move:{name:'一緒に動いて、<em>楽しさをつくる</em>タイプ',jobs:['サポートスタッフ','PT・OT・ST'],why:['体を動かすプログラムや活動の時間で活躍できそうです。','その場を明るくする力は、毎日の支援に欠かせません。']},
+      plan:{name:'整える力で、<em>チームを支える</em>タイプ',jobs:['児童発達支援管理責任者','サービス管理責任者','サポートスタッフ'],why:['計画づくりや記録の整備は、支援の土台です。','段取りの力が、チーム全体を動かします。']}
+    }
+  }
+};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+// 拡張子つき＝単体の画像、拡張子なし＝webp/jpgのペア
+const pic=(b,alt,extra='')=>/\.\w+$/.test(b)?`<img src="${b}" alt="${esc(alt)}" loading="lazy" ${extra}>`
+  :`<picture><source srcset="${b}.webp" type="image/webp"><img src="${b}.jpg" alt="${esc(alt)}" loading="lazy" ${extra}></picture>`;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ===== メニュー ===== */
+(function(){
+  const b=$('menuBtn'),d=$('drawer'),root=document.documentElement;
+  const set=o=>{root.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'メニューを閉じる':'メニューを開く');};
+  b.addEventListener('click',()=>set(!root.classList.contains('menu-open')));
+  d.addEventListener('click',e=>{if(e.target.closest('a'))set(false);});
+  addEventListener('keydown',e=>{if(e.key==='Escape')set(false);});
+})();
+
+/* ===== HERO ===== */
+(function(){
+  const st=$('heroStage'),bar=$('hBar');
+  st.innerHTML=DATA.hero.map((h,i)=>`<div class="sh${i?'':' on'}">${pic(h.b,h.alt,`style="object-position:${h.pos}" ${i?'':'fetchpriority="high"'}`)}</div>`).join('');
+  $('hAll').textContent=String(DATA.hero.length).padStart(2,'0');
+  const sh=[...st.children];let c=0,t;
+  const run=()=>{bar.classList.remove('run');void bar.offsetWidth;if(!reduce)bar.classList.add('run');};
+  function go(n){sh[c].classList.remove('on');c=(n+sh.length)%sh.length;sh[c].classList.add('on');
+    $('hNo').textContent=String(c+1).padStart(2,'0');run();}
+  run();if(!reduce)t=setInterval(()=>go(c+1),5500);
+  requestAnimationFrame(()=>setTimeout(()=>document.querySelector('.hero').classList.add('ready'),120));
+})();
+
+/* ===== 描画 ===== */
+$('dailySl').innerHTML=DATA.daily.map((d,i)=>`
+  <article class="dcard"><p class="no">DAILY ${String(i+1).padStart(2,'0')}</p>
+  <figure>${pic(d.img,d.t)}</figure><span class="kw" aria-hidden="true">${esc(d.k)}</span><h3>${esc(d.t)}</h3><p>${esc(d.d)}</p></article>`).join('');
+
+/* ===== MOVIE ===== */
+(function(){
+  const box=$('mvList');
+  box.innerHTML=DATA.movies.map((m,i)=>`
+    <figure class="mv" data-r><div class="mv-box">
+      <video src="${esc(m.src)}#t=0.5" preload="metadata" playsinline loop aria-label="${esc(m.t)}"></video>
+      <span class="mv-time" aria-hidden="true"></span>
+      <button class="mv-play" type="button" aria-label="${esc(m.t)}を再生"><span>▶</span></button></div>
+      <figcaption><small>MOVIE ${String(i+1).padStart(2,'0')} — ${esc(m.k)}</small><b>${esc(m.t)}</b></figcaption></figure>`).join('');
+  const all=[...box.querySelectorAll('.mv')];
+  all.forEach(f=>{
+    const v=f.querySelector('video'),b=f.querySelector('.mv-play'),tm=f.querySelector('.mv-time');
+    v.addEventListener('loadedmetadata',()=>{const s=Math.round(v.duration);tm.textContent=`${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;});
+    v.addEventListener('play',()=>f.classList.add('playing'));
+    v.addEventListener('pause',()=>f.classList.remove('playing'));
+    f.querySelector('.mv-box').addEventListener('click',()=>{
+      if(v.paused){all.forEach(o=>{const ov=o.querySelector('video');if(ov!==v)ov.pause();});v.play();}else v.pause();
+    });
+  });
+})();
+
+$('xpList').innerHTML=DATA.xp.map((x,i)=>`
+  <li data-r><a href="#jobs" data-job="${esc(x.j)}"><span class="n">${String(i+1).padStart(2,'0')}</span>
+  <span class="t">${esc(x.t)}<small>${esc(x.s)} → ${esc(x.to)}</small></span><span class="arrow" aria-hidden="true">→</span></a></li>`).join('');
+
+$('convList').innerHTML=DATA.conv.map(c=>`
+  <li data-r><span class="from">${esc(c.f)}で磨いた<b>${esc(c.fs)}</b></span><span class="ar" aria-hidden="true">→</span>
+  <span class="to">${esc(c.to)}</span></li>`).join('');
+
+$('peopleList').innerHTML=DATA.people.map((p,i)=>`
+  <article class="person">
+    <div class="pp mask"><span class="tag">PEOPLE ${String(i+1).padStart(2,'0')}</span>
+      <figure>${pic(p.img,'スタッフ写真（イメージ）')}</figure>
+      <div class="pname"><b>${esc(p.n)}</b><span>${esc(p.r)}／${esc(p.y)}</span></div></div>
+    <div class="pt" data-r><p class="say">${esc(p.say)}</p>
+      <dl class="pqa">${p.qa.map(q=>`<div><dt>${esc(q[0])}</dt><dd>${esc(q[1])}</dd></div>`).join('')}</dl></div>
+  </article>`).join('');
+
+/* ===== PLACES ===== */
+(function(){
+  const sl=$('placeSl'),fb=$('placeFilters');let cat='all';
+  const cnt=c=>DATA.places.filter(p=>p.c===c).length;
+  fb.innerHTML=[['all',`すべて ${DATA.places.length}`]].concat(DATA.placeCats.map(c=>[c,`${c} ${cnt(c)}`]))
+    .map(m=>`<button class="chip" type="button" data-k="${esc(m[0])}" aria-pressed="${m[0]===cat}">${esc(m[1])}</button>`).join('');
+  function render(){
+    const list=DATA.places.filter(p=>cat==='all'||p.c===cat);
+    sl.innerHTML=list.map((p,i)=>`
+      <article class="pcard"><div class="area ${p.k}${p.ph?' ph':''}">${p.ph?pic(p.ph,`${p.n}の外観`):''}${p.kari?'<span class="todo">写真仮</span>':''}<small>${esc(p.c)}</small><b>${esc(p.area)}</b></div>
+      <div><h3>${esc(p.n)}</h3><p>${esc(p.s)}</p><p>${esc(p.f)}</p></div>
+      <p class="acc">所在地：${esc(p.ad)}</p></article>`).join('');
+    sl.scrollLeft=0;sl.dispatchEvent(new Event('scroll'));
+  }
+  fb.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;cat=b.dataset.k;
+    [...fb.children].forEach(c=>c.setAttribute('aria-pressed',c.dataset.k===cat));render();});
+  render();
+})();
+
+$('faqList').innerHTML=DATA.faq.map(f=>`
+  <details><summary><span class="q">Q</span><span>${esc(f.q)}</span><span class="pm" aria-hidden="true">+</span></summary>
+  <p class="a">${esc(f.a)}</p></details>`).join('');
+
+/* ===== スライダー ===== */
+document.querySelectorAll('[data-slider]').forEach(w=>{
+  const sl=w.querySelector('.sl'),pv=w.querySelector('[data-prev]'),nx=w.querySelector('[data-next]'),pr=w.querySelector('.sl-prog i');
+  const step=()=>{const c=sl.children[0];return c?c.getBoundingClientRect().width+16:300;};
+  pv.onclick=()=>sl.scrollBy({left:-step(),behavior:reduce?'auto':'smooth'});
+  nx.onclick=()=>sl.scrollBy({left:step(),behavior:reduce?'auto':'smooth'});
+  const upd=()=>{const max=sl.scrollWidth-sl.clientWidth;const r=max>0?sl.scrollLeft/max:0;
+    const vis=sl.clientWidth/sl.scrollWidth;pr.style.width=(vis*100)+'%';pr.style.transform=`translateX(${r*(1/vis-1)*100}%)`;
+    pv.disabled=sl.scrollLeft<4;nx.disabled=sl.scrollLeft>max-4;};
+  sl.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  sl.addEventListener('keydown',e=>{if(e.key==='ArrowRight')nx.click();if(e.key==='ArrowLeft')pv.click();});
+});
+
+/* ===== JOBS ===== */
+(function(){
+  const box=$('jobList'),fb=$('filters');let mode='all';
+  const modes=[['all','すべて'],['open','資格・経験不問'],['lic','資格が必要']];
+  fb.innerHTML=modes.map(m=>`<button class="chip" type="button" data-k="${m[0]}" aria-pressed="${m[0]===mode}">${m[1]}</button>`).join('');
+  fb.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;mode=b.dataset.k;
+    [...fb.children].forEach(c=>c.setAttribute('aria-pressed',c.dataset.k===mode));render();});
+  function render(open){
+    const list=DATA.jobs.filter(j=>mode==='all'||(mode==='open'?j.open:!j.open));
+    if(!list.length){box.innerHTML=`<div class="empty"><b>この条件の募集は今ありません</b><p>条件を戻すか、見学のときに直接ご相談ください。</p></div>`;return;}
+    box.innerHTML=list.map((j,i)=>`<article class="job" id="job-${i}" data-name="${esc(j.name)}">
+      <div class="job-h"><div class="top"><h3>${esc(j.name)}</h3><span class="badge ${j.open?'b-open':'b-req'}">${j.open?'資格・経験不問':'資格要件あり'}</span></div>
+      <p class="desc">${esc(j.desc)}</p>
+      <div class="meta"><span><b>勤務地</b>【要確認】</span><span><b>雇用形態</b>【要確認】</span></div></div>
+      <button class="job-tg" type="button" aria-expanded="false" aria-controls="jd-${i}">詳しく見る<i>＋</i></button>
+      <div class="job-d" id="jd-${i}"><div><dl><dt>仕事内容</dt><dd>${esc(j.work)}</dd><dt>向いている人</dt><dd>${esc(j.fit)}</dd><dt>応募要件</dt><dd>${esc(j.req)}</dd></dl>
+      <div class="btns"><a class="btn btn-olive" href="#cta">見学・応募の相談をする<i>→</i></a></div></div></div></article>`).join('');
+    box.querySelectorAll('.job-tg').forEach(b=>b.addEventListener('click',()=>{
+      const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);
+      $(b.getAttribute('aria-controls')).classList.toggle('open',o);}));
+    if(open){const t=[...box.children].find(a=>a.dataset.name===open);if(t)t.querySelector('.job-tg').click();}
+  }
+  render();
+  window.openJob=name=>{mode='all';[...fb.children].forEach(c=>c.setAttribute('aria-pressed',c.dataset.k==='all'));render(name);};
+  document.addEventListener('click',e=>{const a=e.target.closest('[data-job]');if(a)openJob(a.dataset.job);});
+})();
+
+/* ===== 診断 ===== */
+(function(){
+  const box=$('quiz'),Q=DATA.quiz.q;let st=0,pk=[];
+  const prog=()=>`<div class="qprog">${Q.map((_,i)=>`<i class="${i<st?'on':''}"></i>`).join('')}</div>`;
+  function render(){
+    if(st>=Q.length)return result();
+    const q=Q[st];
+    box.innerHTML=`${prog()}<p class="qn">QUESTION ${String(st+1).padStart(2,'0')} / ${String(Q.length).padStart(2,'0')}</p>
+      <p class="qq">${esc(q.q)}</p><div class="qopts">${q.o.map((o,i)=>`<button class="qopt" type="button" data-i="${i}">${esc(o[0])}</button>`).join('')}</div>
+      ${st?'<button class="qback" type="button" id="qb">ひとつ前に戻る</button>':''}`;
+    box.querySelectorAll('.qopt').forEach(b=>b.onclick=()=>{pk[st]=q.o[b.dataset.i][1];st++;render();});
+    const qb=$('qb');if(qb)qb.onclick=()=>{st--;pk.pop();render();};
+  }
+  function result(){
+    const sc={};pk.forEach(k=>sc[k]=(sc[k]||0)+1);
+    const ord=['teach','listen','move','plan'];let top=ord[0];ord.forEach(k=>{if((sc[k]||0)>(sc[top]||0))top=k;});
+    const t=DATA.quiz.types[top];let n=t.jobs.slice();
+    if(sc.lic)n=['保育士','児童指導員'].concat(n);
+    if(sc.reha)n=['PT・OT・ST'].concat(n);
+    if(sc.care)n=n.concat(['生活支援員・世話人']);
+    if(sc.none)n=['サポートスタッフ','送迎ドライバー'].concat(n.filter(x=>['サポートスタッフ','送迎ドライバー'].includes(x)));
+    n=[...new Set(n)].slice(0,3);
+    const jobs=n.map(x=>DATA.jobs.find(j=>j.name===x)).filter(Boolean);
+    box.innerHTML=`<div class="qres"><div class="qprog">${Q.map(()=>'<i class="on"></i>').join('')}</div>
+      <p class="qn">YOUR ROLE</p><p class="type">${t.name}</p>
+      <ul>${t.why.map(w=>`<li>${esc(w)}</li>`).join('')}</ul>
+      ${jobs.map(j=>`<div class="qjob"><b>${esc(j.name)}</b><span>応募要件：${esc(j.req)}</span></div>`).join('')}
+      <p class="qfine">これは自分の強みを知るための目安で、採用の合否とは関係ありません。要件を満たしていない場合でも、資格・経験を問わないサポートスタッフや送迎ドライバーから始める方法があります。</p>
+      <div class="btns"><a class="btn btn-olive" href="#jobs" id="qToJob">この仕事を見る<i>→</i></a>
+      <a class="btn btn-line" href="#cta">見学してみる<i>→</i></a>
+      <button class="btn btn-line" type="button" id="qr">もう一度<i>↺</i></button></div></div>`;
+    $('qr').onclick=()=>{st=0;pk=[];render();};
+    $('qToJob').onclick=()=>window.openJob&&openJob(jobs[0]&&jobs[0].name);
+  }
+  render();
+})();
+
+/* ===== スクロールモーション ===== */
+(function(){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),
+    {rootMargin:'0px 0px -12% 0px'});
+  const watch=()=>document.querySelectorAll('[data-r]:not(.in),.mask:not(.in),.statement,.sh:not(.in),.v-en:not(.in)').forEach(el=>io.observe(el));
+  watch();new MutationObserver(watch).observe(document.body,{childList:true,subtree:true});
+  // 時間差
+  document.querySelectorAll('.core div,.acts-list li,.cta-cards a,.cta-steps li,.stage').forEach((el,i,a)=>{el.style.transitionDelay=(i%5)*90+'ms';});
+  // カウントアップ
+  const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,to=+el.dataset.count;
+    if(reduce){el.textContent=to;return;}let s=null;const f=t=>{s=s||t;const p=Math.min((t-s)/1200,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f);};
+    requestAnimationFrame(f);cio.unobserve(el);}),{threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+  // パララックス・ビジョンの線
+  const px=[...document.querySelectorAll('[data-px]')],line=$('trackLine'),track=$('track'),mbar=$('mbar'),hero=document.querySelector('.hero');
+  let tick=false;
+  function frame(){
+    const vh=innerHeight,desk=innerWidth>=900;
+    if(!reduce&&desk)px.forEach(el=>{const r=el.getBoundingClientRect();const c=r.top+r.height/2-vh/2;const v=Math.max(-40,Math.min(40,c*+el.dataset.px));el.style.translate=`0 ${v.toFixed(1)}px`;});
+    const tr=track.getBoundingClientRect();const p=Math.min(Math.max((vh*.85-tr.top)/(vh*.6),0),1);line.style.transform=`scaleX(${reduce?1:p})`;
+    mbar.classList.toggle('on',hero.getBoundingClientRect().bottom<0);
+    tick=false;
+  }
+  addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(frame);}},{passive:true});
+  addEventListener('resize',frame);frame();
+})();
+</script>
+</body>
+</html>

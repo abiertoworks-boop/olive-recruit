@@ -1,0 +1,11 @@
+# 公開しないもの（作業用・未使用の素材）
+.claude/
+_unused/
+_originals/
+images/
+olive-v3.zip
+S__21495881.jpg
+S__26910850.jpg
+トップ画③.jpg
+places/*.html
+places/*_files/
