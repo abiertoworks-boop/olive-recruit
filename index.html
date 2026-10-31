@@ -17,7 +17,7 @@
   制作：アビエルトワークス（株式会社Brifu）
   -------------------------------------------------------------------------
   ・データは下部 <script> の DATA に集約。
-  ・【要確認】【仮】= クライアント確認前のダミー。制度・条件は創作していない。
+  ・【要確認】【保留】【仮】= クライアント確認前のダミー。制度・条件は創作していない。
   ・求人条件は Indeed / アットカンパニーの原稿と同一にすること。
   ・利用者が写る写真は掲載同意の確認が必須。
   =========================================================================
@@ -438,7 +438,7 @@ button{font-family:inherit}
   font-size:14px;font-weight:700;cursor:pointer;color:var(--black);transition:all .2s var(--ease)}
 .chip:hover{background:#fff}
 .chip[aria-pressed="true"]{background:var(--black);color:#fff}
-.jgrid{display:grid;gap:14px}
+.jgrid{display:grid;gap:14px;align-items:start}
 @media(min-width:860px){.jgrid{grid-template-columns:1fr 1fr}}
 .job{background:#fff;border-radius:8px;border:1px solid var(--line);overflow:hidden;transition:border-color .2s var(--ease)}
 .job:hover{border-color:var(--black)}
@@ -955,8 +955,8 @@ details[open] summary .pm{background:var(--roof)}
       <h2 class="ttl" data-r>福祉の経験だけが、<br>あなたの<br>武器じゃない。</h2>
       <ul class="conv" id="convList"></ul>
       <div class="fact" data-r>
-        <b>資格・経験を問わない職種</b>
-        <p>サポートスタッフ／送迎ドライバー（AT限定免許可）<br><span class="todo">要確認</span>最新の募集条件と照合してください</p>
+        <b>専門資格なし・未経験から始められる求人</b>
+        <p>就労支援 作業支援員（普通自動車免許が必要。AT限定可）<br><span class="todo">保留</span>サポートスタッフ／送迎ドライバーの募集条件</p>
       </div>
     </div>
     <div class="weapon-ph">
@@ -1048,7 +1048,8 @@ details[open] summary .pm{background:var(--roof)}
     <h2 class="ttl" data-r>一緒に働く仲間を<br>募集しています。</h2>
     <div class="filters" id="filters" role="group" aria-label="職種のしぼり込み"></div>
     <div class="jgrid" id="jobList"></div>
-    <p style="margin-top:18px;font-size:12.5px;color:var(--ink-3)"><span class="todo">要確認</span>勤務地・雇用形態・給与・勤務時間は確定値に差し替え、Indeedの原稿と同一の表記にすること。</p>
+    <p style="margin-top:18px;font-size:12.5px;color:var(--ink-2)">募集内容は<a href="https://atcompany.jp/olive/recruit/list/" target="_blank" rel="noopener">求人一覧</a>にもとづいています（2026年11月1日時点）。尼崎市・伊丹市のほかの事業所が勤務地になる場合もあります。<span class="todo">保留</span>の項目は確認中です。</p>
+    <p style="margin-top:8px;font-size:12.5px;color:var(--ink-2)">子どもに関わる職種では、こども性暴力防止法（2026年12月25日施行予定）にもとづき、採用選考の過程で特定性犯罪の前科の有無を確認します。</p>
   </div>
 </section>
 
@@ -1098,8 +1099,8 @@ details[open] summary .pm{background:var(--roof)}
     <h2 data-r>ちょっと気になる。<br><em>それだけでも、</em><br>十分です。</h2>
     <p class="lead" data-r>応募する前に、まず事業所の空気を見に来てください。話を聞くだけでも大丈夫です。</p>
     <div class="cta-cards">
-      <a href="#" data-todo="見学申込フォームURL" data-r><div><small>VISIT</small><b>見学してみる</b><span class="s">事業所の雰囲気を見る</span></div><span class="go">→</span></a>
-      <a href="#" data-todo="相談窓口（電話／LINE）" data-r><div><small>TALK</small><b>話を聞いてみる</b><span class="s">応募前の質問・相談</span></div><span class="go">→</span></a>
+      <a href="tel:0664157184" data-r><div><small>VISIT</small><b>見学してみる</b><span class="s">お電話で 06-6415-7184</span></div><span class="go">→</span></a>
+      <a href="tel:0664157184" data-r><div><small>TALK</small><b>話を聞いてみる</b><span class="s">応募前の質問・相談もお電話で</span></div><span class="go">→</span></a>
       <a href="#jobs" data-r><div><small>JOBS</small><b>求人を見る</b><span class="s">募集職種と応募要件</span></div><span class="go">→</span></a>
     </div>
     <ol class="cta-steps">
@@ -1108,7 +1109,7 @@ details[open] summary .pm{background:var(--roof)}
       <li data-r><b>STEP 03</b>気になれば応募する</li>
       <li data-r><b>STEP 04</b>面接、そして入職</li>
     </ol>
-    <p class="fine"><span class="todo">要確認</span>見学・相談の受付方法、所要時間</p>
+    <p class="fine">話し中の場合は折り返しご連絡します。<span class="todo">保留</span>見学の所要時間、電話の受付時間</p>
   </div>
 </section>
 
@@ -1180,26 +1181,54 @@ const DATA={
     {f:'スポーツ',fs:'楽しませる力',to:'体を動かす時間をつくる'},
     {f:'子育て',fs:'待つ力',to:'その人のペースに合わせる'}
   ],
+  jobBenefit:'社会保険完備（法定通り）、交通費全額支給、残業代全額支給、諸手当あり、制服貸与、自転車・バイク通勤可',
   jobs:[
-    {name:'サポートスタッフ',open:true,desc:'活動の準備・見守り・片づけ。子どもや利用者さんと一緒に過ごす仕事です。',
-     work:'子どもや利用者さんと一緒に過ごしながら、活動の準備・見守り・片づけを担当します。',fit:'まず現場を知りたい人。福祉がはじめての人。',
-     req:'資格・経験は不問【要確認：最新の募集条件】'},
-    {name:'送迎ドライバー',open:true,desc:'子どもや利用者さんの送り迎え。1日2〜3時間からの勤務です。',
-     work:'子どもや利用者さんの送り迎え。',fit:'空いた時間で関わりたい人。',req:'普通自動車運転免許（AT限定可）【要確認】'},
-    {name:'児童指導員',open:false,desc:'個別・集団の療育プログラムの計画と実施、記録、保護者対応。',
-     work:'個別・集団の療育プログラムの計画と実施、記録、保護者対応。',fit:'子どもの変化に気づくのが好きな人。',
-     req:'小・中・高の教諭資格または幼稚園教諭（経験不問）、もしくは障がい児施設での経験2年以上【要確認】'},
-    {name:'保育士',open:false,desc:'児童発達支援・放課後等デイサービスでの療育と日々の支援。',
-     work:'児童発達支援・放課後等デイサービスでの療育、日々の支援と記録。',fit:'一人ひとりに合わせた関わりを考えたい人。',req:'保育士資格'},
-    {name:'児童発達支援管理責任者',open:false,desc:'個別支援計画の作成と、支援全体の組み立て。',
+    /* 募集中の4職種はアットカンパニーの求人原稿（2026/11/1確認）にもとづく。勤務地のみクライアント指定で統一 */
+    {name:'児童指導員',open:false,place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）',emp:'正社員／アルバイト・パート',
+     pay:'正社員：月給25万〜28万円／パート：時給1,500〜1,700円（経験・能力による）',
+     time:'正社員：10:00〜19:00または9:00〜18:00（休憩60分）／パート：10:00〜19:00の間で1日5時間〜、週3日〜',
+     off:'正社員：完全週休二日制（日曜＋その他）／パート：シフト制。日曜定休、年末年始',
+     desc:'児童発達支援・放課後等デイサービスでの学習支援や療育。マンツーマンまたは2対1でサポートします。',
+     work:'学習支援、療育全般、送迎、絵本の読み聞かせ、工作、自由遊びの見守りなど。',fit:'子どもの変化に気づくのが好きな人。',
+     req:'児童指導員任用（放課後デイ経験2年・5年）、または幼稚園・小中高いずれかの教員資格。少人数の送迎ができる方（AT限定可）',
+     links:[['正社員の求人','497093'],['パートの求人','506044']]},
+    {name:'保育士',open:false,place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）',emp:'正社員／アルバイト・パート',
+     pay:'正社員：月給25万〜28万円／パート：時給1,500〜1,700円（経験・能力による）',
+     time:'正社員：10:00〜19:00または9:00〜18:00（休憩60分）／パート：10:00〜19:00の間で1日5時間〜、週3日〜',
+     off:'正社員：完全週休二日制（日曜＋その他）／パート：シフト制。日曜定休、年末年始',
+     desc:'児童発達支援・放課後等デイサービスでの療育と保育。ご家族へのアドバイスの機会も多い仕事です。',
+     work:'療育・保育・運動指導、学習支援、送迎、絵本の読み聞かせ、工作、自由遊びの見守りなど。',fit:'一人ひとりに合わせた関わりを考えたい人。',
+     req:'保育士資格。パートは新卒・未経験可、正社員は放課後デイ経験2年。少人数の送迎ができる方（AT限定可）',
+     links:[['正社員の求人','497093'],['パートの求人','506044']]},
+    {name:'PT・OT・ST',open:false,place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）',emp:'正社員／アルバイト・パート',
+     pay:'正社員：月給30万〜35万円／パート：時給2,100〜2,500円（経験・資格・能力による）',
+     time:'正社員：10:00〜19:00（休憩1時間）／パート：10:00〜19:00のうち1日5時間〜、週1日〜',
+     off:'シフト制。日曜定休、年末年始',
+     desc:'放課後等デイサービスでの機能訓練指導。ボルダリング体験やコミュニケーションのプログラムも行います。',
+     work:'ST室での個別言語聴覚訓練、感覚統合療法の専門スペースを使ったOT・PTの訓練、他職種と連携したサポート体制の見直し。',fit:'子どもの発達に専門性を活かしたい人。',
+     req:'正社員：言語聴覚士・作業療法士のいずれか／パート：言語聴覚士・作業療法士・理学療法士・公認心理師のいずれか。経験不問',
+     links:[['正社員の求人','548889'],['パートの求人','320398']]},
+    {name:'就労支援 作業支援員',open:true,badge:'未経験可',place:'兵庫県尼崎市西昆陽2-37-1（おりーぶ西昆陽）',emp:'正社員／アルバイト・パート',
+     pay:'正社員：月給25万円以上／パート：時給1,200円（経験・資格・能力による）',
+     time:'正社員：9:00〜18:00（休憩1時間）、週5日程度／パート：9:00〜16:00（休憩1時間）、週3〜5日程度',
+     off:'シフト制。正社員は日曜定休＋平日週1日',
+     desc:'就労継続支援B型で、利用者さんの作業をサポート。SNS動画の撮影や農作業まで、仕事の幅が広い職場です。',
+     work:'SNS動画の撮影・企画・編集、作業指導とサポート、利用者さんの見守り、送迎。作業例はアクセサリー雑貨の制作、内職、自社農園の農作業など。',fit:'接客や営業の経験を活かしたい人。福祉がはじめての人。',
+     req:'普通自動車免許（AT限定可）で少人数の送迎ができる方、土曜・祝日に出勤できる方。専門資格なし・未経験可。社会福祉士・介護福祉士・初任者研修以上、施設での経験も活かせます',
+     links:[['正社員の求人','484537'],['パートの求人','506047']]},
+    /* 以下は求人原稿に掲載なし＝保留。勤務地は事業の種類がわかるものだけ指定どおり記載 */
+    {name:'児童発達支援管理責任者',hold:true,open:false,place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）',desc:'個別支援計画の作成と、支援全体の組み立て。',
      work:'個別支援計画の作成、支援全体の組み立て、チームの調整。',fit:'現場を支える側に回りたい人。',
-     req:'保育士・教諭等としての実務経験5年以上、または障がい児・者施設での実務経験5年以上。研修受講済みの方は優遇【要確認】'},
-    {name:'サービス管理責任者',open:false,desc:'就労支援・グループホームでの個別支援計画と支援管理。',
-     work:'就労支援・グループホームでの個別支援計画の作成と支援管理。',fit:'一人の生活を長い目で見たい人。',req:'実務経験および研修要件【要確認】'},
-    {name:'PT・OT・ST',open:false,desc:'感覚統合療法スペースでの機能訓練とプログラム設計。',
-     work:'感覚統合療法スペースでの機能訓練と、プログラムの設計。',fit:'子どもの発達に専門性を活かしたい人。',req:'理学療法士／作業療法士／言語聴覚士のいずれか'},
-    {name:'生活支援員・世話人',open:false,desc:'就労継続支援B型やグループホームでの日常生活の支援。',
-     work:'就労継続支援B型やグループホームでの、日常生活の支援。',fit:'暮らしを一緒につくりたい人。',req:'【要確認：資格要件と未経験可否】'}
+     req:'保育士・教諭等としての実務経験5年以上、または障がい児・者施設での実務経験5年以上。研修受講済みの方は優遇【保留】'},
+    {name:'サービス管理責任者',hold:true,open:false,place:'兵庫県尼崎市西昆陽2-37-1（おりーぶ西昆陽）',desc:'就労支援・グループホームでの個別支援計画と支援管理。',
+     work:'就労支援・グループホームでの個別支援計画の作成と支援管理。',fit:'一人の生活を長い目で見たい人。',req:'実務経験および研修要件【保留】'},
+    {name:'生活支援員・世話人',hold:true,open:false,place:'兵庫県尼崎市西昆陽2-37-1（おりーぶ西昆陽）',desc:'就労継続支援B型やグループホームでの日常生活の支援。',
+     work:'就労継続支援B型やグループホームでの、日常生活の支援。',fit:'暮らしを一緒につくりたい人。',req:'【保留：資格要件と未経験可否】'},
+    {name:'サポートスタッフ',hold:true,open:true,desc:'活動の準備・見守り・片づけ。子どもや利用者さんと一緒に過ごす仕事です。',
+     work:'子どもや利用者さんと一緒に過ごしながら、活動の準備・見守り・片づけを担当します。',fit:'まず現場を知りたい人。福祉がはじめての人。',
+     req:'資格・経験は不問【保留：最新の募集条件】'},
+    {name:'送迎ドライバー',hold:true,open:true,desc:'子どもや利用者さんの送り迎え。1日2〜3時間からの勤務です。',
+     work:'子どもや利用者さんの送り迎え。',fit:'空いた時間で関わりたい人。',req:'普通自動車運転免許（AT限定可）【保留】'}
   ],
   people:[
     {img:'S__21495891.jpg',n:'【仮】スタッフA',r:'児童指導員',y:'入社3年目',
@@ -1244,12 +1273,12 @@ const DATA={
      f:'地域の中で、安心して暮らし続けるための住まい。',ad:'伊丹市堀池1-6-10',ph:'places/horiike.webp'}
   ],
   faq:[
-    {q:'どんな人が働いていますか？',a:'【要確認】職員の前職・年代の構成。確認でき次第、具体的に記載します。'},
-    {q:'未経験でも応募できますか？',a:'サポートスタッフと送迎ドライバーは、資格・経験を問いません。児童指導員や保育士などには資格要件があります。各職種の応募要件は「募集職種」でご確認ください。'},
-    {q:'どんな資格が必要ですか？',a:'職種によって異なります。保育士は保育士資格、児童指導員は教諭資格または障がい児施設での経験2年以上、PT・OT・STは各国家資格が必要です。【要確認：最新の募集条件】'},
-    {q:'Wワークはできますか？',a:'【要確認】副業・兼業の可否。確認でき次第記載します。'},
-    {q:'見学できますか？',a:'【要確認】見学の受付方法と所要時間。'},
-    {q:'応募前に話を聞けますか？',a:'【要確認】相談窓口（電話／LINE等）と受付時間。'}
+    {q:'どんな人が働いていますか？',a:'20代〜60代のスタッフが働いています。子育て中の方や、営業・接客など異業種から転職した方も活躍中です。保育士や教員、理学療法士・作業療法士・言語聴覚士など、さまざまな資格を持つ専門スタッフが協力し合っています。'},
+    {q:'未経験でも応募できますか？',a:'就労継続支援B型の作業支援員は、専門資格なし・未経験から始められます（少人数の送迎ができる普通自動車免許が必要です。AT限定可）。児童指導員や保育士などには資格要件があります。各職種の応募要件は「募集職種」でご確認ください。'},
+    {q:'どんな資格が必要ですか？',a:'職種によって異なります。保育士は保育士資格、児童指導員は児童指導員任用または幼稚園・小中高いずれかの教員資格、PT・OT・STは各国家資格が必要です。送迎がある職種では普通自動車免許（AT限定可）も必要です。'},
+    {q:'Wワークはできますか？',a:'パートの求人では、Wワーク（掛け持ち・副業）の方も歓迎しています。週1日から勤務できる職種もあります。'},
+    {q:'見学できますか？',a:'はい、職場見学にもぜひお越しください。お電話（06-6415-7184）でお問い合わせいただけます。所要時間は【保留】'},
+    {q:'応募前に話を聞けますか？',a:'お電話（06-6415-7184）でお問い合わせいただけます。話し中の場合は折り返しご連絡します。受付時間は【保留】'}
   ],
   quiz:{
     q:[
@@ -1260,7 +1289,7 @@ const DATA={
     ],
     types:{
       teach:{name:'伝える力で、<em>学びを支える</em>タイプ',jobs:['児童指導員','保育士','サポートスタッフ'],why:['伝え方を工夫する場面が多い療育の現場で力を発揮できそうです。','人に教えてきた経験が、そのまま支援に変わります。']},
-      listen:{name:'気づく力で、<em>暮らしを支える</em>タイプ',jobs:['生活支援員・世話人','サポートスタッフ'],why:['小さな変化を拾うことが、仕事の中心になります。','暮らしの場面での支援に向いていそうです。']},
+      listen:{name:'気づく力で、<em>暮らしを支える</em>タイプ',jobs:['就労支援 作業支援員','生活支援員・世話人','サポートスタッフ'],why:['小さな変化を拾うことが、仕事の中心になります。','暮らしの場面での支援に向いていそうです。']},
       move:{name:'一緒に動いて、<em>楽しさをつくる</em>タイプ',jobs:['サポートスタッフ','PT・OT・ST'],why:['体を動かすプログラムや活動の時間で活躍できそうです。','その場を明るくする力は、毎日の支援に欠かせません。']},
       plan:{name:'整える力で、<em>チームを支える</em>タイプ',jobs:['児童発達支援管理責任者','サービス管理責任者','サポートスタッフ'],why:['計画づくりや記録の整備は、支援の土台です。','段取りの力が、チーム全体を動かします。']}
     }
@@ -1377,7 +1406,7 @@ document.querySelectorAll('[data-slider]').forEach(w=>{
 /* ===== JOBS ===== */
 (function(){
   const box=$('jobList'),fb=$('filters');let mode='all';
-  const modes=[['all','すべて'],['open','資格・経験不問'],['lic','資格が必要']];
+  const modes=[['all','すべて'],['open','未経験から'],['lic','資格が必要']];
   fb.innerHTML=modes.map(m=>`<button class="chip" type="button" data-k="${m[0]}" aria-pressed="${m[0]===mode}">${m[1]}</button>`).join('');
   fb.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;mode=b.dataset.k;
     [...fb.children].forEach(c=>c.setAttribute('aria-pressed',c.dataset.k===mode));render();});
@@ -1385,12 +1414,13 @@ document.querySelectorAll('[data-slider]').forEach(w=>{
     const list=DATA.jobs.filter(j=>mode==='all'||(mode==='open'?j.open:!j.open));
     if(!list.length){box.innerHTML=`<div class="empty"><b>この条件の募集は今ありません</b><p>条件を戻すか、見学のときに直接ご相談ください。</p></div>`;return;}
     box.innerHTML=list.map((j,i)=>`<article class="job" id="job-${i}" data-name="${esc(j.name)}">
-      <div class="job-h"><div class="top"><h3>${esc(j.name)}</h3><span class="badge ${j.open?'b-open':'b-req'}">${j.open?'資格・経験不問':'資格要件あり'}</span></div>
+      <div class="job-h"><div class="top"><h3>${esc(j.name)}</h3><span class="badge ${j.open?'b-open':'b-req'}">${j.badge||(j.open?'資格・経験不問':'資格要件あり')}</span></div>
       <p class="desc">${esc(j.desc)}</p>
-      <div class="meta"><span><b>勤務地</b>【要確認】</span><span><b>雇用形態</b>【要確認】</span></div></div>
+      <div class="meta"><span><b>勤務地</b>${esc(j.place||'【保留】')}</span><span><b>雇用形態</b>${esc(j.emp||'【保留】')}</span>${j.pay?'':'<span><b>給与</b>【保留】</span>'}</div></div>
       <button class="job-tg" type="button" aria-expanded="false" aria-controls="jd-${i}">詳しく見る<i>＋</i></button>
-      <div class="job-d" id="jd-${i}"><div><dl><dt>仕事内容</dt><dd>${esc(j.work)}</dd><dt>向いている人</dt><dd>${esc(j.fit)}</dd><dt>応募要件</dt><dd>${esc(j.req)}</dd></dl>
-      <div class="btns"><a class="btn btn-olive" href="#cta">見学・応募の相談をする<i>→</i></a></div></div></div></article>`).join('');
+      <div class="job-d" id="jd-${i}"><div><dl><dt>仕事内容</dt><dd>${esc(j.work)}</dd><dt>向いている人</dt><dd>${esc(j.fit)}</dd><dt>応募要件</dt><dd>${esc(j.req)}</dd>
+      ${j.pay?`<dt>給与</dt><dd>${esc(j.pay)}</dd><dt>勤務時間</dt><dd>${esc(j.time)}</dd><dt>休日</dt><dd>${esc(j.off)}</dd><dt>待遇</dt><dd>${esc(DATA.jobBenefit)}</dd>`:''}</dl>
+      <div class="btns"><a class="btn btn-olive" href="#cta">見学・応募の相談をする<i>→</i></a>${(j.links||[]).map(l=>`<a class="btn btn-line" href="https://atcompany.jp/olive/recruit/requirement/${l[1]}/" target="_blank" rel="noopener">${esc(l[0])}<i>↗</i></a>`).join('')}</div></div></div></article>`).join('');
     box.querySelectorAll('.job-tg').forEach(b=>b.addEventListener('click',()=>{
       const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);
       $(b.getAttribute('aria-controls')).classList.toggle('open',o);}));
@@ -1421,14 +1451,14 @@ document.querySelectorAll('[data-slider]').forEach(w=>{
     if(sc.lic)n=['保育士','児童指導員'].concat(n);
     if(sc.reha)n=['PT・OT・ST'].concat(n);
     if(sc.care)n=n.concat(['生活支援員・世話人']);
-    if(sc.none)n=['サポートスタッフ','送迎ドライバー'].concat(n.filter(x=>['サポートスタッフ','送迎ドライバー'].includes(x)));
+    if(sc.none)n=['就労支援 作業支援員','サポートスタッフ','送迎ドライバー'];
     n=[...new Set(n)].slice(0,3);
     const jobs=n.map(x=>DATA.jobs.find(j=>j.name===x)).filter(Boolean);
     box.innerHTML=`<div class="qres"><div class="qprog">${Q.map(()=>'<i class="on"></i>').join('')}</div>
       <p class="qn">YOUR ROLE</p><p class="type">${t.name}</p>
       <ul>${t.why.map(w=>`<li>${esc(w)}</li>`).join('')}</ul>
       ${jobs.map(j=>`<div class="qjob"><b>${esc(j.name)}</b><span>応募要件：${esc(j.req)}</span></div>`).join('')}
-      <p class="qfine">これは自分の強みを知るための目安で、採用の合否とは関係ありません。要件を満たしていない場合でも、資格・経験を問わないサポートスタッフや送迎ドライバーから始める方法があります。</p>
+      <p class="qfine">これは自分の強みを知るための目安で、採用の合否とは関係ありません。資格がない場合でも、未経験から始められる就労支援の作業支援員があります。</p>
       <div class="btns"><a class="btn btn-olive" href="#jobs" id="qToJob">この仕事を見る<i>→</i></a>
       <a class="btn btn-line" href="#cta">見学してみる<i>→</i></a>
       <button class="btn btn-line" type="button" id="qr">もう一度<i>↺</i></button></div></div>`;
