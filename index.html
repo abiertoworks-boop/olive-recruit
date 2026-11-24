@@ -250,11 +250,31 @@ button{font-family:inherit}
 .movie{padding:80px 0 40px}
 @media(min-width:900px){.movie{padding:120px 0 60px}}
 .movie .lede{margin-top:16px;max-width:30em;color:var(--ink-2);font-size:15px}
-.mv-list{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:36px;
-  padding-bottom:6px;margin-right:calc(-1*var(--pad));padding-right:var(--pad)}
-.mv-list::-webkit-scrollbar{display:none}
-@media(min-width:900px){.mv-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;overflow:visible;margin-right:0;padding-right:0}}
-.mv{flex:0 0 min(62vw,260px);scroll-snap-align:start;margin:0}
+.movie .sl-wrap{margin-top:36px}
+.movie .sl-ctl button{background:rgba(51,54,58,.08)}
+.movie .sl-ctl button:hover{background:rgba(51,54,58,.16)}
+.movie .sl-prog{background:rgba(51,54,58,.15)}
+.mv{flex:0 0 min(62vw,240px);scroll-snap-align:start;margin:0}
+.mv.land video{object-fit:contain}
+/* PEOPLE：チーム写真 */
+.team{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:32px 0 64px}
+@media(min-width:900px){.team{gap:18px;margin:44px 0 90px}}
+.team figure{margin:0}
+.team img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;border-radius:4px}
+.team figcaption{font-size:12.5px;color:var(--ink-2);margin-top:8px;line-height:1.6}
+/* JOBS：はたらきやすさ・求人一覧 */
+.perks{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 30px;padding:0;list-style:none}
+.perks li{font-size:12.5px;font-weight:700;background:var(--tunsgate);border-radius:999px;padding:6px 13px}
+.jboard{margin-top:56px}
+.jboard h3{font-weight:900;font-size:18px}
+.jboard ul{list-style:none;padding:0;margin:14px 0 0;border-top:1px solid var(--line)}
+.jboard a{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:4px 14px;align-items:center;padding:14px 4px;
+  border-bottom:1px solid var(--line);color:inherit;text-decoration:none;transition:background .2s var(--ease)}
+.jboard a:hover{background:rgba(51,54,58,.04)}
+.jboard .e{font-size:11px;font-weight:700;border:1px solid currentColor;border-radius:999px;padding:2px 9px;white-space:nowrap}
+.jboard .t{font-size:14px;font-weight:700;line-height:1.5}
+.jboard .t small{display:block;font-size:12px;font-weight:400;color:var(--ink-3);margin-top:2px}
+.jboard .go{font-size:13px;color:var(--ink-3)}
 .mv-box{position:relative;aspect-ratio:9/16;border-radius:8px;overflow:hidden;background:var(--black);cursor:pointer}
 .mv-box video{width:100%;height:100%;object-fit:cover;display:block}
 .mv-play{position:absolute;inset:0;display:grid;place-items:center;border:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.45));
@@ -928,8 +948,14 @@ details[open] summary .pm{background:var(--roof)}
     <p class="lab" data-r>MOVIE <small>動画で見るおりーぶ</small></p>
     <h2 class="ttl" data-r>写真だけじゃ伝わらない、<br><em>現場の空気</em>を見てください。</h2>
     <p class="lede" data-r>事業所の雰囲気や、一緒に働くスタッフの声を短い動画にまとめました。タップすると音声つきで再生されます。</p>
-    <div class="mv-list" id="mvList"></div>
-    <p class="note"><span class="todo">仮</span>動画のタイトル・並び順は仮です。出演者の掲載同意を確認してください。</p>
+    <div class="sl-wrap" data-slider>
+      <div class="sl-ctl"><button type="button" data-prev aria-label="前へ"><b>←</b>Prev</button><button type="button" data-next aria-label="次へ"><b>→</b>Next</button></div>
+      <div>
+        <div class="sl" id="mvList" tabindex="0" aria-label="動画一覧"></div>
+        <div class="sl-prog"><i></i></div>
+      </div>
+    </div>
+    <p class="note"><span class="todo">仮</span>動画のタイトル・並び順は仮です。出演者の掲載同意を確認してください。子どもの顔が映る範囲にはモザイクをかけています。</p>
   </div>
 </section>
 
@@ -985,6 +1011,7 @@ details[open] summary .pm{background:var(--roof)}
   <div class="in-wrap">
     <p class="lab" data-r>PEOPLE <small>どんな人と働くの？</small></p>
     <h2 class="ttl" data-r>前職は、ばらばら。<br>でも、<em>同じところ</em>で<br class="sp">喜んでる。</h2>
+    <div class="team" id="teamList"></div>
     <div id="peopleList"></div>
     <p style="margin-top:40px;font-size:12.5px;color:var(--ink-3)"><span class="todo">要差し替え</span>氏名・入社年数・コメントは仮です。写真はイメージを含みます。撮影と掲載同意の取得後に差し替えてください。</p>
   </div>
@@ -1046,9 +1073,14 @@ details[open] summary .pm{background:var(--roof)}
   <div class="in-wrap">
     <p class="lab" data-r>JOBS <small>募集職種</small></p>
     <h2 class="ttl" data-r>一緒に働く仲間を<br>募集しています。</h2>
+    <ul class="perks" id="perkList" aria-label="はたらきやすさ（求人により異なります）"></ul>
     <div class="filters" id="filters" role="group" aria-label="職種のしぼり込み"></div>
     <div class="jgrid" id="jobList"></div>
-    <p style="margin-top:18px;font-size:12.5px;color:var(--ink-2)">募集内容は<a href="https://atcompany.jp/olive/recruit/list/" target="_blank" rel="noopener">求人一覧</a>にもとづいています（2026年11月1日時点）。尼崎市・伊丹市のほかの事業所が勤務地になる場合もあります。<span class="todo">保留</span>の項目は確認中です。</p>
+    <div class="jboard" data-r>
+      <h3>いま出ている求人（全10件）</h3>
+      <ul id="jobBoard"></ul>
+    </div>
+    <p style="margin-top:18px;font-size:12.5px;color:var(--ink-2)">募集内容は<a href="https://atcompany.jp/olive/recruit/list/" target="_blank" rel="noopener">求人一覧</a>にもとづいています（2026年11月1日時点）。尼崎市・伊丹市のほかの事業所が勤務地になる場合もあります。上部の「はたらきやすさ」は求人により異なります。<span class="todo">保留</span>の項目は確認中です。</p>
     <p style="margin-top:8px;font-size:12.5px;color:var(--ink-2)">子どもに関わる職種では、こども性暴力防止法（2026年12月25日施行予定）にもとづき、採用選考の過程で特定性犯罪の前科の有無を確認します。</p>
   </div>
 </section>
@@ -1160,7 +1192,16 @@ const DATA={
     {src:'814610849.398167.mp4',k:'PLACE',t:'こんにちは、おりーぶせらぴーです'},
     {src:'814610849.700107.mp4',k:'INTERVIEW',t:'すまいるりんく 児童発達支援管理責任者インタビュー'},
     {src:'814610849.589704.mp4',k:'ROOM',t:'今月の新書、入りました'},
-    {src:'814610849.736800.mp4',k:'RECRUIT',t:'すまいるりんくで、お待ちしております'}
+    {src:'814610849.736800.mp4',k:'RECRUIT',t:'すまいるりんくで、お待ちしております'},
+    {src:'816645602.455334.mp4',k:'INTERVIEW',t:'2年目スタッフに聞きました'},
+    {src:'815390624.485893.mp4',k:'INTERVIEW',t:'転職して5ヶ月のスタッフに聞きました'},
+    {src:'816645694.923351.mp4',k:'WORK',t:'となりで見守る、学習の時間'},
+    {src:'816645694.955532.mp4',k:'ROOM',t:'放課後の教室'},
+    {src:'816645772.314930.mp4',k:'WORK',t:'手づくり教材を準備中'},
+    {src:'816645772.336635.mp4',k:'WORK',t:'書く練習をサポート'},
+    {src:'816645772.360258.mp4',k:'WORK',t:'記録をつける時間'},
+    {src:'816645772.287651.mp4',k:'WORK',t:'パソコンでの事務作業'},
+    {src:'816645772.381033.mp4',k:'RECRUIT',t:'スタッフ募集中です',land:true}
   ],
   xp:[
     {t:'保育士',s:'資格',to:'保育士 / 児童指導員',j:'保育士'},
@@ -1229,6 +1270,27 @@ const DATA={
      req:'資格・経験は不問【保留：最新の募集条件】'},
     {name:'送迎ドライバー',hold:true,open:true,desc:'子どもや利用者さんの送り迎え。1日2〜3時間からの勤務です。',
      work:'子どもや利用者さんの送り迎え。',fit:'空いた時間で関わりたい人。',req:'普通自動車運転免許（AT限定可）【保留】'}
+  ],
+  team:[
+    {img:'team/event.jpg',alt:'仮装したスタッフ10人の集合写真',c:'イベントの日は、スタッフも本気で仮装。',pos:'50% 45%'},
+    {img:'team/climb.jpg',alt:'ボルダリングの壁の前で笑うスタッフ5人',c:'ボルダリングの壁がある教室で。'},
+    {img:'team/room.jpg',alt:'季節の飾りつけの前に並ぶスタッフ4人',c:'壁の飾りつけも、スタッフの手づくり。',pos:'50% 60%'},
+    {img:'team/orange.jpg',alt:'おそろいのポロシャツで並ぶスタッフ5人',c:'子育て中のスタッフも、たくさん働いています。'}
+  ],
+  /* 求人原稿（アットカンパニー）の「仕事の特徴」から。求人により異なる */
+  perks:['20代〜60代が活躍中','定年なし','残業月20時間以内','年間休日120日以上','産休・育休取得実績あり','交通費全額支給','社員登用あり','週1日〜OKの職種あり','社内託児所あり（おりーぶ西昆陽）'],
+  /* 求人一覧の全10件。勤務地はクライアント指定（放デイ＝おりーぶ瑞穂、就労B・GH＝おりーぶ西昆陽） */
+  jobBoard:[
+    {id:'497093',e:'正社員',t:'保育士・児童指導員（完全週休二日制）',pay:'月給25万〜28万円',place:'おりーぶ瑞穂'},
+    {id:'548889',e:'正社員',t:'言語聴覚士・作業療法士（フレックス勤務可）',pay:'月給30万〜35万円',place:'おりーぶ瑞穂'},
+    {id:'484537',e:'正社員',t:'就労B 作業支援員（未経験可）',pay:'月給25万円以上',place:'おりーぶ西昆陽'},
+    {id:'506044',e:'パート',t:'児童指導員・保育士（新卒・ブランク可）',pay:'時給1,500〜1,700円',place:'おりーぶ瑞穂'},
+    {id:'461630',e:'パート',t:'児童指導員・保育士・教員資格の方（週2日〜）',pay:'時給1,500〜1,700円',place:'おりーぶ瑞穂'},
+    {id:'506045',e:'パート',t:'児童指導員（放課後デイ経験5年以上）・保育士・教員の方',pay:'時給1,500〜1,700円',place:'おりーぶ瑞穂'},
+    {id:'320398',e:'パート',t:'PT・OT・ST・公認心理師（週1日〜）',pay:'時給2,100〜2,500円',place:'おりーぶ瑞穂'},
+    {id:'548403',e:'パート',t:'言語聴覚士・OT・PT（週1日〜・Wワーク可）',pay:'時給2,100〜2,500円',place:'おりーぶ瑞穂'},
+    {id:'506047',e:'パート',t:'就労B 作業支援員（未経験可・週2日〜）',pay:'時給1,200円',place:'おりーぶ西昆陽'},
+    {id:'497090',e:'パート',t:'就労B 作業支援員（未経験可・9:00〜16:00）',pay:'時給1,200円',place:'おりーぶ西昆陽'}
   ],
   people:[
     {img:'S__21495891.jpg',n:'【仮】スタッフA',r:'児童指導員',y:'入社3年目',
@@ -1333,7 +1395,7 @@ $('dailySl').innerHTML=DATA.daily.map((d,i)=>`
 (function(){
   const box=$('mvList');
   box.innerHTML=DATA.movies.map((m,i)=>`
-    <figure class="mv" data-r><div class="mv-box">
+    <figure class="mv${m.land?' land':''}" data-r><div class="mv-box">
       <video src="${esc(m.src)}#t=0.5" preload="metadata" playsinline loop aria-label="${esc(m.t)}"></video>
       <span class="mv-time" aria-hidden="true"></span>
       <button class="mv-play" type="button" aria-label="${esc(m.t)}を再生"><span>▶</span></button></div>
@@ -1357,6 +1419,15 @@ $('xpList').innerHTML=DATA.xp.map((x,i)=>`
 $('convList').innerHTML=DATA.conv.map(c=>`
   <li data-r><span class="from">${esc(c.f)}で磨いた<b>${esc(c.fs)}</b></span><span class="ar" aria-hidden="true">→</span>
   <span class="to">${esc(c.to)}</span></li>`).join('');
+
+$('teamList').innerHTML=DATA.team.map(t=>`
+  <figure data-r><img src="${esc(t.img)}" alt="${esc(t.alt)}" loading="lazy" style="object-position:${t.pos||'50% 50%'}"><figcaption>${esc(t.c)}</figcaption></figure>`).join('');
+
+$('perkList').innerHTML=DATA.perks.map(p=>`<li>${esc(p)}</li>`).join('');
+
+$('jobBoard').innerHTML=DATA.jobBoard.map(j=>`
+  <li><a href="https://atcompany.jp/olive/recruit/requirement/${j.id}/" target="_blank" rel="noopener">
+    <span class="e">${esc(j.e)}</span><span class="t">${esc(j.t)}<small>${esc(j.pay)}　${esc(j.place)}</small></span><span class="go" aria-hidden="true">↗</span></a></li>`).join('');
 
 $('peopleList').innerHTML=DATA.people.map((p,i)=>`
   <article class="person">
