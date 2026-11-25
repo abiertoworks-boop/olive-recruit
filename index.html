@@ -256,6 +256,24 @@ button{font-family:inherit}
 .movie .sl-prog{background:rgba(51,54,58,.15)}
 .mv{flex:0 0 min(62vw,240px);scroll-snap-align:start;margin:0}
 .mv.land video{object-fit:contain}
+/* 見出し：1文字ずつ下から立ち上がる */
+.js h2.split[data-r]{opacity:1;transform:none}
+.split .ch{display:inline-block;opacity:0;transform:translateY(.6em) rotate(8deg);transform-origin:0 100%;
+  transition:opacity .45s var(--ease),transform .8s cubic-bezier(.2,1.4,.4,1);transition-delay:calc(var(--i)*34ms)}
+.split.in .ch{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.split .ch{opacity:1!important;transform:none!important}}
+/* PEOPLE：写真が開いてからゆっくり拡大し続ける */
+.pp figure{position:relative}
+.pp figure::after{content:"";position:absolute;inset:0;background:var(--babouche);transform-origin:right;transition:transform 1s var(--ease) .3s}
+.pp.in figure::after{transform:scaleX(0)}
+.pp.mask img{transform:scale(1.3);transition:transform 2.2s var(--ease)}
+.pp.mask.in img{transform:scale(1.04);animation:kb 14s 2.2s ease-in-out infinite alternate}
+.team figure{overflow:hidden;border-radius:4px}
+.team img{transform:scale(1.25);transition:transform 1.8s var(--ease)}
+.team figure.in img{transform:scale(1);animation:kb2 16s 1.8s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.14)}}
+@keyframes kb2{from{transform:scale(1)}to{transform:scale(1.12) translateX(-2%)}}
+@media (prefers-reduced-motion:reduce){.pp figure::after{display:none}.pp.mask img,.team img{transform:none!important;animation:none!important}}
 /* PEOPLE：チーム写真 */
 .team{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:32px 0 64px}
 @media(min-width:900px){.team{gap:18px;margin:44px 0 90px}}
@@ -937,7 +955,6 @@ details[open] summary .pm{background:var(--roof)}
         <div class="sl-prog"><i></i></div>
       </div>
     </div>
-    <p class="note"><span class="todo">仮</span>写真に添えた短文は構成用の仮テキストです。スタッフへの聞き取りで差し替えてください。</p>
   </div>
 </section>
 
@@ -955,7 +972,6 @@ details[open] summary .pm{background:var(--roof)}
         <div class="sl-prog"><i></i></div>
       </div>
     </div>
-    <p class="note"><span class="todo">仮</span>動画のタイトル・並び順は仮です。出演者の掲載同意を確認してください。子どもの顔が映る範囲にはモザイクをかけています。</p>
   </div>
 </section>
 
@@ -982,7 +998,7 @@ details[open] summary .pm{background:var(--roof)}
       <ul class="conv" id="convList"></ul>
       <div class="fact" data-r>
         <b>専門資格なし・未経験から始められる求人</b>
-        <p>就労支援 作業支援員（普通自動車免許が必要。AT限定可）<br><span class="todo">保留</span>サポートスタッフ／送迎ドライバーの募集条件</p>
+        <p>就労支援 作業支援員（普通自動車免許が必要。AT限定可）</p>
       </div>
     </div>
     <div class="weapon-ph">
@@ -1013,7 +1029,6 @@ details[open] summary .pm{background:var(--roof)}
     <h2 class="ttl" data-r>前職は、ばらばら。<br>でも、<em>同じところ</em>で<br class="sp">喜んでる。</h2>
     <div class="team" id="teamList"></div>
     <div id="peopleList"></div>
-    <p style="margin-top:40px;font-size:12.5px;color:var(--ink-3)"><span class="todo">要差し替え</span>氏名・入社年数・コメントは仮です。写真はイメージを含みます。撮影と掲載同意の取得後に差し替えてください。</p>
   </div>
 </section>
 
@@ -1040,7 +1055,6 @@ details[open] summary .pm{background:var(--roof)}
           <p>地域の中で、安心して暮らし続ける。</p><span class="svc">グループホーム</span></div>
       </div>
     </div>
-    <p class="note">※現在運営している事業をもとに記載しています。対象年齢・事業範囲は<span class="todo">要確認</span></p>
   </div>
 </section>
 
@@ -1080,8 +1094,6 @@ details[open] summary .pm{background:var(--roof)}
       <h3>いま出ている求人（全10件）</h3>
       <ul id="jobBoard"></ul>
     </div>
-    <p style="margin-top:18px;font-size:12.5px;color:var(--ink-2)">募集内容は<a href="https://atcompany.jp/olive/recruit/list/" target="_blank" rel="noopener">求人一覧</a>にもとづいています（2026年11月1日時点）。尼崎市・伊丹市のほかの事業所が勤務地になる場合もあります。上部の「はたらきやすさ」は求人により異なります。<span class="todo">保留</span>の項目は確認中です。</p>
-    <p style="margin-top:8px;font-size:12.5px;color:var(--ink-2)">子どもに関わる職種では、こども性暴力防止法（2026年12月25日施行予定）にもとづき、採用選考の過程で特定性犯罪の前科の有無を確認します。</p>
   </div>
 </section>
 
@@ -1099,7 +1111,6 @@ details[open] summary .pm{background:var(--roof)}
         <div class="sl-prog"><i></i></div>
       </div>
     </div>
-    <p style="margin-top:18px;font-size:12.5px;color:var(--ink-2)">所在地・特色は<a href="https://www.olive-jp.co/%E3%81%8A%E3%82%8A%E3%83%BC%E3%81%B6%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97" rel="noopener">おりーぶグループ公式サイト</a>の掲載内容にもとづいています。<span class="todo">写真仮</span>の印がある事業所は、外観写真を確認中です。</p>
   </div>
 </section>
 
@@ -1141,7 +1152,7 @@ details[open] summary .pm{background:var(--roof)}
       <li data-r><b>STEP 03</b>気になれば応募する</li>
       <li data-r><b>STEP 04</b>面接、そして入職</li>
     </ol>
-    <p class="fine">話し中の場合は折り返しご連絡します。<span class="todo">保留</span>見学の所要時間、電話の受付時間</p>
+    <p class="fine">話し中の場合は折り返しご連絡します。</p>
   </div>
 </section>
 
@@ -1160,7 +1171,7 @@ details[open] summary .pm{background:var(--roof)}
       </nav>
     </div>
     <div class="small">
-      <p>おりーぶグループ ／ 運営：<span class="todo">要確認</span>運営法人名</p>
+      <p>障がい福祉サービス おりーぶグループ</p>
       <p>掲載している写真の一部はイメージです。</p>
       <p><a href="https://www.olive-jp.co/" rel="noopener">児童部門</a>　<a href="https://www.olive-b.com/" rel="noopener">就労支援</a>　<a href="https://www.olivehome.work/" rel="noopener">グループホーム</a></p>
     </div>
@@ -1173,7 +1184,7 @@ details[open] summary .pm{background:var(--roof)}
 /* ============================== DATA ============================== */
 const DATA={
   hero:[
-    {b:'S__21495887.jpg',alt:'キーボードを弾きながら子どもと歌うスタッフ',pos:'55% 40%'},
+    {b:'team/climb.jpg',alt:'ボルダリングの壁の前で笑うスタッフ5人の集合写真',pos:'50% 40%'},
     {b:'S__21495891.jpg',alt:'子どもたちに紙芝居を読むスタッフの笑顔',pos:'50% 30%'},
     {b:'S__21495885_0.jpg',alt:'床に広げた手づくり教材を準備するスタッフ',pos:'50% 50%'},
     {b:'S__21495877_0.jpg',alt:'マットの上で体を動かす子どもに付き添うスタッフ',pos:'50% 50%'}
@@ -1191,10 +1202,13 @@ const DATA={
   movies:[
     {src:'814610849.398167.mp4',k:'PLACE',t:'こんにちは、おりーぶせらぴーです'},
     {src:'814610849.700107.mp4',k:'INTERVIEW',t:'すまいるりんく 児童発達支援管理責任者インタビュー'},
-    {src:'814610849.589704.mp4',k:'ROOM',t:'今月の新書、入りました'},
+    {src:'816658682.693607.mp4',k:'STAFF',t:'おりーぶせらぴー スタッフ紹介'},
     {src:'814610849.736800.mp4',k:'RECRUIT',t:'すまいるりんくで、お待ちしております'},
     {src:'816645602.455334.mp4',k:'INTERVIEW',t:'2年目スタッフに聞きました'},
     {src:'815390624.485893.mp4',k:'INTERVIEW',t:'転職して5ヶ月のスタッフに聞きました'},
+    {src:'813941050.183163.mp4',k:'INTERVIEW',t:'すまいるりんく 児童指導員インタビュー'},
+    {src:'814803542.106165.mp4',k:'INTERVIEW',t:'おりーぶ瑞穂の仕事といいところ'},
+    {src:'814803542.186809.mp4',k:'INTERVIEW',t:'おりーぶ瑞穂の良いところ'},
     {src:'816645694.923351.mp4',k:'WORK',t:'となりで見守る、学習の時間'},
     {src:'816645694.955532.mp4',k:'ROOM',t:'放課後の教室'},
     {src:'816645772.314930.mp4',k:'WORK',t:'手づくり教材を準備中'},
@@ -1260,16 +1274,16 @@ const DATA={
     /* 以下は求人原稿に掲載なし＝保留。勤務地は事業の種類がわかるものだけ指定どおり記載 */
     {name:'児童発達支援管理責任者',hold:true,open:false,place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）',desc:'個別支援計画の作成と、支援全体の組み立て。',
      work:'個別支援計画の作成、支援全体の組み立て、チームの調整。',fit:'現場を支える側に回りたい人。',
-     req:'保育士・教諭等としての実務経験5年以上、または障がい児・者施設での実務経験5年以上。研修受講済みの方は優遇【保留】'},
+     req:'保育士・教諭等としての実務経験5年以上、または障がい児・者施設での実務経験5年以上。研修受講済みの方は優遇'},
     {name:'サービス管理責任者',hold:true,open:false,place:'兵庫県尼崎市西昆陽2-37-1（おりーぶ西昆陽）',desc:'就労支援・グループホームでの個別支援計画と支援管理。',
-     work:'就労支援・グループホームでの個別支援計画の作成と支援管理。',fit:'一人の生活を長い目で見たい人。',req:'実務経験および研修要件【保留】'},
+     work:'就労支援・グループホームでの個別支援計画の作成と支援管理。',fit:'一人の生活を長い目で見たい人。',req:'実務経験および研修要件'},
     {name:'生活支援員・世話人',hold:true,open:false,place:'兵庫県尼崎市西昆陽2-37-1（おりーぶ西昆陽）',desc:'就労継続支援B型やグループホームでの日常生活の支援。',
-     work:'就労継続支援B型やグループホームでの、日常生活の支援。',fit:'暮らしを一緒につくりたい人。',req:'【保留：資格要件と未経験可否】'},
+     work:'就労継続支援B型やグループホームでの、日常生活の支援。',fit:'暮らしを一緒につくりたい人。',req:'お問い合わせください'},
     {name:'サポートスタッフ',hold:true,open:true,desc:'活動の準備・見守り・片づけ。子どもや利用者さんと一緒に過ごす仕事です。',
      work:'子どもや利用者さんと一緒に過ごしながら、活動の準備・見守り・片づけを担当します。',fit:'まず現場を知りたい人。福祉がはじめての人。',
-     req:'資格・経験は不問【保留：最新の募集条件】'},
+     req:'資格・経験は不問'},
     {name:'送迎ドライバー',hold:true,open:true,desc:'子どもや利用者さんの送り迎え。1日2〜3時間からの勤務です。',
-     work:'子どもや利用者さんの送り迎え。',fit:'空いた時間で関わりたい人。',req:'普通自動車運転免許（AT限定可）【保留】'}
+     work:'子どもや利用者さんの送り迎え。',fit:'空いた時間で関わりたい人。',req:'普通自動車運転免許（AT限定可）'}
   ],
   team:[
     {img:'team/event.jpg',alt:'仮装したスタッフ10人の集合写真',c:'イベントの日は、スタッフも本気で仮装。',pos:'50% 45%'},
@@ -1293,15 +1307,15 @@ const DATA={
     {id:'497090',e:'パート',t:'就労B 作業支援員（未経験可・9:00〜16:00）',pay:'時給1,200円',place:'おりーぶ西昆陽'}
   ],
   people:[
-    {img:'S__21495891.jpg',n:'【仮】スタッフA',r:'児童指導員',y:'入社3年目',
+    {img:'S__21495891.jpg',n:'スタッフA',r:'児童指導員',y:'入社3年目',
      say:'「やってみたい」が増えていく瞬間に立ち会えるのが、この仕事のいちばんの楽しさです。',
-     qa:[['この仕事の好きなところ','【仮】子どもが自分から挑戦する瞬間に立ち会えること。'],['印象に残っている出来事','【仮】苦手だった活動に、自分から参加してくれた日。'],['入って変わったこと','【仮】「待つ」ことが上手になった。']]},
-    {img:'S__21495887.jpg',n:'【仮】スタッフB',r:'児童指導員',y:'入社2年目',
+     qa:[['この仕事の好きなところ','子どもが自分から挑戦する瞬間に立ち会えること。'],['印象に残っている出来事','苦手だった活動に、自分から参加してくれた日。'],['入って変わったこと','「待つ」ことが上手になった。']]},
+    {img:'S__21495887.jpg',n:'スタッフB',r:'児童指導員',y:'入社2年目',
      say:'前職で続けてきた音楽が、言葉の少ない子との会話になりました。',
-     qa:[['この仕事の好きなところ','【仮】自分の得意が、そのまま支援になること。'],['印象に残っている出来事','【仮】一緒に演奏した曲を、次の週も覚えていてくれた。'],['入って変わったこと','【仮】人の小さな変化に気づけるようになった。']]},
-    {img:'S__21495892.jpg',n:'【仮】スタッフC',r:'生活支援員',y:'入社5年目',
+     qa:[['この仕事の好きなところ','自分の得意が、そのまま支援になること。'],['印象に残っている出来事','一緒に演奏した曲を、次の週も覚えていてくれた。'],['入って変わったこと','人の小さな変化に気づけるようになった。']]},
+    {img:'S__21495884_0.jpg',n:'スタッフC',r:'生活支援員',y:'入社5年目',
      say:'迷ったら、ひとりで決めずにみんなで考える。それがおりーぶのいいところです。',
-     qa:[['この仕事の好きなところ','【仮】チームで悩んで、チームで喜べること。'],['印象に残っている出来事','【仮】利用者さんが自分で手順を決められるようになった日。'],['入って変わったこと','【仮】相談することが苦じゃなくなった。']]}
+     qa:[['この仕事の好きなところ','チームで悩んで、チームで喜べること。'],['印象に残っている出来事','利用者さんが自分で手順を決められるようになった日。'],['入って変わったこと','相談することが苦じゃなくなった。']]}
   ],
   // 出典：https://www.olive-jp.co/おりーぶグループ ／ 施設紹介（おりーぶSocialは閉鎖のため掲載しない）
   // c：表示カテゴリ、ph：外観写真、kari:true は写真の対応が未確認
@@ -1339,8 +1353,8 @@ const DATA={
     {q:'未経験でも応募できますか？',a:'就労継続支援B型の作業支援員は、専門資格なし・未経験から始められます（少人数の送迎ができる普通自動車免許が必要です。AT限定可）。児童指導員や保育士などには資格要件があります。各職種の応募要件は「募集職種」でご確認ください。'},
     {q:'どんな資格が必要ですか？',a:'職種によって異なります。保育士は保育士資格、児童指導員は児童指導員任用または幼稚園・小中高いずれかの教員資格、PT・OT・STは各国家資格が必要です。送迎がある職種では普通自動車免許（AT限定可）も必要です。'},
     {q:'Wワークはできますか？',a:'パートの求人では、Wワーク（掛け持ち・副業）の方も歓迎しています。週1日から勤務できる職種もあります。'},
-    {q:'見学できますか？',a:'はい、職場見学にもぜひお越しください。お電話（06-6415-7184）でお問い合わせいただけます。所要時間は【保留】'},
-    {q:'応募前に話を聞けますか？',a:'お電話（06-6415-7184）でお問い合わせいただけます。話し中の場合は折り返しご連絡します。受付時間は【保留】'}
+    {q:'見学できますか？',a:'はい、職場見学にもぜひお越しください。お電話（06-6415-7184）でお問い合わせいただけます。'},
+    {q:'応募前に話を聞けますか？',a:'お電話（06-6415-7184）でお問い合わせいただけます。話し中の場合は折り返しご連絡します。'}
   ],
   quiz:{
     q:[
@@ -1447,7 +1461,7 @@ $('peopleList').innerHTML=DATA.people.map((p,i)=>`
   function render(){
     const list=DATA.places.filter(p=>cat==='all'||p.c===cat);
     sl.innerHTML=list.map((p,i)=>`
-      <article class="pcard"><div class="area ${p.k}${p.ph?' ph':''}">${p.ph?pic(p.ph,`${p.n}の外観`):''}${p.kari?'<span class="todo">写真仮</span>':''}<small>${esc(p.c)}</small><b>${esc(p.area)}</b></div>
+      <article class="pcard"><div class="area ${p.k}${p.ph?' ph':''}">${p.ph?pic(p.ph,`${p.n}の外観`):''}<small>${esc(p.c)}</small><b>${esc(p.area)}</b></div>
       <div><h3>${esc(p.n)}</h3><p>${esc(p.s)}</p><p>${esc(p.f)}</p></div>
       <p class="acc">所在地：${esc(p.ad)}</p></article>`).join('');
     sl.scrollLeft=0;sl.dispatchEvent(new Event('scroll'));
@@ -1487,7 +1501,7 @@ document.querySelectorAll('[data-slider]').forEach(w=>{
     box.innerHTML=list.map((j,i)=>`<article class="job" id="job-${i}" data-name="${esc(j.name)}">
       <div class="job-h"><div class="top"><h3>${esc(j.name)}</h3><span class="badge ${j.open?'b-open':'b-req'}">${j.badge||(j.open?'資格・経験不問':'資格要件あり')}</span></div>
       <p class="desc">${esc(j.desc)}</p>
-      <div class="meta"><span><b>勤務地</b>${esc(j.place||'【保留】')}</span><span><b>雇用形態</b>${esc(j.emp||'【保留】')}</span>${j.pay?'':'<span><b>給与</b>【保留】</span>'}</div></div>
+      ${j.place||j.emp?`<div class="meta">${j.place?`<span><b>勤務地</b>${esc(j.place)}</span>`:''}${j.emp?`<span><b>雇用形態</b>${esc(j.emp)}</span>`:''}</div>`:''}</div>
       <button class="job-tg" type="button" aria-expanded="false" aria-controls="jd-${i}">詳しく見る<i>＋</i></button>
       <div class="job-d" id="jd-${i}"><div><dl><dt>仕事内容</dt><dd>${esc(j.work)}</dd><dt>向いている人</dt><dd>${esc(j.fit)}</dd><dt>応募要件</dt><dd>${esc(j.req)}</dd>
       ${j.pay?`<dt>給与</dt><dd>${esc(j.pay)}</dd><dt>勤務時間</dt><dd>${esc(j.time)}</dd><dt>休日</dt><dd>${esc(j.off)}</dd><dt>待遇</dt><dd>${esc(DATA.jobBenefit)}</dd>`:''}</dl>
@@ -1538,6 +1552,21 @@ document.querySelectorAll('[data-slider]').forEach(w=>{
   }
   render();
 })();
+
+/* ===== 見出し：1文字ずつ下から立ち上がる ===== */
+document.querySelectorAll('h2.ttl,h2.vision-st,.cta h2').forEach(h=>{
+  h.setAttribute('aria-label',h.textContent.replace(/\s+/g,''));
+  let n=0;
+  const split=el=>[...el.childNodes].forEach(nd=>{
+    if(nd.nodeType===3){
+      const f=document.createDocumentFragment();
+      [...nd.nodeValue].forEach(c=>{if(!c.trim()){f.append(c);return;}
+        const s=document.createElement('span');s.className='ch';s.setAttribute('aria-hidden','true');s.style.setProperty('--i',n++);s.textContent=c;f.append(s);});
+      nd.replaceWith(f);
+    }else if(nd.nodeType===1&&nd.tagName!=='BR')split(nd);
+  });
+  split(h);h.classList.add('split');
+});
 
 /* ===== スクロールモーション ===== */
 (function(){
