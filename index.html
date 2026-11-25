@@ -166,6 +166,27 @@ button{font-family:inherit}
 .hero .ln{display:inline-block;overflow:hidden;vertical-align:bottom}
 .js .hero .ln > span{display:inline-block;transform:translateY(105%);transition:transform 1.1s var(--ease)}
 .js .hero.ready .ln > span{transform:none}
+/* 写真と文字を重ねない配置（スマホ：上に写真・下に文字／PC：右に写真・左に文字） */
+.hero{height:auto;min-height:0;background:var(--paper);display:flex;flex-direction:column}
+.hero::after{display:none}
+#heroStage{position:relative;height:56svh;min-height:330px;overflow:hidden;border-radius:0 0 28px 28px}
+#heroStage::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28),transparent 28%);pointer-events:none}
+.hero-copy{position:relative;left:auto;bottom:auto;background:none;padding:26px var(--pad) 34px;max-width:none;border-radius:0}
+.hero-copy::after{display:none}
+.hero-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.hero-btns a{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 18px;border-radius:999px;font-weight:700;font-size:14px;
+  border:1.5px solid var(--black);color:var(--black);background:#fff;transition:background .2s,color .2s}
+.hero-btns a:hover{background:var(--black);color:#fff}
+.hero-btns a.main{background:var(--roof);border-color:var(--roof);color:#fff}
+.hero-btns a.main:hover{filter:brightness(.92)}
+.hero-btns a::after{content:"→";font-size:12px}
+@media(min-width:900px){
+  .hero{height:92svh;min-height:640px;display:block}
+  #heroStage{position:absolute;top:0;right:0;bottom:0;width:58%;height:auto;border-radius:0 0 0 44px}
+  .hero-copy{position:absolute;left:0;top:50%;transform:translateY(-44%);width:44%;padding:0 32px 0 calc(var(--pad) + 30px)}
+  .hero-copy h1{font-size:clamp(30px,3.5vw,54px)}
+  .hero-side{color:var(--ink-3)}
+}
 
 /* ================= 02 ABOUT ================= */
 .about{padding:72px 0 120px}
@@ -268,7 +289,9 @@ button{font-family:inherit}
 .pp.in figure::after{transform:scaleX(0)}
 .pp.mask img{transform:scale(1.3);transition:transform 2.2s var(--ease)}
 .pp.mask.in img{transform:scale(1.04);animation:kb 14s 2.2s ease-in-out infinite alternate}
-.team figure{overflow:hidden;border-radius:4px}
+.pp figure{overflow:hidden;isolation:isolate}
+.pname{z-index:3}
+.team .tf{overflow:hidden;border-radius:4px;isolation:isolate}
 .team img{transform:scale(1.25);transition:transform 1.8s var(--ease)}
 .team figure.in img{transform:scale(1);animation:kb2 16s 1.8s ease-in-out infinite alternate}
 @keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.14)}}
@@ -500,6 +523,8 @@ button{font-family:inherit}
 @media(min-width:620px){.job-d dl{grid-template-columns:110px 1fr;gap:10px 16px}}
 .job-d dt{font-size:12.5px;color:var(--ink-3)}
 .job-d dd{margin:0;color:var(--ink-2)}
+.job-d dd.pre{white-space:pre-line}
+.job{scroll-margin-top:96px}
 .job-d .btns{padding:12px 22px 22px}
 .empty{grid-column:1/-1;border:1.5px dashed var(--line);border-radius:8px;padding:34px 22px}
 .empty b{display:block;font-size:17px;margin-bottom:6px}
@@ -803,6 +828,48 @@ details[open] summary .pm{background:var(--roof)}
 .cta-steps li{border-top-color:rgba(255,255,255,.35);color:rgba(255,255,255,.92)}
 .cta-steps li b{color:var(--babouche)}
 .cta .fine{margin-top:20px;font-size:12px;color:rgba(255,255,255,.8)}
+/* 求人サイトに掲載している言葉 */
+.msgs{display:grid;gap:14px;margin:34px 0 48px}
+@media(min-width:900px){.msgs{grid-template-columns:repeat(3,1fr);gap:18px}}
+.msg{margin:0;background:#fff;border-radius:6px;padding:24px 22px 18px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;position:relative}
+.msg::before{content:"“";position:absolute;top:-6px;left:16px;font-family:Georgia,serif;font-size:64px;line-height:1;color:var(--roof)}
+.msg blockquote{margin:0;font-size:14px;line-height:1.9;color:var(--ink-2)}
+.msg blockquote p+p{margin-top:10px}
+.msg .sub{font-weight:700;color:var(--black);font-size:13px;margin-top:14px!important}
+.msg ul{margin:6px 0 0;padding-left:1.2em;font-size:13.5px}
+.msg figcaption{font-size:12px;border-top:1px solid var(--line);padding-top:10px}
+.msg figcaption a{color:var(--ink-3);text-decoration:underline;text-underline-offset:3px}
+/* 問い合わせフォーム */
+.contact{display:grid;gap:26px;margin-top:64px;scroll-margin-top:80px}
+@media(min-width:960px){.contact{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:start}}
+.contact-h h3{font-weight:900;font-size:clamp(24px,3vw,34px);line-height:1.4;margin-top:10px}
+.contact-h p{margin-top:14px;font-size:14.5px;color:rgba(255,255,255,.92)}
+.contact-h .tel a{color:#fff;font-weight:900;font-size:22px;font-family:var(--en)}
+.contact-h .tel small{font-size:12px;opacity:.8}
+.cform{background:#fff;color:var(--black);border-radius:8px;padding:24px 20px;display:grid;gap:16px}
+@media(min-width:620px){.cform{padding:32px}}
+.cform fieldset{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.cform legend,.cform .f > span{font-size:13px;font-weight:700;margin-bottom:6px;display:block}
+.cform em{font-style:normal;font-size:10.5px;background:var(--roof);color:#fff;border-radius:3px;padding:1px 6px;margin-left:4px;vertical-align:1px}
+.f-kind label{cursor:pointer}
+.f-kind input{position:absolute;opacity:0}
+.f-kind span{display:inline-block;padding:10px 16px;border:1.5px solid var(--line);border-radius:999px;font-size:14px;font-weight:700}
+.f-kind input:checked+span{background:var(--black);border-color:var(--black);color:#fff}
+.f-kind input:focus-visible+span{outline:2px solid var(--roof);outline-offset:2px}
+.f2{display:grid;gap:16px}
+@media(min-width:620px){.f2{grid-template-columns:1fr 1fr}}
+.cform .f{display:block}
+.cform input:not([type=radio]):not([type=checkbox]),.cform select,.cform textarea{width:100%;font:inherit;font-size:16px;color:var(--black);
+  background:var(--paper);border:1.5px solid transparent;border-radius:6px;padding:12px 14px}
+.cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--roof);background:#fff}
+.cform .bad{border-color:#c0392b!important}
+.cform .hp{position:absolute;left:-9999px;width:1px;height:1px}
+.cform .agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-2);cursor:pointer}
+.cform .agree input{margin-top:4px;width:18px;height:18px;accent-color:var(--roof)}
+.cform button{justify-self:start;border:0;cursor:pointer;font:inherit;font-weight:700}
+.cform button[disabled]{opacity:.6;cursor:wait}
+.cmsg{font-size:14px;font-weight:700;min-height:1.4em}
+.cmsg.ok{color:var(--olive)}.cmsg.ng{color:#c0392b}
 .ct-b{--c:var(--babouche);width:min(260px,26vw);height:200px;right:var(--pad);top:90px}
 .ct-d{--c:#fff;--o:.45;width:160px;height:110px;right:var(--pad);top:312px}
 .ct-r{--c:rgba(255,255,255,.4);width:400px;height:400px;right:-150px;bottom:-160px}
@@ -868,7 +935,7 @@ details[open] summary .pm{background:var(--roof)}
     <nav class="navpill" aria-label="メニュー">
       <a href="#daily">おりーぶの毎日</a><a href="#movie">動画</a><a href="#role">適性を見る</a><a href="#people">働く人</a>
       <a href="#jobs">募集職種</a><a href="#places">働く場所</a>
-      <a class="go" href="#cta">見学してみる</a>
+      <a class="go" href="#contact" data-kind="見学したい">見学してみる</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer"><i></i></button>
   </div>
@@ -900,6 +967,11 @@ details[open] summary .pm{background:var(--roof)}
       <span class="l"><span class="ln"><span><em>本気で</em>向き合う仕事。</span></span></span>
     </h1>
     <p>誰かの成長を支えながら、<br>自分も一緒に成長していく。<br>ここで働く毎日は、ちょっと楽しい。</p>
+    <nav class="hero-btns" aria-label="おもなメニュー">
+      <a class="main" href="#jobs">求人一覧を見る</a>
+      <a href="#contact" data-kind="見学したい">見学を申し込む</a>
+      <a href="#contact" data-kind="質問・相談したい">相談する</a>
+    </nav>
   </div>
 </section>
 
@@ -933,9 +1005,9 @@ details[open] summary .pm{background:var(--roof)}
       </div>
     </div>
     <div class="stats" data-r>
-      <div class="stat"><b><span data-count="13">0</span><small>拠点</small></b><span>本サイト掲載の事業所数</span></div>
-      <div class="stat"><b><span data-count="2">0</span><small>市</small></b><span>伊丹市・尼崎市</span></div>
-      <div class="stat"><b><span data-count="8">0</span><small>職種</small></b><span>募集中の職種</span></div>
+      <div class="stat"><b><span id="stPlaces">13</span><small>拠点</small></b><span>本サイト掲載の事業所数</span></div>
+      <div class="stat"><b><span>2</span><small>市</small></b><span>伊丹市・尼崎市</span></div>
+      <div class="stat"><b><span id="stJobs">9</span><small>職種</small></b><span>募集中の職種</span></div>
     </div>
   </div>
   <div class="mq" aria-hidden="true"><div><span>GROW TOGETHER</span><span>OLIVE</span><span>GROW TOGETHER</span><span>OLIVE</span><span>GROW TOGETHER</span><span>OLIVE</span><span>GROW TOGETHER</span><span>OLIVE</span></div></div>
@@ -1087,11 +1159,29 @@ details[open] summary .pm{background:var(--roof)}
   <div class="in-wrap">
     <p class="lab" data-r>JOBS <small>募集職種</small></p>
     <h2 class="ttl" data-r>一緒に働く仲間を<br>募集しています。</h2>
+    <div class="msgs">
+      <figure class="msg" data-r><blockquote>
+        <p>おりーぶグループでは、施設やサービスの違いに関わらず常に笑顔が溢れています。利用者さんの笑顔がやりがいになるのはもちろん、仕事を通して社会貢献を実感出来るのはこのお仕事ならではのやりがいです。</p>
+        <p>利用者さんやご家族からいただく「ありがとう」という言葉が励みになる、素敵なお仕事です。私たちと一緒に、たくさんの笑顔を作りませんか？</p>
+        <p>日勤だけという働き方も可能ですので、それぞれのライフスタイルに合わせて働いていただけます。働き方に関する相談にものります。</p>
+      </blockquote><figcaption><a href="https://atcompany.jp/olive/recruit/" target="_blank" rel="noopener">アットカンパニー 採用情報より ↗</a></figcaption></figure>
+      <figure class="msg" data-r><blockquote>
+        <p>第一は「お子様にとって楽しい場所」であることです。「楽しい」を軸に、学習支援・自立支援から安全面への配慮など、それぞれに相応しい経験・資格を持っているスタッフを配置し、質の高いサービスを提供しています。</p>
+        <p class="sub">おりーぶ武庫之荘教室の特徴</p>
+        <ul><li>特別支援学校教諭のSST</li><li>ネイチャーゲームインストラクターのネイチャーゲーム指導</li><li>プロダンサー・ダンスインストラクターのダンス教室</li><li>鍼灸師の指圧施術・経絡療法</li><li>言語聴覚療法（ST4名体制で週6日ST室にて）</li><li>K式発達検査</li></ul>
+      </blockquote><figcaption><a href="https://litalico-c.jp/workplaces/2237" target="_blank" rel="noopener">LITALICOキャリア 事業所情報より ↗</a></figcaption></figure>
+      <figure class="msg" data-r><blockquote>
+        <p>利用者様が安心して過ごし楽しい場所であることを第一に考えています。</p>
+        <p>楽しくあたたかい空間の中で、専門性の高いサービスを提供しています。</p>
+        <p class="sub">スタッフ構成</p>
+        <p>児童発達支援管理責任者、介護支援専門員、保育士、児童指導員、音楽療法士、臨床心理士、作業療法士、理学療法士、鍼灸師、管理栄養士</p>
+      </blockquote><figcaption><a href="https://job-medley.com/facility/174087/" target="_blank" rel="noopener">ジョブメドレー 事業所情報より ↗</a></figcaption></figure>
+    </div>
     <ul class="perks" id="perkList" aria-label="はたらきやすさ（求人により異なります）"></ul>
     <div class="filters" id="filters" role="group" aria-label="職種のしぼり込み"></div>
     <div class="jgrid" id="jobList"></div>
     <div class="jboard" data-r>
-      <h3>いま出ている求人（全10件）</h3>
+      <h3>いま出ている求人（全<span id="jbCount">13</span>件）</h3>
       <ul id="jobBoard"></ul>
     </div>
   </div>
@@ -1142,8 +1232,8 @@ details[open] summary .pm{background:var(--roof)}
     <h2 data-r>ちょっと気になる。<br><em>それだけでも、</em><br>十分です。</h2>
     <p class="lead" data-r>応募する前に、まず事業所の空気を見に来てください。話を聞くだけでも大丈夫です。</p>
     <div class="cta-cards">
-      <a href="tel:0664157184" data-r><div><small>VISIT</small><b>見学してみる</b><span class="s">お電話で 06-6415-7184</span></div><span class="go">→</span></a>
-      <a href="tel:0664157184" data-r><div><small>TALK</small><b>話を聞いてみる</b><span class="s">応募前の質問・相談もお電話で</span></div><span class="go">→</span></a>
+      <a href="#contact" data-kind="見学したい" data-r><div><small>VISIT</small><b>見学してみる</b><span class="s">フォームから申し込む</span></div><span class="go">→</span></a>
+      <a href="#contact" data-kind="質問・相談したい" data-r><div><small>TALK</small><b>話を聞いてみる</b><span class="s">応募前の質問・相談もフォームから</span></div><span class="go">→</span></a>
       <a href="#jobs" data-r><div><small>JOBS</small><b>求人を見る</b><span class="s">募集職種と応募要件</span></div><span class="go">→</span></a>
     </div>
     <ol class="cta-steps">
@@ -1152,7 +1242,36 @@ details[open] summary .pm{background:var(--roof)}
       <li data-r><b>STEP 03</b>気になれば応募する</li>
       <li data-r><b>STEP 04</b>面接、そして入職</li>
     </ol>
-    <p class="fine">話し中の場合は折り返しご連絡します。</p>
+    <div class="contact" id="contact">
+      <div class="contact-h" data-r>
+        <p class="lab">CONTACT <small>お問い合わせフォーム</small></p>
+        <h3>見学・面接・質問や相談の<br>お申し込み</h3>
+        <p>入力いただいた内容は、おりーぶ西昆陽の採用担当に届きます。担当者から、メールまたはお電話でご連絡します。</p>
+        <p class="tel">お電話の場合：<a href="tel:0664157184">06-6415-7184</a><br><small>話し中の場合は折り返しご連絡します。</small></p>
+      </div>
+      <form class="cform" id="cform" novalidate>
+        <fieldset class="f-kind"><legend>ご用件 <em>必須</em></legend>
+          <label><input type="radio" name="ご用件" value="見学したい" required checked><span>見学したい</span></label>
+          <label><input type="radio" name="ご用件" value="面接を受けたい"><span>面接を受けたい</span></label>
+          <label><input type="radio" name="ご用件" value="質問・相談したい"><span>質問・相談のみ</span></label>
+        </fieldset>
+        <div class="f2">
+          <label class="f"><span>お名前 <em>必須</em></span><input name="お名前" autocomplete="name" required></label>
+          <label class="f"><span>ふりがな</span><input name="ふりがな"></label>
+        </div>
+        <div class="f2">
+          <label class="f"><span>メールアドレス <em>必須</em></span><input type="email" name="email" autocomplete="email" required></label>
+          <label class="f"><span>電話番号 <em>必須</em></span><input type="tel" name="電話番号" autocomplete="tel" inputmode="tel" required></label>
+        </div>
+        <label class="f"><span>気になる職種</span><select name="気になる職種" id="cfJob"><option value="">まだ決めていない</option></select></label>
+        <label class="f"><span>見学・面接のご希望日時</span><input name="希望日時" placeholder="例：平日の午後、12月10日以降 など"></label>
+        <label class="f"><span>ご質問・ご相談の内容</span><textarea name="内容" rows="5" placeholder="働き方や資格のこと、なんでもどうぞ"></textarea></label>
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="agree"><input type="checkbox" name="同意" value="同意する" required><span>入力した情報を、見学・面接・お問い合わせへの対応のためだけに使うことに同意します</span></label>
+        <button class="btn btn-olive" type="submit">この内容で送信する<i>→</i></button>
+        <p class="cmsg" id="cmsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -1178,7 +1297,7 @@ details[open] summary .pm{background:var(--roof)}
   </div>
 </footer>
 
-<div class="mbar" id="mbar"><a href="#cta">見学してみる</a><a href="#role">適性を見る</a></div>
+<div class="mbar" id="mbar"><a href="#contact" data-kind="見学したい">見学してみる</a><a href="#role">適性を見る</a></div>
 
 <script>
 /* ============================== DATA ============================== */
@@ -1218,15 +1337,15 @@ const DATA={
     {src:'816645772.381033.mp4',k:'RECRUIT',t:'スタッフ募集中です',land:true}
   ],
   xp:[
-    {t:'保育士',s:'資格',to:'保育士 / 児童指導員',j:'保育士'},
+    {t:'保育士',s:'資格',to:'保育士',j:'保育士'},
     {t:'教員免許（小・中・高・幼稚園）',s:'資格',to:'児童指導員',j:'児童指導員'},
-    {t:'理学療法士・作業療法士・言語聴覚士',s:'資格',to:'PT・OT・ST',j:'PT・OT・ST'},
-    {t:'障がい福祉・保育の実務経験',s:'経験',to:'児童発達支援管理責任者 / サービス管理責任者',j:'児童発達支援管理責任者'},
-    {t:'介護の経験',s:'経験',to:'生活支援員・世話人',j:'生活支援員・世話人'},
-    {t:'教育・指導の経験',s:'経験',to:'サポートスタッフ',j:'サポートスタッフ'},
-    {t:'接客・サービスの経験',s:'経験',to:'サポートスタッフ',j:'サポートスタッフ'},
-    {t:'スポーツの経験',s:'経験',to:'サポートスタッフ',j:'サポートスタッフ'},
-    {t:'子育ての経験',s:'経験',to:'サポートスタッフ',j:'サポートスタッフ'},
+    {t:'理学療法士・作業療法士・言語聴覚士・公認心理師',s:'資格',to:'PT・OT・ST',j:'PT・OT・ST'},
+    {t:'児童発達支援管理責任者研修の修了',s:'資格',to:'児童発達支援管理責任者',j:'児童発達支援管理責任者'},
+    {t:'放課後等デイサービスでの実務経験',s:'経験',to:'児童指導員',j:'児童指導員'},
+    {t:'就労支援・グループホームでの実務経験',s:'経験',to:'サービス管理責任者',j:'サービス管理責任者'},
+    {t:'介護の資格・経験',s:'経験',to:'生活支援員・世話人',j:'生活支援員・世話人'},
+    {t:'接客・営業・SNSの経験',s:'経験',to:'就労支援 作業支援員',j:'就労支援 作業支援員'},
+    {t:'子育て・スポーツの経験',s:'経験',to:'サポートスタッフ',j:'サポートスタッフ'},
     {t:'運転の経験',s:'経験',to:'送迎ドライバー',j:'送迎ドライバー'}
   ],
   conv:[
@@ -1237,53 +1356,65 @@ const DATA={
     {f:'子育て',fs:'待つ力',to:'その人のペースに合わせる'}
   ],
   jobBenefit:'社会保険完備（法定通り）、交通費全額支給、残業代全額支給、諸手当あり、制服貸与、自転車・バイク通勤可',
+  /* 求人の条件欄はすべて同じ項目でそろえる。求人原稿に記載がない項目は ASK を表示する
+     出典：アットカンパニー求人（2026/11/12確認）、LITALICOキャリア offers/31523、ジョブメドレー facility/174087 */
   jobs:[
-    /* 募集中の4職種はアットカンパニーの求人原稿（2026/11/1確認）にもとづく。勤務地のみクライアント指定で統一 */
-    {name:'児童指導員',open:false,place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）',emp:'正社員／アルバイト・パート',
+    {id:'jido',name:'児童指導員',open:false,badge:'資格要件あり',place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）',emp:'正社員／アルバイト・パート',
      pay:'正社員：月給25万〜28万円／パート：時給1,500〜1,700円（経験・能力による）',
      time:'正社員：10:00〜19:00または9:00〜18:00（休憩60分）／パート：10:00〜19:00の間で1日5時間〜、週3日〜',
      off:'正社員：完全週休二日制（日曜＋その他）／パート：シフト制。日曜定休、年末年始',
      desc:'児童発達支援・放課後等デイサービスでの学習支援や療育。マンツーマンまたは2対1でサポートします。',
      work:'学習支援、療育全般、送迎、絵本の読み聞かせ、工作、自由遊びの見守りなど。',fit:'子どもの変化に気づくのが好きな人。',
      req:'児童指導員任用（放課後デイ経験2年・5年）、または幼稚園・小中高いずれかの教員資格。少人数の送迎ができる方（AT限定可）',
-     links:[['正社員の求人','497093'],['パートの求人','506044']]},
-    {name:'保育士',open:false,place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）',emp:'正社員／アルバイト・パート',
+     links:[['正社員の求人','https://atcompany.jp/olive/recruit/requirement/497093/'],['パートの求人','https://atcompany.jp/olive/recruit/requirement/506044/'],['教員資格の方（週2日〜）','https://atcompany.jp/olive/recruit/requirement/461630/']]},
+    {id:'hoiku',name:'保育士',open:false,badge:'資格要件あり',place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）',emp:'正社員／アルバイト・パート',
      pay:'正社員：月給25万〜28万円／パート：時給1,500〜1,700円（経験・能力による）',
      time:'正社員：10:00〜19:00または9:00〜18:00（休憩60分）／パート：10:00〜19:00の間で1日5時間〜、週3日〜',
      off:'正社員：完全週休二日制（日曜＋その他）／パート：シフト制。日曜定休、年末年始',
-     desc:'児童発達支援・放課後等デイサービスでの療育と保育。ご家族へのアドバイスの機会も多い仕事です。',
+     desc:'子どもたちの生活全般のお世話をしながら心身の発達を促します。食事や睡眠・排せつなどの基本的な生活習慣を身につけられるよう支え、児童発達支援・運動療法なども行います。',
      work:'療育・保育・運動指導、学習支援、送迎、絵本の読み聞かせ、工作、自由遊びの見守りなど。',fit:'一人ひとりに合わせた関わりを考えたい人。',
      req:'保育士資格。パートは新卒・未経験可、正社員は放課後デイ経験2年。少人数の送迎ができる方（AT限定可）',
-     links:[['正社員の求人','497093'],['パートの求人','506044']]},
-    {name:'PT・OT・ST',open:false,place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）',emp:'正社員／アルバイト・パート',
+     links:[['正社員の求人','https://atcompany.jp/olive/recruit/requirement/497093/'],['パートの求人','https://atcompany.jp/olive/recruit/requirement/506044/']]},
+    {id:'ptotst',name:'PT・OT・ST',open:false,badge:'資格要件あり',place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）',emp:'正社員／アルバイト・パート',
      pay:'正社員：月給30万〜35万円／パート：時給2,100〜2,500円（経験・資格・能力による）',
      time:'正社員：10:00〜19:00（休憩1時間）／パート：10:00〜19:00のうち1日5時間〜、週1日〜',
      off:'シフト制。日曜定休、年末年始',
-     desc:'放課後等デイサービスでの機能訓練指導。ボルダリング体験やコミュニケーションのプログラムも行います。',
+     desc:'言語・理学・作業・臨床心理・音楽療法といったさまざまな方法で、子どもたちが安心して日常生活を送れるよう支援します。ボルダリング体験など、子どもたちが楽しめるプログラムも考えて実施しています。',
      work:'ST室での個別言語聴覚訓練、感覚統合療法の専門スペースを使ったOT・PTの訓練、他職種と連携したサポート体制の見直し。',fit:'子どもの発達に専門性を活かしたい人。',
      req:'正社員：言語聴覚士・作業療法士のいずれか／パート：言語聴覚士・作業療法士・理学療法士・公認心理師のいずれか。経験不問',
-     links:[['正社員の求人','548889'],['パートの求人','320398']]},
-    {name:'就労支援 作業支援員',open:true,badge:'未経験可',place:'兵庫県尼崎市西昆陽2-37-1（おりーぶ西昆陽）',emp:'正社員／アルバイト・パート',
+     links:[['正社員の求人','https://atcompany.jp/olive/recruit/requirement/548889/'],['パートの求人','https://atcompany.jp/olive/recruit/requirement/320398/'],['週1日〜・Wワーク可','https://atcompany.jp/olive/recruit/requirement/548403/']]},
+    {id:'hatsukan',name:'児童発達支援管理責任者',open:false,badge:'研修修了の方',place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）',emp:'正社員／アルバイト・パート',
+     pay:'正社員：月給25万〜35万円（固定残業代なし。残業代は別途支給）／パート：時給1,500〜1,700円',
+     time:'10:00〜18:00（休憩60分。残業は1時間程度）。パートは週5日〜',
+     off:'週休2日（日曜＋ほか1日、シフト制）、年末年始休暇、有給休暇、産休・育休、介護休暇',
+     benefit:'社会保険完備、昇給あり、交通費全額支給（規定による）、制服貸与、マイカー通勤応相談・バイク・自転車通勤可、グループ会社運営のホテル・温泉施設の社員優待（家族利用可）、屋内全面禁煙',
+     desc:'利用者様の増員・新規事業所の順次開所につき、一緒に働くスタッフを募集中です。発達の遅れや、障害があるお子様の支援をお任せします。',
+     work:'児童発達支援管理責任者業務全般\n●個別支援計画の作成、モニタリング\n●スタッフの育成、指導、サポート\n●プログラムの提案\n●関係機関との調整、参加\n●保護者とのやりとり\n●予約受付業務\n●療育支援のサポート\n●送迎　など',
+     appeal:'●学習支援をはじめとする療育・療法が充実しています！\n●言語・理学・作業・臨床心理・音楽療法など各分野の専門家が多く在籍。その子の特性に合わせ、必要な療育を行っています！\n\n専門的な知識をお持ちの方はもちろん、ブランクのある方・経験の浅い方も歓迎します！ベテランスタッフによるフォロー体制等が充実していますので、ご安心ください。',
+     fit:'子どもたちの立場にたって行動できる方、より良いサービスを目指して真摯に業務に取り組める方。',
+     req:'児童発達支援管理責任者研修を修了（受講済み）している方。普通自動車免許があればなお歓迎',
+     links:[['正社員の求人（LITALICOキャリア）','https://litalico-c.jp/offers/31523'],['正社員の求人（ジョブメドレー）','https://job-medley.com/nm/312743/'],['パートの求人（ジョブメドレー）','https://job-medley.com/nm/312744/']]},
+    {id:'sabikan',name:'サービス管理責任者',open:false,badge:'資格要件あり',place:'兵庫県尼崎市西昆陽2-37-1（おりーぶ西昆陽）',
+     desc:'就労支援・グループホームでの個別支援計画と支援管理。',
+     work:'就労支援・グループホームでの個別支援計画の作成と支援管理。',fit:'一人の生活を長い目で見たい人。',req:'サービス管理責任者の実務経験および研修要件を満たす方'},
+    {id:'seikatsu',name:'生活支援員・世話人',open:false,badge:'経験を活かせる',place:'兵庫県尼崎市西昆陽2-37-1（おりーぶ西昆陽）',
+     desc:'軽度な知的障害・精神障害を持った方を対象に、自立の助長を目的とした少人数での共同生活を支援します。',
+     work:'利用者さんの食事準備・日々の相談・入浴・排泄・清掃など、日常生活上の援助。就労継続支援や健康管理の支援も行います。',fit:'暮らしを一緒につくりたい人。',req:'介護の資格・経験があれば活かせます。詳しくはお問い合わせください'},
+    {id:'sagyo',name:'就労支援 作業支援員',open:true,badge:'未経験可',place:'兵庫県尼崎市西昆陽2-37-1（おりーぶ西昆陽）',emp:'正社員／アルバイト・パート',
      pay:'正社員：月給25万円以上／パート：時給1,200円（経験・資格・能力による）',
-     time:'正社員：9:00〜18:00（休憩1時間）、週5日程度／パート：9:00〜16:00（休憩1時間）、週3〜5日程度',
+     time:'正社員：9:00〜18:00（休憩1時間）、週5日程度／パート：9:00〜16:00（休憩1時間）、週2〜5日程度',
      off:'シフト制。正社員は日曜定休＋平日週1日',
      desc:'就労継続支援B型で、利用者さんの作業をサポート。SNS動画の撮影や農作業まで、仕事の幅が広い職場です。',
      work:'SNS動画の撮影・企画・編集、作業指導とサポート、利用者さんの見守り、送迎。作業例はアクセサリー雑貨の制作、内職、自社農園の農作業など。',fit:'接客や営業の経験を活かしたい人。福祉がはじめての人。',
      req:'普通自動車免許（AT限定可）で少人数の送迎ができる方、土曜・祝日に出勤できる方。専門資格なし・未経験可。社会福祉士・介護福祉士・初任者研修以上、施設での経験も活かせます',
-     links:[['正社員の求人','484537'],['パートの求人','506047']]},
-    /* 以下は求人原稿に掲載なし＝保留。勤務地は事業の種類がわかるものだけ指定どおり記載 */
-    {name:'児童発達支援管理責任者',hold:true,open:false,place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）',desc:'個別支援計画の作成と、支援全体の組み立て。',
-     work:'個別支援計画の作成、支援全体の組み立て、チームの調整。',fit:'現場を支える側に回りたい人。',
-     req:'保育士・教諭等としての実務経験5年以上、または障がい児・者施設での実務経験5年以上。研修受講済みの方は優遇'},
-    {name:'サービス管理責任者',hold:true,open:false,place:'兵庫県尼崎市西昆陽2-37-1（おりーぶ西昆陽）',desc:'就労支援・グループホームでの個別支援計画と支援管理。',
-     work:'就労支援・グループホームでの個別支援計画の作成と支援管理。',fit:'一人の生活を長い目で見たい人。',req:'実務経験および研修要件'},
-    {name:'生活支援員・世話人',hold:true,open:false,place:'兵庫県尼崎市西昆陽2-37-1（おりーぶ西昆陽）',desc:'就労継続支援B型やグループホームでの日常生活の支援。',
-     work:'就労継続支援B型やグループホームでの、日常生活の支援。',fit:'暮らしを一緒につくりたい人。',req:'お問い合わせください'},
-    {name:'サポートスタッフ',hold:true,open:true,desc:'活動の準備・見守り・片づけ。子どもや利用者さんと一緒に過ごす仕事です。',
+     links:[['正社員の求人','https://atcompany.jp/olive/recruit/requirement/484537/'],['パートの求人','https://atcompany.jp/olive/recruit/requirement/506047/'],['パート（9:00〜16:00）','https://atcompany.jp/olive/recruit/requirement/497090/']]},
+    {id:'support',name:'サポートスタッフ',open:true,badge:'資格・経験不問',place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）または兵庫県尼崎市西昆陽2-37-1（おりーぶ西昆陽）',
+     desc:'活動の準備・見守り・片づけ。子どもや利用者さんと一緒に過ごす仕事です。',
      work:'子どもや利用者さんと一緒に過ごしながら、活動の準備・見守り・片づけを担当します。',fit:'まず現場を知りたい人。福祉がはじめての人。',
      req:'資格・経験は不問'},
-    {name:'送迎ドライバー',hold:true,open:true,desc:'子どもや利用者さんの送り迎え。1日2〜3時間からの勤務です。',
-     work:'子どもや利用者さんの送り迎え。',fit:'空いた時間で関わりたい人。',req:'普通自動車運転免許（AT限定可）'}
+    {id:'driver',name:'送迎ドライバー',open:true,badge:'資格・経験不問',place:'兵庫県伊丹市瑞ケ丘1-52（おりーぶ瑞穂）',
+     desc:'施設に通っている子どもたちを、近隣の学校や自宅へ送迎します。お子さんや利用者さんとお話しすることが多く、顔なじみになりやすい仕事です。',
+     work:'子どもや利用者さんの送り迎え。1日2〜3時間からの勤務です。',fit:'空いた時間で関わりたい人。',req:'普通自動車運転免許（AT限定可）'}
   ],
   team:[
     {img:'team/event.jpg',alt:'仮装したスタッフ10人の集合写真',c:'イベントの日は、スタッフも本気で仮装。',pos:'50% 45%'},
@@ -1293,8 +1424,11 @@ const DATA={
   ],
   /* 求人原稿（アットカンパニー）の「仕事の特徴」から。求人により異なる */
   perks:['20代〜60代が活躍中','定年なし','残業月20時間以内','年間休日120日以上','産休・育休取得実績あり','交通費全額支給','社員登用あり','週1日〜OKの職種あり','社内託児所あり（おりーぶ西昆陽）'],
-  /* 求人一覧の全10件。勤務地はクライアント指定（放デイ＝おりーぶ瑞穂、就労B・GH＝おりーぶ西昆陽） */
+  /* アットカンパニーの10件＋児発管の3件。勤務地はクライアント指定（放デイ＝おりーぶ瑞穂、就労B・GH＝おりーぶ西昆陽） */
   jobBoard:[
+    {u:'https://litalico-c.jp/offers/31523',src:'LITALICOキャリア',e:'正社員',t:'児童発達支援管理責任者（ブランク・経験の浅い方歓迎）',pay:'月給25万〜35万円',place:'おりーぶ瑞穂'},
+    {u:'https://job-medley.com/nm/312743/',src:'ジョブメドレー',e:'正社員',t:'児童発達支援管理責任者（新規開所）',pay:'月給25万〜35万円',place:'おりーぶ瑞穂'},
+    {u:'https://job-medley.com/nm/312744/',src:'ジョブメドレー',e:'パート',t:'児童発達支援管理責任者（週5日〜）',pay:'時給1,500〜1,700円',place:'おりーぶ瑞穂'},
     {id:'497093',e:'正社員',t:'保育士・児童指導員（完全週休二日制）',pay:'月給25万〜28万円',place:'おりーぶ瑞穂'},
     {id:'548889',e:'正社員',t:'言語聴覚士・作業療法士（フレックス勤務可）',pay:'月給30万〜35万円',place:'おりーぶ瑞穂'},
     {id:'484537',e:'正社員',t:'就労B 作業支援員（未経験可）',pay:'月給25万円以上',place:'おりーぶ西昆陽'},
@@ -1353,8 +1487,10 @@ const DATA={
     {q:'未経験でも応募できますか？',a:'就労継続支援B型の作業支援員は、専門資格なし・未経験から始められます（少人数の送迎ができる普通自動車免許が必要です。AT限定可）。児童指導員や保育士などには資格要件があります。各職種の応募要件は「募集職種」でご確認ください。'},
     {q:'どんな資格が必要ですか？',a:'職種によって異なります。保育士は保育士資格、児童指導員は児童指導員任用または幼稚園・小中高いずれかの教員資格、PT・OT・STは各国家資格が必要です。送迎がある職種では普通自動車免許（AT限定可）も必要です。'},
     {q:'Wワークはできますか？',a:'パートの求人では、Wワーク（掛け持ち・副業）の方も歓迎しています。週1日から勤務できる職種もあります。'},
-    {q:'見学できますか？',a:'はい、職場見学にもぜひお越しください。お電話（06-6415-7184）でお問い合わせいただけます。'},
-    {q:'応募前に話を聞けますか？',a:'お電話（06-6415-7184）でお問い合わせいただけます。話し中の場合は折り返しご連絡します。'}
+    {q:'勤務時間の融通はききますか？',a:'日勤だけという働き方も可能です。それぞれのライフスタイルに合わせて働けるよう、働き方に関する相談にものります。週1日から勤務できる職種もあります。'},
+    {q:'男性も女性も働いていますか？',a:'はい。家事のスキルや、子どもとのコミュニケーションの視点を活かして活躍する女性スタッフが多い一方、体力を使う場面や男性利用者さんへの対応では男性スタッフも頼りにされています。男女関係なく、スタッフ同士の仲が良い職場です。'},
+    {q:'見学できますか？',a:'はい、職場見学にもぜひお越しください。ページ下の「お問い合わせフォーム」から申し込めます。お電話（06-6415-7184）でも受け付けています。'},
+    {q:'応募前に話を聞けますか？',a:'はい。お問い合わせフォームで「質問・相談のみ」を選んで送ってください。お電話（06-6415-7184）でも受け付けています。話し中の場合は折り返しご連絡します。'}
   ],
   quiz:{
     q:[
@@ -1427,7 +1563,7 @@ $('dailySl').innerHTML=DATA.daily.map((d,i)=>`
 })();
 
 $('xpList').innerHTML=DATA.xp.map((x,i)=>`
-  <li data-r><a href="#jobs" data-job="${esc(x.j)}"><span class="n">${String(i+1).padStart(2,'0')}</span>
+  <li data-r><a href="#job-${(DATA.jobs.find(j=>j.name===x.j)||{id:""}).id}" data-job="${esc(x.j)}"><span class="n">${String(i+1).padStart(2,'0')}</span>
   <span class="t">${esc(x.t)}<small>${esc(x.s)} → ${esc(x.to)}</small></span><span class="arrow" aria-hidden="true">→</span></a></li>`).join('');
 
 $('convList').innerHTML=DATA.conv.map(c=>`
@@ -1435,13 +1571,16 @@ $('convList').innerHTML=DATA.conv.map(c=>`
   <span class="to">${esc(c.to)}</span></li>`).join('');
 
 $('teamList').innerHTML=DATA.team.map(t=>`
-  <figure data-r><img src="${esc(t.img)}" alt="${esc(t.alt)}" loading="lazy" style="object-position:${t.pos||'50% 50%'}"><figcaption>${esc(t.c)}</figcaption></figure>`).join('');
+  <figure data-r><div class="tf"><img src="${esc(t.img)}" alt="${esc(t.alt)}" loading="lazy" style="object-position:${t.pos||'50% 50%'}"></div><figcaption>${esc(t.c)}</figcaption></figure>`).join('');
 
 $('perkList').innerHTML=DATA.perks.map(p=>`<li>${esc(p)}</li>`).join('');
 
 $('jobBoard').innerHTML=DATA.jobBoard.map(j=>`
-  <li><a href="https://atcompany.jp/olive/recruit/requirement/${j.id}/" target="_blank" rel="noopener">
-    <span class="e">${esc(j.e)}</span><span class="t">${esc(j.t)}<small>${esc(j.pay)}　${esc(j.place)}</small></span><span class="go" aria-hidden="true">↗</span></a></li>`).join('');
+  <li><a href="${esc(j.u||`https://atcompany.jp/olive/recruit/requirement/${j.id}/`)}" target="_blank" rel="noopener">
+    <span class="e">${esc(j.e)}</span><span class="t">${esc(j.t)}<small>${esc(j.pay)}　${esc(j.place)}　掲載：${esc(j.src||'アットカンパニー')}</small></span><span class="go" aria-hidden="true">↗</span></a></li>`).join('');
+$('jbCount').textContent=DATA.jobBoard.length;
+$('stJobs').textContent=DATA.jobs.length;
+$('stPlaces').textContent=DATA.places.length;
 
 $('peopleList').innerHTML=DATA.people.map((p,i)=>`
   <article class="person">
@@ -1498,22 +1637,56 @@ document.querySelectorAll('[data-slider]').forEach(w=>{
   function render(open){
     const list=DATA.jobs.filter(j=>mode==='all'||(mode==='open'?j.open:!j.open));
     if(!list.length){box.innerHTML=`<div class="empty"><b>この条件の募集は今ありません</b><p>条件を戻すか、見学のときに直接ご相談ください。</p></div>`;return;}
-    box.innerHTML=list.map((j,i)=>`<article class="job" id="job-${i}" data-name="${esc(j.name)}">
-      <div class="job-h"><div class="top"><h3>${esc(j.name)}</h3><span class="badge ${j.open?'b-open':'b-req'}">${j.badge||(j.open?'資格・経験不問':'資格要件あり')}</span></div>
+    const ASK='面接時にご案内します（お気軽にお問い合わせください）';
+    const v=x=>esc(x||ASK);
+    box.innerHTML=list.map(j=>`<article class="job" id="job-${j.id}" data-name="${esc(j.name)}">
+      <div class="job-h"><div class="top"><h3>${esc(j.name)}</h3><span class="badge ${j.open?'b-open':'b-req'}">${esc(j.badge)}</span></div>
       <p class="desc">${esc(j.desc)}</p>
-      ${j.place||j.emp?`<div class="meta">${j.place?`<span><b>勤務地</b>${esc(j.place)}</span>`:''}${j.emp?`<span><b>雇用形態</b>${esc(j.emp)}</span>`:''}</div>`:''}</div>
-      <button class="job-tg" type="button" aria-expanded="false" aria-controls="jd-${i}">詳しく見る<i>＋</i></button>
-      <div class="job-d" id="jd-${i}"><div><dl><dt>仕事内容</dt><dd>${esc(j.work)}</dd><dt>向いている人</dt><dd>${esc(j.fit)}</dd><dt>応募要件</dt><dd>${esc(j.req)}</dd>
-      ${j.pay?`<dt>給与</dt><dd>${esc(j.pay)}</dd><dt>勤務時間</dt><dd>${esc(j.time)}</dd><dt>休日</dt><dd>${esc(j.off)}</dd><dt>待遇</dt><dd>${esc(DATA.jobBenefit)}</dd>`:''}</dl>
-      <div class="btns"><a class="btn btn-olive" href="#cta">見学・応募の相談をする<i>→</i></a>${(j.links||[]).map(l=>`<a class="btn btn-line" href="https://atcompany.jp/olive/recruit/requirement/${l[1]}/" target="_blank" rel="noopener">${esc(l[0])}<i>↗</i></a>`).join('')}</div></div></div></article>`).join('');
+      <div class="meta"><span><b>勤務地</b>${v(j.place)}</span><span><b>雇用形態</b>${v(j.emp)}</span><span><b>給与</b>${v(j.pay)}</span></div></div>
+      <button class="job-tg" type="button" aria-expanded="false" aria-controls="jd-${j.id}">詳しく見る<i>＋</i></button>
+      <div class="job-d" id="jd-${j.id}"><div><dl>
+      <dt>仕事内容</dt><dd class="pre">${v(j.work)}</dd>
+      ${j.appeal?`<dt>アピールポイント</dt><dd class="pre">${esc(j.appeal)}</dd>`:''}
+      <dt>向いている人</dt><dd>${v(j.fit)}</dd><dt>応募要件</dt><dd>${v(j.req)}</dd>
+      <dt>勤務地</dt><dd>${v(j.place)}</dd><dt>雇用形態</dt><dd>${v(j.emp)}</dd><dt>給与</dt><dd>${v(j.pay)}</dd>
+      <dt>勤務時間</dt><dd>${v(j.time)}</dd><dt>休日</dt><dd>${v(j.off)}</dd><dt>待遇</dt><dd>${v(j.benefit||(j.pay?DATA.jobBenefit:''))}</dd></dl>
+      <div class="btns"><a class="btn btn-olive" href="#contact" data-kind="面接を受けたい" data-pick="${esc(j.name)}">見学・応募の相談をする<i>→</i></a>${(j.links||[]).map(l=>`<a class="btn btn-line" href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])}<i>↗</i></a>`).join('')}</div></div></div></article>`).join('');
     box.querySelectorAll('.job-tg').forEach(b=>b.addEventListener('click',()=>{
       const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);
       $(b.getAttribute('aria-controls')).classList.toggle('open',o);}));
-    if(open){const t=[...box.children].find(a=>a.dataset.name===open);if(t)t.querySelector('.job-tg').click();}
+    if(open){const t=[...box.children].find(a=>a.dataset.name===open);
+      if(t){t.querySelector('.job-tg').click();setTimeout(()=>t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}),60);}}
   }
   render();
   window.openJob=name=>{mode='all';[...fb.children].forEach(c=>c.setAttribute('aria-pressed',c.dataset.k==='all'));render(name);};
-  document.addEventListener('click',e=>{const a=e.target.closest('[data-job]');if(a)openJob(a.dataset.job);});
+  document.addEventListener('click',e=>{const a=e.target.closest('[data-job]');if(a){e.preventDefault();openJob(a.dataset.job);}});
+})();
+
+/* ===== 問い合わせフォーム（FormSubmit 経由で olive.nishikoya@gmail.com に届く） ===== */
+(function(){
+  const f=$('cform'),msg=$('cmsg'),sel=$('cfJob');
+  sel.innerHTML+=DATA.jobs.map(j=>`<option>${esc(j.name)}</option>`).join('');
+  document.addEventListener('click',e=>{const a=e.target.closest('[data-kind]');if(!a)return;
+    const r=f.querySelector(`input[name="ご用件"][value="${a.dataset.kind}"]`);if(r)r.checked=true;
+    if(a.dataset.pick)sel.value=a.dataset.pick;});
+  f.addEventListener('submit',async e=>{
+    e.preventDefault();msg.className='cmsg';msg.textContent='';
+    const bad=[...f.querySelectorAll('[required]')].filter(el=>el.type==='checkbox'?!el.checked:el.type==='radio'?false:!el.checkValidity());
+    f.querySelectorAll('.bad').forEach(el=>el.classList.remove('bad'));
+    bad.forEach(el=>el.classList.add('bad'));
+    if(bad.length){msg.classList.add('ng');msg.textContent=bad.some(el=>el.type==='checkbox')&&bad.length===1?'同意のチェックをお願いします。':'必須の項目を確認してください。';bad[0].focus();return;}
+    const data=Object.fromEntries(new FormData(f));
+    if(data._honey)return;
+    data._subject=`【採用LP】${data['ご用件']}：${data['お名前']}様`;data._template='table';data._captcha='false';
+    const btn=f.querySelector('button');btn.disabled=true;msg.textContent='送信しています…';
+    try{
+      const r=await fetch('https://formsubmit.co/ajax/olive.nishikoya@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)});
+      const j=await r.json().catch(()=>({}));
+      if(!r.ok||String(j.success)==='false')throw new Error(j.message||r.status);
+      f.reset();msg.classList.add('ok');msg.textContent='送信しました。担当者からのご連絡をお待ちください。';
+    }catch(err){msg.classList.add('ng');msg.textContent='送信できませんでした。時間をおいて再度お試しいただくか、お電話（06-6415-7184）でお問い合わせください。';}
+    btn.disabled=false;
+  });
 })();
 
 /* ===== 診断 ===== */
@@ -1545,7 +1718,7 @@ document.querySelectorAll('[data-slider]').forEach(w=>{
       ${jobs.map(j=>`<div class="qjob"><b>${esc(j.name)}</b><span>応募要件：${esc(j.req)}</span></div>`).join('')}
       <p class="qfine">これは自分の強みを知るための目安で、採用の合否とは関係ありません。資格がない場合でも、未経験から始められる就労支援の作業支援員があります。</p>
       <div class="btns"><a class="btn btn-olive" href="#jobs" id="qToJob">この仕事を見る<i>→</i></a>
-      <a class="btn btn-line" href="#cta">見学してみる<i>→</i></a>
+      <a class="btn btn-line" href="#contact" data-kind="見学したい">見学してみる<i>→</i></a>
       <button class="btn btn-line" type="button" id="qr">もう一度<i>↺</i></button></div></div>`;
     $('qr').onclick=()=>{st=0;pk=[];render();};
     $('qToJob').onclick=()=>window.openJob&&openJob(jobs[0]&&jobs[0].name);
@@ -1576,11 +1749,6 @@ document.querySelectorAll('h2.ttl,h2.vision-st,.cta h2').forEach(h=>{
   watch();new MutationObserver(watch).observe(document.body,{childList:true,subtree:true});
   // 時間差
   document.querySelectorAll('.core div,.acts-list li,.cta-cards a,.cta-steps li,.stage').forEach((el,i,a)=>{el.style.transitionDelay=(i%5)*90+'ms';});
-  // カウントアップ
-  const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,to=+el.dataset.count;
-    if(reduce){el.textContent=to;return;}let s=null;const f=t=>{s=s||t;const p=Math.min((t-s)/1200,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f);};
-    requestAnimationFrame(f);cio.unobserve(el);}),{threshold:.6});
-  document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
   // パララックス・ビジョンの線
   const px=[...document.querySelectorAll('[data-px]')],line=$('trackLine'),track=$('track'),mbar=$('mbar'),hero=document.querySelector('.hero');
   let tick=false;
