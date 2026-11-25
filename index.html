@@ -526,6 +526,16 @@ button{font-family:inherit}
 .job-d dd.pre{white-space:pre-line}
 .job{scroll-margin-top:96px}
 .job-d .btns{padding:12px 22px 22px}
+/* 閉じた状態のカードは同じ高さにそろえる（開くと全文） */
+.jgrid{grid-template-columns:minmax(0,1fr)}
+@media(min-width:860px){.jgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.job-h .top{min-height:2.8em;align-items:center}
+.job h3{font-size:clamp(17px,1.9vw,20px)}
+.job .desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;height:calc(14px*1.85*3)}
+.job .meta{display:grid;gap:4px}
+.job .meta span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.job.is-open .desc{-webkit-line-clamp:unset;height:auto}
+.job.is-open .meta span{white-space:normal}
 .empty{grid-column:1/-1;border:1.5px dashed var(--line);border-radius:8px;padding:34px 22px}
 .empty b{display:block;font-size:17px;margin-bottom:6px}
 
@@ -713,7 +723,7 @@ svg.sh{overflow:visible}
 @media(max-width:979px){.st-l1,.st-l2{display:none}}
 
 /* WEAPON（タンズゲート）：ミッドセンチュリーの平行四辺形 */
-.weapon{--bg:var(--tunsgate)}
+.weapon{--bg:var(--paper)}
 .weapon .lab{color:var(--serge)}
 .weapon-ph .pop{background:var(--serge)}
 .fact{border-color:var(--serge)}
@@ -741,7 +751,7 @@ svg.sh{overflow:visible}
 @media(max-width:899px){.pe-o{width:130px;height:65px;top:60px}}
 
 /* VISION（スクールハウスホワイト）：三角のガーランド */
-.vision{--bg:var(--school)}
+.vision{--bg:var(--paper)}
 .track-line i{background:linear-gradient(90deg,var(--serge),var(--roof),var(--saxon))}
 .stage:nth-child(3) .dot{border-color:var(--roof)}
 .stage:nth-child(4) .dot{border-color:var(--saxon)}
@@ -828,17 +838,6 @@ details[open] summary .pm{background:var(--roof)}
 .cta-steps li{border-top-color:rgba(255,255,255,.35);color:rgba(255,255,255,.92)}
 .cta-steps li b{color:var(--babouche)}
 .cta .fine{margin-top:20px;font-size:12px;color:rgba(255,255,255,.8)}
-/* 求人サイトに掲載している言葉 */
-.msgs{display:grid;gap:14px;margin:34px 0 48px}
-@media(min-width:900px){.msgs{grid-template-columns:repeat(3,1fr);gap:18px}}
-.msg{margin:0;background:#fff;border-radius:6px;padding:24px 22px 18px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;position:relative}
-.msg::before{content:"“";position:absolute;top:-6px;left:16px;font-family:Georgia,serif;font-size:64px;line-height:1;color:var(--roof)}
-.msg blockquote{margin:0;font-size:14px;line-height:1.9;color:var(--ink-2)}
-.msg blockquote p+p{margin-top:10px}
-.msg .sub{font-weight:700;color:var(--black);font-size:13px;margin-top:14px!important}
-.msg ul{margin:6px 0 0;padding-left:1.2em;font-size:13.5px}
-.msg figcaption{font-size:12px;border-top:1px solid var(--line);padding-top:10px}
-.msg figcaption a{color:var(--ink-3);text-decoration:underline;text-underline-offset:3px}
 /* 問い合わせフォーム */
 .contact{display:grid;gap:26px;margin-top:64px;scroll-margin-top:80px}
 @media(min-width:960px){.contact{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:start}}
@@ -1074,7 +1073,7 @@ details[open] summary .pm{background:var(--roof)}
       </div>
     </div>
     <div class="weapon-ph">
-      <figure class="mask" data-px="-0.05"><img src="S__21495884_0.jpg" alt="子どもたちに絵本を読み聞かせるスタッフ" loading="lazy"></figure>
+      <figure class="mask" data-px="-0.05"><picture><source srcset="images/ep-02.webp" type="image/webp"><img src="images/ep-02.jpg" alt="テーブルを囲んで手作業を進めるスタッフ" loading="lazy"></picture></figure>
       <p class="pop" data-r>前の仕事で<br>身につけたこと、<br>そのまま使えます。</p>
     </div>
   </div>
@@ -1159,24 +1158,6 @@ details[open] summary .pm{background:var(--roof)}
   <div class="in-wrap">
     <p class="lab" data-r>JOBS <small>募集職種</small></p>
     <h2 class="ttl" data-r>一緒に働く仲間を<br>募集しています。</h2>
-    <div class="msgs">
-      <figure class="msg" data-r><blockquote>
-        <p>おりーぶグループでは、施設やサービスの違いに関わらず常に笑顔が溢れています。利用者さんの笑顔がやりがいになるのはもちろん、仕事を通して社会貢献を実感出来るのはこのお仕事ならではのやりがいです。</p>
-        <p>利用者さんやご家族からいただく「ありがとう」という言葉が励みになる、素敵なお仕事です。私たちと一緒に、たくさんの笑顔を作りませんか？</p>
-        <p>日勤だけという働き方も可能ですので、それぞれのライフスタイルに合わせて働いていただけます。働き方に関する相談にものります。</p>
-      </blockquote><figcaption><a href="https://atcompany.jp/olive/recruit/" target="_blank" rel="noopener">アットカンパニー 採用情報より ↗</a></figcaption></figure>
-      <figure class="msg" data-r><blockquote>
-        <p>第一は「お子様にとって楽しい場所」であることです。「楽しい」を軸に、学習支援・自立支援から安全面への配慮など、それぞれに相応しい経験・資格を持っているスタッフを配置し、質の高いサービスを提供しています。</p>
-        <p class="sub">おりーぶ武庫之荘教室の特徴</p>
-        <ul><li>特別支援学校教諭のSST</li><li>ネイチャーゲームインストラクターのネイチャーゲーム指導</li><li>プロダンサー・ダンスインストラクターのダンス教室</li><li>鍼灸師の指圧施術・経絡療法</li><li>言語聴覚療法（ST4名体制で週6日ST室にて）</li><li>K式発達検査</li></ul>
-      </blockquote><figcaption><a href="https://litalico-c.jp/workplaces/2237" target="_blank" rel="noopener">LITALICOキャリア 事業所情報より ↗</a></figcaption></figure>
-      <figure class="msg" data-r><blockquote>
-        <p>利用者様が安心して過ごし楽しい場所であることを第一に考えています。</p>
-        <p>楽しくあたたかい空間の中で、専門性の高いサービスを提供しています。</p>
-        <p class="sub">スタッフ構成</p>
-        <p>児童発達支援管理責任者、介護支援専門員、保育士、児童指導員、音楽療法士、臨床心理士、作業療法士、理学療法士、鍼灸師、管理栄養士</p>
-      </blockquote><figcaption><a href="https://job-medley.com/facility/174087/" target="_blank" rel="noopener">ジョブメドレー 事業所情報より ↗</a></figcaption></figure>
-    </div>
     <ul class="perks" id="perkList" aria-label="はたらきやすさ（求人により異なります）"></ul>
     <div class="filters" id="filters" role="group" aria-label="職種のしぼり込み"></div>
     <div class="jgrid" id="jobList"></div>
@@ -1304,9 +1285,9 @@ details[open] summary .pm{background:var(--roof)}
 const DATA={
   hero:[
     {b:'team/climb.jpg',alt:'ボルダリングの壁の前で笑うスタッフ5人の集合写真',pos:'50% 40%'},
-    {b:'S__21495891.jpg',alt:'子どもたちに紙芝居を読むスタッフの笑顔',pos:'50% 30%'},
+    {b:'hero/S__21495891.jpg',alt:'子どもたちに紙芝居を読むスタッフの笑顔',pos:'50% 30%'},
     {b:'S__21495885_0.jpg',alt:'床に広げた手づくり教材を準備するスタッフ',pos:'50% 50%'},
-    {b:'S__21495877_0.jpg',alt:'マットの上で体を動かす子どもに付き添うスタッフ',pos:'50% 50%'}
+    {b:'hero/S__21495877_0.jpg',alt:'マットの上で体を動かす子どもに付き添うスタッフ',pos:'50% 50%'}
   ],
   daily:[
     {img:'S__21495874_0.jpg',k:'できた！',t:'できた！が生まれた日。',d:'折り紙を前にずっと迷っていた子が、最後まで自分の手で仕上げた。その瞬間、テーブルの空気が変わった。'},
@@ -1652,7 +1633,7 @@ document.querySelectorAll('[data-slider]').forEach(w=>{
       <dt>勤務時間</dt><dd>${v(j.time)}</dd><dt>休日</dt><dd>${v(j.off)}</dd><dt>待遇</dt><dd>${v(j.benefit||(j.pay?DATA.jobBenefit:''))}</dd></dl>
       <div class="btns"><a class="btn btn-olive" href="#contact" data-kind="面接を受けたい" data-pick="${esc(j.name)}">見学・応募の相談をする<i>→</i></a>${(j.links||[]).map(l=>`<a class="btn btn-line" href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])}<i>↗</i></a>`).join('')}</div></div></div></article>`).join('');
     box.querySelectorAll('.job-tg').forEach(b=>b.addEventListener('click',()=>{
-      const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);
+      const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);b.closest('.job').classList.toggle('is-open',o);
       $(b.getAttribute('aria-controls')).classList.toggle('open',o);}));
     if(open){const t=[...box.children].find(a=>a.dataset.name===open);
       if(t){t.querySelector('.job-tg').click();setTimeout(()=>t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}),60);}}
